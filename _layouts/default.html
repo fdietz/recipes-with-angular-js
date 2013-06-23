@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>{{ page.title }}</title>
+    <meta name="viewport" content="width=device-width">
+
+    {% stylesheet application %}
+  </head>
+    <body>
+
+      <div class="">
+        <nav class="top-bar">
+          <ul class="title-area">
+            <li class="name">
+              <h1><a href="/">Recipes with Angular.js <img src="{% asset_path AngularJS-Shield-small.png %}" alt="" width="24" height="24"></a>  </h1>
+            </li>
+            <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+          </ul>
+
+          <section class="top-bar-section">
+            <!-- Left Nav Section -->
+            <ul class="left">
+              <li class="divider"></li>
+              <li class="active"><a href="/">Home</a></li>
+              <li class="divider"></li>
+              <li><a href="/toc.html">Table of Contents</a></li>
+              <li class="divider"></li>
+              <li class="active"><a href="/about.html">About</a></li>
+              <li class="divider"></li>
+            </ul>
+
+          </section>
+        </nav>
+      </div>
+
+      <div class="row">
+        <div class="large-12 columns">
+          {{ content }}
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="large-12 columns">
+          <hr>
+          <br>
+          <p>
+            Your Name<br />
+            What You Are<br />
+            your@email.com
+          </p>
+
+          <p>
+            <a href="http://github.com/yourusername/">github.com/yourusername</a><br />
+            <a href="http://twitter.com/yourusername/">twitter.com/yourusername</a><br />
+          </p>
+
+        </div>
+      </div>
+
+      {% javascript application %}
+      <script>
+        $(document).foundation();
+      </script>
+    </body>
+</html>

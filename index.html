@@ -1,0 +1,39 @@
+---
+layout: default
+title: Recipes with Angular.js
+---
+
+<div class="row">
+  <div class="large-6 columns">
+    <h3>Latest Articles</h3>
+    <ul>
+      {% for page in site.pages reversed limit:5 %}
+        {% if page.chapter %}
+          <li>
+            <a href="{{page.url}}">{{page.title}}</a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div class="large-6 columns">
+    <div class="row panel">
+      <div class="large-12 columns">
+        <h3>Support us and buy the book!</h3>
+      </div>
+      <div class="large-4 columns">
+        <a href="https://leanpub.com/recipes-with-angular-js"><img src="{% asset_path book-medium.png %}" alt="" width="200px"></a>
+      </div>
+      <div class="large-8 columns">
+        <h5>Recipes with Angular.js</h5>
+        <h5 class="subheader">Practical concepts and techniques for rapid web application development <span class="author">by <a href="mailto: fdietz@gmail.com">Frederik Dietz</a></span></h5>
+
+
+        <a class="button small" href="https://leanpub.com/recipes-with-angular-js">Learn More</a>
+        <a class="button small success" href="https://leanpub.com/recipes-with-angular-js/purchases/new">Buy Now</a>
+      </div>
+    </div>
+
+  </div>
+</div>

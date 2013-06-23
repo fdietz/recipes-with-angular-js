@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+<ul class="breadcrumbs">
+  <li><a href="/">Home</a></li>
+  <li><a href="/{{ page.chapter }}">{{ page.chapter }}</a></li>
+  <li class="current">{{page.title}}</li>
+</ul>
+
+<h2>{{page.title}}</h2>
+
+{{ content }}
+
+<div class="panel radius similar-pages">
+  <h4>Similar Recipes</h4>
+  <ul>
+    {% sorted_for similar_page in site.pages %}
+      {% if similar_page.chapter == page.chapter %}
+        <li>
+          <a href="{{similar_page.url}}">{{similar_page.title}}</a>
+        </li>
+      {% endif %}
+    {% endsorted_for %}
+  </ul>
+</div>

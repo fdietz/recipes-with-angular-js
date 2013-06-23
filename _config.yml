@@ -1,0 +1,8 @@
+name: Recipes with Angular.js
+pygments: true
+table_of_contents:
+  dirs: [introduction, controllers]
+assets:
+  compress:
+    js:   uglifier
+    css:  sass
