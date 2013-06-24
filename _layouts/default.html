@@ -10,31 +10,67 @@
   </head>
     <body>
 
-      <div class="">
         <nav class="top-bar">
           <ul class="title-area">
             <li class="name">
               <h1><a href="/">Recipes with Angular.js <img src="{% asset_path AngularJS-Shield-small.png %}" alt="" width="24" height="24"></a>  </h1>
             </li>
-            <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
             <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
           </ul>
 
           <section class="top-bar-section">
-            <!-- Left Nav Section -->
             <ul class="left">
-              <li class="divider"></li>
-              <li class="active"><a href="/">Home</a></li>
-              <li class="divider"></li>
+              <!-- <li class="divider"></li> -->
+              <li class=""><a href="/">Home</a></li>
+              <!-- <li class="divider"></li> -->
               <li><a href="/toc.html">Table of Contents</a></li>
-              <li class="divider"></li>
-              <li class="active"><a href="/about.html">About</a></li>
-              <li class="divider"></li>
+              <!-- <li class="divider"></li> -->
+              <li class=""><a href="/about.html">About</a></li>
+              <!-- <li class="divider"></li> -->
             </ul>
 
           </section>
         </nav>
+
+<!--       <div class="row">
+        <div class="large-12 columns">
+          <nav class="top-bar">
+            <ul class="title-area">
+              <li class="name">
+                <h1><a href="/">Recipes with Angular.js <img src="{% asset_path AngularJS-Shield-small.png %}" alt="" width="24" height="24"></a>  </h1>
+              </li>
+              <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+            </ul>
+
+            <section class="top-bar-section">
+              <ul class="left">
+                <li class="divider"></li>
+                <li class=""><a href="/">Home</a></li>
+                <li class="divider"></li>
+                <li><a href="/toc.html">Table of Contents</a></li>
+                <li class="divider"></li>
+                <li class=""><a href="/about.html">About</a></li>
+                <li class="divider"></li>
+              </ul>
+            </section>
+          </nav>
+        </div>
       </div>
+
+ -->
+      <!-- <div class="row">
+        <div class="large-12 columns">
+            <ul class="button-group radius right" style="margin-top: 20px">
+              <li><a class="button secondary small" href="/">Home</a></li>
+              <li><a class="button secondary small" href="/toc.html">Table of Contents</a></li>
+              <li><a class="button secondary small" href="/about.html">About</a></li>
+            </ul>
+          <h1>
+            Recipes with Angular.js <img src="{% asset_path AngularJS-Shield-small.png %}" alt="" width="48" height="48">
+          </h1>
+        </div>
+      </div> -->
+
 
       <div class="row">
         <div class="large-12 columns">
@@ -42,24 +78,30 @@
         </div>
       </div>
 
-
-      <div class="row">
+      <footer class="row">
         <div class="large-12 columns">
           <hr>
-          <br>
-          <p>
-            Your Name<br />
-            What You Are<br />
-            your@email.com
-          </p>
+          <div class="row">
+            <div class="large-6 columns">
+              <p>
+                Made by <a href="http://fdietz.de">Frederik Dietz</a> Contact: <a href="mailto: fdietz@gmail.com">fdietz@gmail.com</a>
+              </p>
+              <p>
+                Follow me:
+                <a href="http://twitter.com/fdietz/">twitter.com/fdietz</a>
+              </p>
+              <p>
+                Fork me:
+                <a href="http://github.com/fdietz/">github.com/fdietz</a>
+              </p>
+            </div>
 
-          <p>
-            <a href="http://github.com/yourusername/">github.com/yourusername</a><br />
-            <a href="http://twitter.com/yourusername/">twitter.com/yourusername</a><br />
-          </p>
-
+            <div class="large-6 columns">
+              <p>All content licensed with <a href="http://creativecommons.org/">Creative Commons</a>.</p>
+            </div>
+          </div>
         </div>
-      </div>
+      </footer>
 
       {% javascript application %}
       <script>

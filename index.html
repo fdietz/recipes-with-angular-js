@@ -4,10 +4,21 @@ title: Recipes with Angular.js
 ---
 
 <div class="row">
+  <div class="large-12 columns">
+    <!-- <h1>Welcome to Recipes with Angular.js</h1> -->
+    <p>A community project dedicated to collecting resources for the <a href="http://angularjs.org/">Angular.js</a> framework. You find here easy to follow cookbook style recipes for issues you are likely to face when working with Angular.js.</p>
+
+    <p><a href="http://angularjs.org/">Angular.js</a> is the superheroic Javascript MVW framework developed by Google.</p>
+  </div>
+</div>
+
+<br>
+
+<div class="row">
   <div class="large-6 columns">
-    <h3>Latest Articles</h3>
+    <h3>Latest Updates</h3>
     <ul>
-      {% for page in site.pages reversed limit:5 %}
+      {% for page in site.pages reversed limit:10 %}
         {% if page.chapter %}
           <li>
             <a href="{{page.url}}">{{page.title}}</a>
