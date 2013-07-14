@@ -4,40 +4,28 @@ require "shellwords"
 
 Bundler.require
 
+GITHUB_REPONAME = "fdietz/recipes-with-angular-js"
+
 namespace :site do
-  
-  desc "Commit the local site to the gh-pages branch and publish to GitHub Pages"
-  task :publish do
-    # Ensure the gh-pages dir exists so we can generate into it.
-    puts "Checking for gh-pages dir..."
-    unless File.exist?("./gh-pages")
-      puts "No gh-pages directory found. Run the following commands first:"
-      puts "  `git clone git@github.com:fdietz/recipes-with-angular-js gh-pages"
-      puts "  `cd gh-pages"
-      puts "  `git checkout gh-pages`"
-      exit(1)
-    end
+  desc "Generate blog files"
+  task :generate do
+    Jekyll::Site.new(Jekyll.configuration({
+      "source"      => ".",
+      "destination" => "_site"
+    })).process
+  end
 
-    # Ensure gh-pages branch is up to date.
-    Dir.chdir('gh-pages') do
-      sh "git pull origin gh-pages"
+  desc "Generate and publish blog to gh-pages"
+  task :publish => [:generate] do
+    Dir.mktmpdir do |tmp|
+      cp_r "_site/.", tmp
+      Dir.chdir tmp
+      system "git init"
+      system "git add ."
+      message = "Site updated at #{Time.now.utc}"
+      system "git commit -m #{message.shellescape}"
+      system "git remote add origin git@github.com:#{GITHUB_REPONAME}.git"
+      system "git push origin master:refs/heads/gh-pages --force"
     end
-
-    # Copy to gh-pages dir.
-    puts "Copying site to gh-pages branch..."
-    Dir.glob("site/*") do |path|
-      next if path == "_site"
-      sh "cp -R #{path} gh-pages/"
-    end
-
-    # Commit and push.
-    puts "Committing and pushing to GitHub Pages..."
-    sha = `git log`.match(/[a-z0-9]{40}/)[0]
-    Dir.chdir('gh-pages') do
-      sh "git add ."
-      sh "git commit -m 'Updating to #{sha}.'"
-      sh "git push origin gh-pages"
-    end
-    puts 'Done.'
   end
 end
