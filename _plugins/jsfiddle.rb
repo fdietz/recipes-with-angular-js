@@ -21,12 +21,16 @@ module Jekyll
       EOF
     end
 
-    def resource_path
+    def resource_paths
+      [js_resource_path, css_resource_path].join(',')
+    end
+
+    def js_resource_path
       "https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"
     end
 
     def css_resource_path
-      '<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">'
+      "http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css"
     end
 
     def template(html_content, js_content, css_content)
@@ -35,7 +39,7 @@ module Jekyll
         #{hidden_field('html', html_content) if html_content}
         #{hidden_field('js', js_content) if js_content}
         #{hidden_field('css', css_content) if css_content}
-        #{hidden_field('resources', resource_path)}
+        #{hidden_field('resources', resource_paths)}
         <button class="btn small btn-primary">Edit in jsfiddle</button>
       </form>
       EOF
