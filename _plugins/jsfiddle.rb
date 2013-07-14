@@ -13,15 +13,6 @@ module Jekyll
       # since liquid template engine would interpret it as a liquid tag
       value.gsub("{{", '&#123;&#123; &quot;&#123;&#123;'). 
             gsub("}}", '&quot; &#125;&#125;&#125;&#125;');
-
-      # value.gsub(/\&/, '&amp;').
-      #       gsub(/\</, '&lt;').
-      #       gsub(/\>/, '&gt;').
-      #       gsub(/"/, '&quot;').
-      #       # escape {{ (double curly braces)
-      #       # since liquid template engine would interpret it as a liquid tag
-      #       gsub("{{", '&#123;&#123; &quot;&#123;&#123;'). 
-      #       gsub("}}", '&quot; &#125;&#125;&#125;&#125;');
     end
 
     def hidden_field(name, value)
@@ -44,7 +35,7 @@ module Jekyll
         #{hidden_field('html', html_content) if html_content}
         #{hidden_field('js', js_content) if js_content}
         #{hidden_field('resources', resource_path)}
-        <button class="btn tiny btn-primary">Edit in jsfiddle</button>
+        <button class="btn small btn-primary">Edit in jsfiddle</button>
       </form>
       EOF
     end

@@ -55,16 +55,42 @@ code {
   margin-top: 20px;
 }
 
-.top-bar-section {
-  ul {
-    padding-left: 0px;
-  }
-}
+// .top-bar-section {
+//   ul {
+//     padding-left: 0px;
+//   }
+// }
 
-.top-bar {
-  margin-bottom: 40px;
-}
+// .top-bar {
+//   margin-bottom: 40px;
+// }
 
 .recipe-actions {
   float: right;
 }
+
+.recipe-actions-centered {
+  margin: 20px;
+}
+
+code {
+  color: #444;
+  font-family: courier;
+
+  background: #f5f2f0;
+  padding: 2px 4px 2px 4px;
+  border-radius: .3em;
+}
+
+.breadcrumbs {
+  padding-left: 0px;
+  margin-bottom: 0px;
+}
+
+// .title-area {
+//   padding-left: 10px;
+//   a {
+//     padding-left: 0px;
+//   }
+
+// }
