@@ -28,8 +28,6 @@ describe('MyCtrl', function(){
 });
 {% endprism %}
 
-You can find the complete example on [github](https://github.com/fdietz/recipes-with-angular-js-examples/tree/master/chapter2/recipe7).
-
 ### Discussion
 Jasmine specs use `describe` and `it` functions to group specs and `beforeEach` and `afterEach` to setup and teardown code. The actual expectation compares the greeting from the scope with our expectation `Greetings Frederik`.
 

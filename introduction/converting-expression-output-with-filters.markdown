@@ -19,8 +19,6 @@ Enter your name: <input type="text" ng-model="name"></input>
 {% endraw %}
 {% endprism %}
 
-You can find the complete example on [github](https://github.com/fdietz/recipes-with-angular-js-examples/tree/master/chapter1/recipe4).
-
 ### Discussion
 Angular uses the `|` (pipe) character to combine filters with variables in expressions. When evaluating the expression, the name variable is passed to the uppercase filter. This is similar to working with the Unix bash pipe symbol where an input can be transformed by another program. Also try the `lowercase` filter!
 

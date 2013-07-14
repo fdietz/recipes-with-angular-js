@@ -37,6 +37,15 @@ title: Recipes with Angular.js
 
   <li>
     <a href="directives">Directives</a>
+    <ul>
+      {% sorted_for page in site.pages | sort_by:order %}
+        {% if page.chapter == "directives" %}
+          <li>
+            <a href="{{page.url}}">{{page.title}}</a>
+          </li>
+        {% endif %}
+      {% endsorted_for %}
+    </ul>
   </li>
 
   <li>

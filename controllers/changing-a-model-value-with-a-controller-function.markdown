@@ -32,8 +32,6 @@ This function can be directly called in an expression, in our example we use `ng
 {% endraw %}
 {% endprism %}
 
-You can find the complete example on [github](https://github.com/fdietz/recipes-with-angular-js-examples/tree/master/chapter2/recipe2).
-
 ### Discussion
 The `ng-init` directive is executed on page load and calls the function `incrementValue` defined in `MyCtrl`. Functions are defined on the scope very similar to values but must be called with the familiar parenthesis syntax.
 

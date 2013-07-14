@@ -18,8 +18,6 @@ Enter your name: <input type="text" ng-model="name"></input>
 {% endraw %}
 {% endprism %}
 
-You can find the complete example on [github](https://github.com/fdietz/recipes-with-angular-js-examples/tree/master/chapter1/recipe2).
-
 ### Discussion
 Assigning "name" to the `ng-model` attribute and using the name variable in an expression will keep both in sync automatically. Typing in the text input will automatically reflect these changes in the paragraph element below.
 

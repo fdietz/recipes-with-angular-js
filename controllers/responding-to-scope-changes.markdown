@@ -37,8 +37,6 @@ In our example we use the text input value to print a friendly greeting.
 
 The value `greeting` will be changed whenever there's a change to the `name` model and the value is not blank.
 
-You can find the complete example on [github](https://github.com/fdietz/recipes-with-angular-js-examples/tree/master/chapter2/recipe4).
-
 ### Discussion
 The first argument `name` of the `$watch` function is actually an Angular expression, so you can use more complex expressions (for example: `[value1, value2] | json`) or even a Javascript function. In this case you need to return a string in the watcher function:
 

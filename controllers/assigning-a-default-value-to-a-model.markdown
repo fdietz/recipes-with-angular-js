@@ -29,8 +29,6 @@ var MyCtrl = function($scope) {
 };
 {% endprism %}
 
-You can find the complete example on [github](https://github.com/fdietz/recipes-with-angular-js-examples/tree/master/chapter2/recipe1).
-
 ### Discussion
 Depending on where you use the ng-controller directive, you define its assigned scope. The scope is hierarchical and follows the DOM node hierarchy. In our example, the value expression is correctly evaluated to `some value`, since value is set in the `MyCtrl` controller. Note that this would not work if the value expression were moved outside the controllers scope:
 

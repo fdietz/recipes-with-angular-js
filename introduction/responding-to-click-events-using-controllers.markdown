@@ -40,8 +40,6 @@ function MyCtrl($scope) {
 }
 {% endprism %}
 
-You can find the complete example on [github](https://github.com/fdietz/recipes-with-angular-js-examples/tree/master/chapter1/recipe3).
-
 When toggling the button the "Hello World" paragraph will change its visibility.
 
 ### Discussion

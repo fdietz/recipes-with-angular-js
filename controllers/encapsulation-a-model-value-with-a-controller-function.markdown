@@ -32,7 +32,5 @@ Then in the template we use an expression to call it:
 {% endraw %}
 {% endprism %}
 
-You can find the complete example on [github](https://github.com/fdietz/recipes-with-angular-js-examples/tree/master/chapter2/recipe3).
-
 ### Discussion
 `MyCtrl` defines the `getIncrementedValue` function, which uses the current value and returns it incremented by one. One could argue that depending on the use case it would make more sense to use a filter. But there are use cases specific to the controllers behavior where a generic filter is not required.

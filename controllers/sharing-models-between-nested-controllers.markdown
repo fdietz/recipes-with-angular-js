@@ -57,8 +57,6 @@ app.controller("MyNestedCtrl", function($scope) {
 
 Play around with the various input fields and see how changes affect each other.
 
-You can find the complete example on [github](https://github.com/fdietz/recipes-with-angular-js-examples/tree/master/chapter2/recipe5).
-
 ### Discussion
 All the default values are defined in `MyCtrl` which is the parent of `MyNestedCtrl`. When making changes in the first input field, the changes will be in sync with the other input fields bound to the `name` variable. They all share the same scope variable as long as they only read from the variable. If you change the nested value, a copy in the scope of the `MyNestedCtrl` will be created. From now on, changing the first input field will only change the nested input field which explicitly references the parent scope via `$parent.name` expression.
 
