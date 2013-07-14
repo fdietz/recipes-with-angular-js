@@ -3,6 +3,7 @@ layout: recipe
 title: Sharing Models Between Nested Controllers
 chapter: controllers
 order: 5
+source_path: controllers/source/recipe5
 ---
 
 ### Problem

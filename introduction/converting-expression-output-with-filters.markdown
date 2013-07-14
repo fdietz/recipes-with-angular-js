@@ -3,6 +3,7 @@ layout: recipe
 title: Converting Expression Output with Filters
 chapter: introduction
 order: 4
+source_path: introduction/source/recipe4
 ---
 
 ### Problem

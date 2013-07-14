@@ -3,6 +3,7 @@ layout: recipe
 title: Responding to Scope Changes
 chapter: controllers
 order: 4
+source_path: controllers/source/recipe4
 ---
 
 ### Problem

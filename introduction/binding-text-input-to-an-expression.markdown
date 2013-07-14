@@ -3,6 +3,7 @@ layout: recipe
 title: Binding a Text Input to an Expression
 chapter: introduction
 order: 2
+source_path: introduction/source/recipe2
 ---
 ### Problem
 You want user input to be used in another part of your HTML page.

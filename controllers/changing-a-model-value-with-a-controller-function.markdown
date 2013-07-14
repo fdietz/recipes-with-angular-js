@@ -3,6 +3,7 @@ layout: recipe
 title: Changing a Model Value with a Controller Function
 chapter: controllers
 order: 2
+source_path: controllers/source/recipe2
 ---
 
 ### Problem

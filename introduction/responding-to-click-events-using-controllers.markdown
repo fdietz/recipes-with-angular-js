@@ -3,6 +3,7 @@ layout: recipe
 title: Responding to Click Events using Controllers
 chapter: introduction
 order: 3
+source_path: introduction/source/recipe3
 ---
 ### Problem
 You wish to hide an HTML element on button click.

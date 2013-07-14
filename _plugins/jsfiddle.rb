@@ -29,11 +29,12 @@ module Jekyll
       '<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">'
     end
 
-    def template(html_content, js_content)
+    def template(html_content, js_content, css_content)
       <<-EOF
       <form class="jsfiddle" method="post" action="http://jsfiddle.net/api/post/library/pure/" target="_blank">
         #{hidden_field('html', html_content) if html_content}
         #{hidden_field('js', js_content) if js_content}
+        #{hidden_field('css', css_content) if css_content}
         #{hidden_field('resources', resource_path)}
         <button class="btn small btn-primary">Edit in jsfiddle</button>
       </form>
@@ -48,13 +49,18 @@ module Jekyll
       "#{File.dirname(__FILE__)}/../#{@path}/app.js"
     end
 
+    def css_path
+      "#{File.dirname(__FILE__)}/../#{@path}/style.css"
+    end
+
     def render(context)
       @path = context.environments.first["page"]["source_path"]
 
       if @path
-        html_content = IO.read(html_path)
+        html_content = IO.read(html_path) if File.exist?(html_path)
         js_content = IO.read(js_path) if File.exist?(js_path)
-        template(html_content, js_content).strip
+        css_content = IO.read(css_path) if File.exist?(css_path)
+        template(html_content, js_content, css_content).strip
       else
         "Error processing input. Expected syntax: {% jsfiddle [html] %}"
       end

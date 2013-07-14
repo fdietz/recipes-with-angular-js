@@ -3,6 +3,7 @@ layout: recipe
 title: Sharing Code Between Controllers using Services
 chapter: controllers
 order: 6
+source_path: controllers/source/recipe6
 ---
 
 ### Problem

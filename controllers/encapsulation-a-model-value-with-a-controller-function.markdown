@@ -3,6 +3,7 @@ layout: recipe
 title: Encapsulating a Model Value with a Controller Function
 chapter: controllers
 order: 3
+source_path: controllers/source/recipe3
 ---
 
 ### Problem
