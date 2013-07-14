@@ -8,6 +8,12 @@ layout: default
   <li class="current">{{page.title}}</li>
 </ul>
 
+<div class="recipe-actions">
+  {% if page.source_path %}
+    {% jsfiddle %}
+  {% endif %}
+</div>
+
 <h2>{{page.title}}</h2>
 
 {{ content }}

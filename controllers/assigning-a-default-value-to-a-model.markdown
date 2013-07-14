@@ -2,6 +2,7 @@
 layout: recipe
 title: Assigning a Default Value to a Model
 chapter: controllers
+source_path: controllers/source/recipe1
 order: 1
 ---
 
@@ -9,6 +10,7 @@ order: 1
 You wish to assign a default value to the scope in the controller's context.
 
 ### Solution
+
 Use the `ng-controller` directive in your template:
 
 {% prism markup %}
