@@ -3,6 +3,7 @@ layout: recipe
 title: Including the Angular.js Library Code in an HTML Page
 chapter: introduction
 order: 1
+source_path: introduction/source/recipe1
 ---
 ### Problem
 You wish to use Angular.js on a web page.

@@ -11,8 +11,8 @@ module Jekyll
 
       # escape {{ (double curly braces)
       # since liquid template engine would interpret it as a liquid tag
-      value.gsub("{{", '&#123;&#123; &quot;&#123;&#123;'). 
-            gsub("}}", '&quot; &#125;&#125;&#125;&#125;');
+      value.gsub("{{", '&#123;&#123;'). 
+            gsub("}}", '&#125;&#125;');
     end
 
     def hidden_field(name, value)
@@ -53,7 +53,7 @@ module Jekyll
 
       if @path
         html_content = IO.read(html_path)
-        js_content = IO.read(js_path)
+        js_content = IO.read(js_path) if File.exist?(js_path)
         template(html_content, js_content).strip
       else
         "Error processing input. Expected syntax: {% jsfiddle [html] %}"
