@@ -1,0 +1,1 @@
+window.app = angular.module("RecipesApp", []);
