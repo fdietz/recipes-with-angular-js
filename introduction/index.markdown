@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Recipes with Angular.js
+title: Introduction - Table of Contents
 ---
 <ul class="breadcrumbs">
   <li><a href="{{ site.baseurl }}">Home</a></li>
