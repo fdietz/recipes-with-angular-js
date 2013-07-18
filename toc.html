@@ -3,13 +3,13 @@ layout: default
 title: Recipes with Angular.js
 ---
 <ul class="breadcrumbs">
-  <li><a href="/">Home</a></li>
+  <li><a href="{{ site.baseurl }}">Home</a></li>
 </ul>
 
 <h2>Table of Contents</h2>
 <ol>
   <li>
-    <a href="introduction">Introduction</a>
+    <a href="{{ site.baseurl }}/introduction.html">Introduction</a>
 
     <ul>
       {% sorted_for page in site.pages | sort_by:order %}
@@ -23,7 +23,7 @@ title: Recipes with Angular.js
   </li>
 
   <li>
-    <a href="controllers">Controllers</a>
+    <a href="{{ site.baseurl }}/controllers/html">Controllers</a>
     <ul>
       {% sorted_for page in site.pages | sort_by:order %}
         {% if page.chapter == "controllers" %}
@@ -36,7 +36,7 @@ title: Recipes with Angular.js
   </li>
 
   <li>
-    <a href="directives">Directives</a>
+    <a href="{{ site.baseurl }}/directives.html">Directives</a>
     <ul>
       {% sorted_for page in site.pages | sort_by:order %}
         {% if page.chapter == "directives" %}
@@ -49,6 +49,6 @@ title: Recipes with Angular.js
   </li>
 
   <li>
-    <a href="filters">Filters</a>
+    <a href="{{ site.baseurl }}/filters.html">Filters</a>
   </li>
 </ol>
