@@ -1,5 +1,6 @@
 name: Recipes with Angular.js
 pygments: true
+baseurl: /recipes-with-angular-js
 table_of_contents:
   dirs: [introduction, controllers]
 assets:
