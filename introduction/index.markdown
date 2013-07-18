@@ -3,7 +3,7 @@ layout: default
 title: Recipes with Angular.js
 ---
 <ul class="breadcrumbs">
-  <li><a href="/">Home</a></li>
+  <li><a href="{{ site.baseurl }}">Home</a></li>
   <li class="current">introduction</li>
 </ul>
 
@@ -12,7 +12,7 @@ title: Recipes with Angular.js
   {% sorted_for page in site.pages | sort_by:order %}
     {% if page.chapter == "introduction" %}
       <li>
-        <a href="{{page.url}}">{{page.title}}</a>
+        <a href="{{ site.baseurl }}{{page.url}}">{{page.title}}</a>
       </li>
     {% endif %}
   {% endsorted_for %}

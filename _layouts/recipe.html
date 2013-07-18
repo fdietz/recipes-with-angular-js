@@ -3,8 +3,8 @@ layout: default
 ---
 
 <ul class="breadcrumbs">
-  <li><a href="/">Home</a></li>
-  <li><a href="/{{ page.chapter }}">{{ page.chapter }}</a></li>
+  <li><a href="{{ site.baseurl }}">Home</a></li>
+  <li><a href="{{ site.baseurl }}/{{ page.chapter }}">{{ page.chapter }}</a></li>
   <li class="current">{{page.title}}</li>
 </ul>
 
@@ -24,7 +24,7 @@ layout: default
     {% sorted_for similar_page in site.pages %}
       {% if similar_page.chapter == page.chapter %}
         <li>
-          <a href="{{similar_page.url}}">{{similar_page.title}}</a>
+          <a href="{{ site.baseurl }}{{similar_page.url}}">{{similar_page.title}}</a>
         </li>
       {% endif %}
     {% endsorted_for %}

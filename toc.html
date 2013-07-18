@@ -15,7 +15,7 @@ title: Recipes with Angular.js
       {% sorted_for page in site.pages | sort_by:order %}
         {% if page.chapter == "introduction" %}
           <li>
-            <a href="{{page.url}}">{{page.title}}</a>
+            <a href="{{ site.baseurl }}{{page.url}}">{{page.title}}</a>
           </li>
         {% endif %}
       {% endsorted_for %}
@@ -28,7 +28,7 @@ title: Recipes with Angular.js
       {% sorted_for page in site.pages | sort_by:order %}
         {% if page.chapter == "controllers" %}
           <li>
-            <a href="{{page.url}}">{{page.title}}</a>
+            <a href="{{ site.baseurl }}{{page.url}}">{{page.title}}</a>
           </li>
         {% endif %}
       {% endsorted_for %}
@@ -41,7 +41,7 @@ title: Recipes with Angular.js
       {% sorted_for page in site.pages | sort_by:order %}
         {% if page.chapter == "directives" %}
           <li>
-            <a href="{{page.url}}">{{page.title}}</a>
+            <a href="{{ site.baseurl }}{{page.url}}">{{page.title}}</a>
           </li>
         {% endif %}
       {% endsorted_for %}

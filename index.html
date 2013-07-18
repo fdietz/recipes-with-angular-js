@@ -21,7 +21,7 @@ title: Recipes with Angular.js
       {% for page in site.pages reversed limit:10 %}
         {% if page.chapter %}
           <li>
-            <a href="{{page.url}}">{{page.title}}</a>
+            <a href="{{ site.baseurl }}{{page.url}}">{{page.title}}</a>
           </li>
         {% endif %}
       {% endfor %}
