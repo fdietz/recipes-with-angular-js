@@ -50,3 +50,35 @@ title: Home
     </div>
   </div>
 </div>
+
+
+<div class="row">
+  <div class="large-12 columns">
+    <h3>Search Recipes</h3>
+
+    <div id="search">
+      <form action="/search" method="get">
+        <input type="text" id="search-query" name="q" placeholder="Search for Recipes..." autocomplete="off">
+      </form>
+    </div>
+
+    <section id="search-results" style="display: none;">
+      <p>Search results</p>
+      <div class="entries">
+      </div>
+    </section>
+
+    {% raw %}
+      <script id="search-results-template" type="text/mustache">
+        {{#entries}}
+          <article>
+            <h3>
+              {{#date}}<small><time datetime="{{pubdate}}" pubdate>{{displaydate}}</time></small>{{/date}}
+              <a href="{{url}}">{{title}}</a>
+            </h3>
+          </article>
+        {{/entries}}
+      </script>
+    {% endraw %}
+  </div>
+</div>
