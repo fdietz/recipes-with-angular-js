@@ -6,3 +6,4 @@ assets:
   compress:
     js:   uglifier
     css:  sass
+  baseurl: http://fdietz.github.io/recipes-with-angular-js/assets/
