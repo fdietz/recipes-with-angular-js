@@ -22,11 +22,15 @@ module Jekyll
     end
 
     def resource_paths
-      [js_resource_path, css_resource_path].join(',')
+      [angular_js_resource_path, jquery_resource_path, css_resource_path].join(',')
     end
 
-    def js_resource_path
+    def angular_js_resource_path
       "https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"
+    end
+
+    def jquery_resource_path
+      "http://code.jquery.com/jquery-1.10.1.min.js"
     end
 
     def css_resource_path
