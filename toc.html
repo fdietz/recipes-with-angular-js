@@ -23,7 +23,7 @@ title: Table of Contents
   </li>
 
   <li>
-    <a href="{{ site.baseurl }}/controllers/html">Controllers</a>
+    <a href="{{ site.baseurl }}/controllers/index.html">Controllers</a>
     <ul>
       {% sorted_for page in site.pages | sort_by:order %}
         {% if page.chapter == "controllers" %}
@@ -36,7 +36,7 @@ title: Table of Contents
   </li>
 
   <li>
-    <a href="{{ site.baseurl }}/directives.html">Directives</a>
+    <a href="{{ site.baseurl }}/directives/index.html">Directives</a>
     <ul>
       {% sorted_for page in site.pages | sort_by:order %}
         {% if page.chapter == "directives" %}
@@ -49,6 +49,81 @@ title: Table of Contents
   </li>
 
   <li>
-    <a href="{{ site.baseurl }}/filters.html">Filters</a>
+    <a href="{{ site.baseurl }}/filters/index.html">Filters</a>
+    <ul>
+      {% sorted_for page in site.pages | sort_by:order %}
+        {% if page.chapter == "filters" %}
+          <li>
+            <a href="{{ site.baseurl }}{{page.url}}">{{page.title}}</a>
+          </li>
+        {% endif %}
+      {% endsorted_for %}
+    </ul>
   </li>
+
+  <li>
+    <a href="{{ site.baseurl }}/consuming-external-services/index.html">Consuming External Services</a>
+    <ul>
+      {% sorted_for page in site.pages | sort_by:order %}
+        {% if page.chapter == "consuming-external-services" %}
+          <li>
+            <a href="{{ site.baseurl }}{{page.url}}">{{page.title}}</a>
+          </li>
+        {% endif %}
+      {% endsorted_for %}
+    </ul>
+  </li>
+
+  <li>
+    <a href="{{ site.baseurl }}/urls-routing-and-partials/index.html">URLs, Routing and Partials</a>
+    <ul>
+      {% sorted_for page in site.pages | sort_by:order %}
+        {% if page.chapter == "urls-routing-and-partials" %}
+          <li>
+            <a href="{{ site.baseurl }}{{page.url}}">{{page.title}}</a>
+          </li>
+        {% endif %}
+      {% endsorted_for %}
+    </ul>
+  </li>
+
+  <li>
+    <a href="{{ site.baseurl }}/common-user-interface-patterns/index.html">Common User Interface Patterns</a>
+    <ul>
+      {% sorted_for page in site.pages | sort_by:order %}
+        {% if page.chapter == "common-user-interface-patterns" %}
+          <li>
+            <a href="{{ site.baseurl }}{{page.url}}">{{page.title}}</a>
+          </li>
+        {% endif %}
+      {% endsorted_for %}
+    </ul>
+  </li>
+
+  <li>
+    <a href="{{ site.baseurl }}/backend-integration-with-ruby-on-rails/index.html">Common User Interface Patterns</a>
+    <ul>
+      {% sorted_for page in site.pages | sort_by:order %}
+        {% if page.chapter == "backend-integration-with-ruby-on-rails" %}
+          <li>
+            <a href="{{ site.baseurl }}{{page.url}}">{{page.title}}</a>
+          </li>
+        {% endif %}
+      {% endsorted_for %}
+    </ul>
+  </li>
+
+  <li>
+    <a href="{{ site.baseurl }}/backend-integration-with-node-express/index.html">Common User Interface Patterns</a>
+    <ul>
+      {% sorted_for page in site.pages | sort_by:order %}
+        {% if page.chapter == "backend-integration-with-node-express" %}
+          <li>
+            <a href="{{ site.baseurl }}{{page.url}}">{{page.title}}</a>
+          </li>
+        {% endif %}
+      {% endsorted_for %}
+    </ul>
+  </li>
+
 </ol>
