@@ -12,34 +12,40 @@ You wish to create a form to enter user details and capture this information in 
 ### Solution
 Use the standard `form` tag and the `ng-model` directive to implement a basic form:
 
-    <body ng-app="MyApp">
-      <div ng-controller="User">
-        <form ng-submit="submit()" class="form-horizontal" novalidate>
-          <label>Firstname</label>
-          <input type="text" ng-model="user.firstname"/>
-          <label>Lastname</label>
-          <input type="text" ng-model="user.lastname"/>
-          <label>Age</label>
-          <input type="text" ng-model="user.age"/>
-          <button class="btn">Submit</button>
-        </form>
-      </div>
-    </body>
+{% prism markup %}
+{% raw %}
+<body ng-app="MyApp">
+  <div ng-controller="User">
+    <form ng-submit="submit()" class="form-horizontal" novalidate>
+      <label>Firstname</label>
+      <input type="text" ng-model="user.firstname"/>
+      <label>Lastname</label>
+      <input type="text" ng-model="user.lastname"/>
+      <label>Age</label>
+      <input type="text" ng-model="user.age"/>
+      <button class="btn">Submit</button>
+    </form>
+  </div>
+</body>
+{% endraw %}
+{% endprism %}
 
 The `novalidate` attribute disables the HTML5 validations, which are client-side validations supports by modern browsers. In our example we only want the Angular.js validations running to have complete control over the look and feel.
 
 The controller binds the form data to your user model and implements the `submit()` function:
 
-    var app = angular.module("MyApp", []);
+{% prism javascript %}
+var app = angular.module("MyApp", []);
 
-    app.controller("User", function($scope) {
-      $scope.user = {};
-      $scope.wasSubmitted = false;
+app.controller("User", function($scope) {
+  $scope.user = {};
+  $scope.wasSubmitted = false;
 
-      $scope.submit = function() {
-        $scope.wasSubmitted = true;
-      };
-    });
+  $scope.submit = function() {
+    $scope.wasSubmitted = true;
+  };
+});
+{% endprism %}
 
 You can find the complete example on [github](https://github.com/fdietz/recipes-with-angular-js-examples/tree/master/chapter7/recipe1).
 

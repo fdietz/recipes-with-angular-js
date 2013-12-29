@@ -14,7 +14,11 @@ Use the `$form.invalid` state in combination with a `ng-disabled` directive.
 
 Here is the changed submit button:
 
-    <button ng-disabled="form.$invalid" class="btn">Submit</button>
+{% prism markup %}
+{% raw %}
+<button ng-disabled="form.$invalid" class="btn">Submit</button>
+{% endraw %}
+{% endprism %}
 
 You can find the complete example on [github](https://github.com/fdietz/recipes-with-angular-js-examples/tree/master/chapter7/recipe5).
 

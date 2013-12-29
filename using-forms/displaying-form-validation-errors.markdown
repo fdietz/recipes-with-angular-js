@@ -14,22 +14,30 @@ We can use the `ng-show` directive to show an error message if a form input is i
 
 Let us start with the styling changes:
 
-    <style type="text/css">
-      input.ng-invalid.ng-dirty {
-        background-color: red;
-      }
-      input.ng-valid.ng-dirty {
-        background-color: green;
-      }
-    </style>
+{% prism markup %}
+{% raw %}
+<style type="text/css">
+  input.ng-invalid.ng-dirty {
+    background-color: red;
+  }
+  input.ng-valid.ng-dirty {
+    background-color: green;
+  }
+</style>
+{% endraw %}
+{% endprism %}
 
 And here is a small part of the form with an error message for the input field:
 
-    <label>Firstname</label>
-    <input name="firstname" type="text" ng-model="user.firstname" required/>
-    <p ng-show="form.firstname.$invalid && form.firstname.$dirty">
-      Firstname is required
-    </p>
+{% prism markup %}
+{% raw %}
+<label>Firstname</label>
+<input name="firstname" type="text" ng-model="user.firstname" required/>
+<p ng-show="form.firstname.$invalid && form.firstname.$dirty">
+  Firstname is required
+</p>
+{% endraw %}
+{% endprism %}
 
 You can find the complete example on [github](https://github.com/fdietz/recipes-with-angular-js-examples/tree/master/chapter7/recipe3).
 

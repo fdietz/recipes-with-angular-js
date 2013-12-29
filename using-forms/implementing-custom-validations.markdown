@@ -14,26 +14,32 @@ The [angular-ui](http://angular-ui.github.com/) project offers a nice custom val
 
 Let us have a look at the template first with the usage of the `ui-validate` Directive:
 
-    <input name="firstname" type="text"
-      ng-model="user.firstname" required
-      ui-validate=" { blacklisted: 'notBlacklisted($value)' } "
-    />
+{% prism markup %}
+{% raw %}
+<input name="firstname" type="text"
+  ng-model="user.firstname" required
+  ui-validate=" { blacklisted: 'notBlacklisted($value)' } "
+/>
 
-    <p ng-show='form.firstname.$error.blackListed'>
-      This firstname is blacklisted.
-    </p>
+<p ng-show='form.firstname.$error.blackListed'>
+  This firstname is blacklisted.
+</p>
+{% endraw %}
+{% endprism %}
 
 And the controller with the `notBlackListed` implementation:
 
-    var app = angular.module("MyApp", ["ui", "ui.directives"]);
+{% prism javascript %}
+var app = angular.module("MyApp", ["ui", "ui.directives"]);
 
-    app.controller("User", function($scope) {
-      $scope.blacklist = ['idiot','loser'];
+app.controller("User", function($scope) {
+  $scope.blacklist = ['idiot','loser'];
 
-      $scope.notBlackListed = function(value) {
-        return $scope.blacklist.indexOf(value) === -1;
-      };
-    });
+  $scope.notBlackListed = function(value) {
+    return $scope.blacklist.indexOf(value) === -1;
+  };
+});
+{% endprism %}
 
 You can find the complete example on [github](https://github.com/fdietz/recipes-with-angular-js-examples/tree/master/chapter7/recipe6).
 

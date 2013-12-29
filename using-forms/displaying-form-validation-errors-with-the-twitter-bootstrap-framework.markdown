@@ -14,50 +14,56 @@ When using the `.horizontal-form` class Twitter Bootstrap uses `div` elements to
 
 Let us start with the form:
 
-    <div ng-controller="User">
-      <form name="form" ng-submit="submit()" novalidate>
+{% prism markup %}
+{% raw %}
+<div ng-controller="User">
+  <form name="form" ng-submit="submit()" novalidate>
 
-        <div class="control-group" ng-class="error('firstname')">
-          <label class="control-label" for="firstname">Firstname</label>
-          <div class="controls">
-            <input id="firstname" name="firstname" type="text"
-              ng-model="user.firstname" placeholder="Firstname" required/>
-            <span class="help-block"
-              ng-show="form.firstname.$invalid && form.firstname.$dirty">
-              Firstname is required
-            </span>
-          </div>
-        </div>
-
-        <div class="control-group" ng-class="error('lastname')">
-          <label class="control-label" for="lastname">Lastname</label>
-          <div class="controls">
-            <input id="lastname" name="lastname" type="text"
-              ng-model="user.lastname" placeholder="Lastname" required/>
-            <span class="help-block"
-              ng-show="form.lastname.$invalid && form.lastname.$dirty">
-              Lastname is required
-            </span>
-          </div>
-        </div>
-
-        <div class="control-group">
-          <div class="controls">
-            <button ng-disabled="form.$invalid" class="btn">Submit</button>
-          </div>
-        </div>
-      </form>
+    <div class="control-group" ng-class="error('firstname')">
+      <label class="control-label" for="firstname">Firstname</label>
+      <div class="controls">
+        <input id="firstname" name="firstname" type="text"
+          ng-model="user.firstname" placeholder="Firstname" required/>
+        <span class="help-block"
+          ng-show="form.firstname.$invalid && form.firstname.$dirty">
+          Firstname is required
+        </span>
+      </div>
     </div>
+
+    <div class="control-group" ng-class="error('lastname')">
+      <label class="control-label" for="lastname">Lastname</label>
+      <div class="controls">
+        <input id="lastname" name="lastname" type="text"
+          ng-model="user.lastname" placeholder="Lastname" required/>
+        <span class="help-block"
+          ng-show="form.lastname.$invalid && form.lastname.$dirty">
+          Lastname is required
+        </span>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <div class="controls">
+        <button ng-disabled="form.$invalid" class="btn">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>
+{% endraw %}
+{% endprism %}
 
 Note that we use the `ng-class` directive on the `control-group` div. So let's look at the controller implementation of the `error` function:
 
-    app.controller("User", function($scope) {
-      // ...
-      $scope.error = function(name) {
-        var s = $scope.form[name];
-        return s.$invalid && s.$dirty ? "error" : "";
-      };
-    });
+{% prism javascript %}
+app.controller("User", function($scope) {
+  // ...
+  $scope.error = function(name) {
+    var s = $scope.form[name];
+    return s.$invalid && s.$dirty ? "error" : "";
+  };
+});
+{% endprism %}
 
 The error function gets the input name attribute passed as a string and checks for the `$invalid` and `$dirty` flags to return either the error class or a blank string.
 
