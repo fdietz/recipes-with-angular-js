@@ -8,11 +8,37 @@ title: Home
     <!-- <h1>Welcome to Recipes with Angular.js</h1> -->
     <p>A community project dedicated to collecting resources for the <a href="http://angularjs.org/">Angular.js</a> framework. You find here easy to follow cookbook style recipes for issues you are likely to face when working with Angular.js.</p>
 
-    <p><a href="http://angularjs.org/">Angular.js</a> is the superheroic Javascript MVW framework developed by Google.</p>
+    <!-- <p><a href="http://angularjs.org/">Angular.js</a> is the superheroic Javascript MVW framework developed by Google.</p> -->
   </div>
 </div>
 
 <br>
+
+<div class="row">
+  <div class="large-12 columns">
+    <h3>Search Recipes</h3>
+
+    <div id="search">
+      <form action="/search" method="get">
+        <input type="text" id="search-query" name="q" placeholder="Search for Recipes..." autocomplete="off">
+      </form>
+    </div>
+
+    <section id="search-results" style="display: none;">
+      <p>Search results</p>
+      <div class="entries">
+      </div>
+    </section>
+
+    {% raw %}
+      <script id="search-results-template" type="text/mustache">
+        {{#entries}}
+          <a href="/recipes-with-angular-js{{url}}">{{title}}</a>
+        {{/entries}}
+      </script>
+    {% endraw %}
+  </div>
+</div>
 
 <div class="row">
   <div class="large-6 columns">
@@ -48,37 +74,5 @@ title: Home
 
       </div>
     </div>
-  </div>
-</div>
-
-
-<div class="row">
-  <div class="large-12 columns">
-    <h3>Search Recipes</h3>
-
-    <div id="search">
-      <form action="/search" method="get">
-        <input type="text" id="search-query" name="q" placeholder="Search for Recipes..." autocomplete="off">
-      </form>
-    </div>
-
-    <section id="search-results" style="display: none;">
-      <p>Search results</p>
-      <div class="entries">
-      </div>
-    </section>
-
-    {% raw %}
-      <script id="search-results-template" type="text/mustache">
-        {{#entries}}
-          <article>
-            <h3>
-              {{#date}}<small><time datetime="{{pubdate}}" pubdate>{{displaydate}}</time></small>{{/date}}
-              <a href="/recipes-with-angular-js{{url}}">{{title}}</a>
-            </h3>
-          </article>
-        {{/entries}}
-      </script>
-    {% endraw %}
   </div>
 </div>
