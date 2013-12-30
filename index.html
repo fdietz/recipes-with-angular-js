@@ -16,7 +16,7 @@ title: Home
 
 <div class="row">
   <div class="large-12 columns">
-    <h3>Search Recipes</h3>
+    <!-- <h3>Search Recipes</h3> -->
 
     <div id="search">
       <form action="/search" method="get">
@@ -25,20 +25,24 @@ title: Home
     </div>
 
     <section id="search-results" style="display: none;">
-      <p>Search results</p>
-      <div class="entries">
-      </div>
+      <!-- <p>Search results</p> -->
+      <ul class="entries">
+      </ul>
     </section>
 
     {% raw %}
       <script id="search-results-template" type="text/mustache">
         {{#entries}}
-          <a href="/recipes-with-angular-js{{url}}">{{title}}</a>
+          <li>
+            <a href="/recipes-with-angular-js{{url}}">{{title}}</a>
+          </li>
         {{/entries}}
       </script>
     {% endraw %}
   </div>
 </div>
+
+<br>
 
 <div class="row">
   <div class="large-6 columns">
