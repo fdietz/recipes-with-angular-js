@@ -3,7 +3,6 @@ layout: recipe
 title: Implementing Client-Side Routing
 chapter: backend-integration-with-ruby-on-rails
 order: 2
-source_path: backend-integration-with-ruby-on-rails/source/recipe2
 ---
 
 ### Problem

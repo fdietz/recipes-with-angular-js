@@ -3,7 +3,6 @@ layout: recipe
 title: Consuming REST APIs
 chapter: backend-integration-with-node-express
 order: 1
-source_path: backend-integration-with-node-express/source/recipe1
 ---
 
 ### Problem

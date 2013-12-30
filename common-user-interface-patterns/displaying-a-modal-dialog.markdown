@@ -3,7 +3,6 @@ layout: recipe
 title: Displaying a Modal Dialog
 chapter: common-user-interface-patterns
 order: 7
-source_path: common-user-interface-patterns/source/recipe7
 ---
 
 ### Question

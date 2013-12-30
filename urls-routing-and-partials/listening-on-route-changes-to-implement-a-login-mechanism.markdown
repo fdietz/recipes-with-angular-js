@@ -3,7 +3,6 @@ layout: recipe
 title: Listening on Route Changes to Implement a Login Mechanism
 chapter: urls-routing-and-partials
 order: 4
-source_path: urls-routing-and-partials/source/recipe4
 ---
 
 ### Problem

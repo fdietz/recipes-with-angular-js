@@ -3,7 +3,6 @@ layout: recipe
 title: Requesting JSON data with AJAX
 chapter: consuming-external-services
 order: 1
-source_path: consuming-external-services/source/recipe1
 ---
 
 ### Problem

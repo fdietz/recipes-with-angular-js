@@ -3,7 +3,6 @@ layout: recipe
 title: Implementing Client-Side Routing
 chapter: backend-integration-with-node-express
 order: 2
-source_path: backend-integration-with-node-express/source/recipe2
 ---
 
 ### Problem

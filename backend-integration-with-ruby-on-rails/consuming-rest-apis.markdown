@@ -3,7 +3,6 @@ layout: recipe
 title: Consuming REST APIs
 chapter: backend-integration-with-ruby-on-rails
 order: 1
-source_path: backend-integration-with-ruby-on-rails/source/recipe1
 ---
 
 ### Problem

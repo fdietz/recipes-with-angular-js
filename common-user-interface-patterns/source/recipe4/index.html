@@ -1,0 +1,25 @@
+<body ng-app="MyApp">
+  <div ng-controller="PaginationCtrl">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="item in pagedItems">
+          <td>{{item.id}}</td>
+          <td>{{item.name}}</td>
+          <td>{{item.description}}</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <td colspan="3">
+          <button class="btn" href="#" ng-class="nextPageDisabledClass()" ng-click="loadMore()">Load More</button>
+        </td>
+      </tfoot>
+    </table>
+  </div>
+</body>

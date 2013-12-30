@@ -3,7 +3,6 @@ layout: recipe
 title: Validating Forms Server-Side
 chapter: backend-integration-with-ruby-on-rails
 order: 3
-source_path: backend-integration-with-ruby-on-rails/source/recipe3
 ---
 
 ### Problem

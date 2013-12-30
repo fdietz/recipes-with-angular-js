@@ -3,7 +3,6 @@ layout: recipe
 title: Implementing Custom Validations
 chapter: using-forms
 order: 6
-source_path: using-forms/source/recipe6
 ---
 
 ### Problem

@@ -3,7 +3,6 @@ layout: recipe
 title: Using Regular URLs with the HTML5 History API
 chapter: urls-routing-and-partials
 order: 2
-source_path: urls-routing-and-partials/source/recipe2
 ---
 
 ### Problem

@@ -3,7 +3,6 @@ layout: recipe
 title: Consuming JSONP APIs
 chapter: consuming-external-services
 order: 3
-source_path: consuming-external-services/source/recipe3
 ---
 
 ### Problem

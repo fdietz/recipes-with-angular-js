@@ -1,0 +1,30 @@
+<body ng-app="MyApp" ng-controller="MyCtrl">
+
+  <ul class="nav nav-pills">
+    <li><a href="#/">Home</a></li>
+    <li><a href="#/page">Next Page</a></li>
+  </ul>
+
+  <div class="alert" ng-show="flash.getMessage()">
+    <b>Alert!</b>
+    <p>{{flash.getMessage()}}</p>
+  </div>
+
+  <ng-view></ng-view>
+
+  <script type="text/ng-template" id="home.html">
+    <h3>Home</h3>
+
+    <form ng-submit="submit(message)" class="form-inline">
+      <input type="text" ng-model="message" autofocus>
+      <button class="btn">Submit</button>
+    </form>
+
+  </script>
+
+  <script type="text/ng-template" id="page.html">
+    <h3>Next Page</h3>
+
+  </script>
+
+</body>

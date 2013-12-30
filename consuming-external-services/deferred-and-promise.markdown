@@ -3,7 +3,6 @@ layout: recipe
 title: Deferred and Promise
 chapter: consuming-external-services
 order: 4
-source_path: consuming-external-services/source/recipe4
 ---
 
 ### Problem

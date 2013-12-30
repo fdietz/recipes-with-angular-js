@@ -3,7 +3,6 @@ layout: recipe
 title: Testing Services
 chapter: consuming-external-services
 order: 5
-source_path: consuming-external-services/source/recipe5
 ---
 
 ### Problem

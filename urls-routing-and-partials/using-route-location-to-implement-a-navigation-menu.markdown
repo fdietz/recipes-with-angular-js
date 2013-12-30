@@ -3,7 +3,6 @@ layout: recipe
 title: Using Route Location to Implement a Navigation Menu
 chapter: urls-routing-and-partials
 order: 3
-source_path: urls-routing-and-partials/source/recipe3
 ---
 
 ### Problem

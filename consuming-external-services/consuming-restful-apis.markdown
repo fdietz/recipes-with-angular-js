@@ -3,7 +3,6 @@ layout: recipe
 title: Consuming RESTful APIs
 chapter: consuming-external-services
 order: 2
-source_path: consuming-external-services/source/recipe2
 ---
 
 ### Problem

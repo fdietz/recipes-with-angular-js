@@ -3,7 +3,6 @@ layout: recipe
 title: Client-Side Routing with Hashbang URLs
 chapter: urls-routing-and-partials
 order: 1
-source_path: urls-routing-and-partials/source/recipe1
 ---
 
 ### Problem

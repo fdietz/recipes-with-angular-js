@@ -3,7 +3,6 @@ layout: recipe
 title: Displaying a Loading Spinner
 chapter: common-user-interface-patterns
 order: 8
-source_path: common-user-interface-patterns/source/recipe8
 ---
 
 ### Problem

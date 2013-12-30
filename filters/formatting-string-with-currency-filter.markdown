@@ -3,7 +3,6 @@ layout: recipe
 title: Formatting a String with currency Filter
 chapter: filters
 order: 1
-source_path: filters/source/recipe1
 ---
 
 ### Problem
