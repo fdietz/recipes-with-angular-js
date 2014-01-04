@@ -3,7 +3,7 @@ layout: default
 title: Controllers - Table of Contents
 ---
 <ul class="breadcrumbs">
-  <li><a href="{{ site.baseurl }}">Home</a></li>
+  <li><a href="/">Home</a></li>
   <li class="current">controllers</li>
 </ul>
 
@@ -18,7 +18,7 @@ As a general rule, a controller should not reference or manipulate the DOM direc
   {% sorted_for page in site.pages | sort_by:order %}
     {% if page.chapter == "controllers" %}
       <li>
-        <a href="{{ site.baseurl }}{{page.url}}">{{page.title}}</a>
+        <a href="{{page.url}}">{{page.title}}</a>
       </li>
     {% endif %}
   {% endsorted_for %}

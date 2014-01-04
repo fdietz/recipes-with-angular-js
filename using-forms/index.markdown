@@ -3,7 +3,7 @@ layout: default
 title: Using Forms - Table of Contents
 ---
 <ul class="breadcrumbs">
-  <li><a href="{{ site.baseurl }}">Home</a></li>
+  <li><a href="/">Home</a></li>
   <li class="current">Using Forms</li>
 </ul>
 
@@ -16,7 +16,7 @@ Every website eventually uses some kind of form for users to enter data. Angular
   {% sorted_for page in site.pages | sort_by:order %}
     {% if page.chapter == "using-forms" %}
       <li>
-        <a href="{{ site.baseurl }}{{page.url}}">{{page.title}}</a>
+        <a href="{{page.url}}">{{page.title}}</a>
       </li>
     {% endif %}
   {% endsorted_for %}
