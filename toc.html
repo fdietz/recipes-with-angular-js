@@ -3,19 +3,19 @@ layout: default
 title: Table of Contents
 ---
 <ul class="breadcrumbs">
-  <li><a href="{{ site.baseurl }}">Home</a></li>
+  <li><a href="/">Home</a></li>
 </ul>
 
 <h2>Table of Contents</h2>
 <ol>
   <li>
-    <a href="{{ site.baseurl }}/introduction.html">Introduction</a>
+    <a href="introduction.html">Introduction</a>
 
     <ul>
       {% sorted_for page in site.pages | sort_by:order %}
         {% if page.chapter == "introduction" %}
           <li>
-            <a href="{{ site.baseurl }}{{page.url}}">{{page.title}}</a>
+            <a href="{{page.url}}">{{page.title}}</a>
           </li>
         {% endif %}
       {% endsorted_for %}
