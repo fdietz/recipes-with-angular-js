@@ -1,4 +1,5 @@
 name: Recipes with Angular.js
+baseurl: /recipes-with-angular-js
 pygments: true
 table_of_contents:
   dirs: [introduction, controllers]
@@ -6,3 +7,4 @@ assets:
   compress:
     js:   uglifier
     css:  sass
+    baseurl: /recipes-with-angular-js/assets/
