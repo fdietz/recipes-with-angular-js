@@ -15,8 +15,7 @@ In order to get your first Angular.js app up and running you need to include the
 {% raw %}
 <html>
   <head>
-    <script src="http://ajax.googleapis.com/ajax/libs/
-      angularjs/1.0.4/angular.js">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.js">
     </script>
   </head>
   <body ng-app>
@@ -26,7 +25,8 @@ In order to get your first Angular.js app up and running you need to include the
 {% endraw %}
 {% endprism %}
 
-You can check out a complete example on [github](http://github.com/fdietz/recipes-with-angular-js-examples/chapter1/recipe1).
+You can check out a complete example on [github](https://github.com/fdietz/recipes-with-angular-js-examples/tree/master/chapter1/recipe1).
+
 
 ### Discussion
 Adding the `ng-app` directive tells Angular to kick in its magic. The expression `{{ 1 + 2 }}` is evaluated by Angular and the result `3` is rendered. Note that removing `ng-app` will result in the browser rendering the expression as is instead of evaluating it. Play around with the expression! You can, for instance, concatenate Strings and invert or combine Boolean values.
