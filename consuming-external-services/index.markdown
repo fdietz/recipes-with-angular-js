@@ -3,7 +3,7 @@ layout: default
 title: Consuming External Services - Table of Contents
 ---
 <ul class="breadcrumbs">
-  <li><a href="/">Home</a></li>
+  <li><a href="{{ site.baseurl }}">Home</a></li>
   <li class="current">Consuming External Services</li>
 </ul>
 
@@ -15,7 +15,7 @@ Angular has built-in support for communication with remote HTTP servers. The [$h
   {% sorted_for page in site.pages | sort_by:order %}
     {% if page.chapter == "consuming-external-services" %}
       <li>
-        <a href="{{page.url}}">{{page.title}}</a>
+        <a href="{{ site.baseurl }}{{page.url}}">{{page.title}}</a>
       </li>
     {% endif %}
   {% endsorted_for %}

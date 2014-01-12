@@ -3,7 +3,7 @@ layout: default
 title: Filters - Table of Contents
 ---
 <ul class="breadcrumbs">
-  <li><a href="/">Home</a></li>
+  <li><a href="{{ site.baseurl }}">Home</a></li>
   <li class="current">Filters</li>
 </ul>
 
@@ -16,7 +16,7 @@ Angular Filters are typically used to format expressions in bindings in your tem
   {% sorted_for page in site.pages | sort_by:order %}
     {% if page.chapter == "filters" %}
       <li>
-        <a href="{{page.url}}">{{page.title}}</a>
+        <a href="{{ site.baseurl }}{{page.url}}">{{page.title}}</a>
       </li>
     {% endif %}
   {% endsorted_for %}

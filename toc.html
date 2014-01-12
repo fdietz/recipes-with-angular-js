@@ -9,7 +9,7 @@ title: Table of Contents
 <h2>Table of Contents</h2>
 <ol>
   <li>
-    <a href="introduction/index.html">Introduction</a>
+    <a href="introduction.html">Introduction</a>
 
     <ul>
       {% sorted_for page in site.pages | sort_by:order %}
@@ -23,12 +23,12 @@ title: Table of Contents
   </li>
 
   <li>
-    <a href="controllers/index.html">Controllers</a>
+    <a href="{{ site.baseurl }}/controllers/index.html">Controllers</a>
     <ul>
       {% sorted_for page in site.pages | sort_by:order %}
         {% if page.chapter == "controllers" %}
           <li>
-            <a href="{{page.url}}">{{page.title}}</a>
+            <a href="{{ site.baseurl }}{{page.url}}">{{page.title}}</a>
           </li>
         {% endif %}
       {% endsorted_for %}
@@ -36,12 +36,12 @@ title: Table of Contents
   </li>
 
   <li>
-    <a href="directives/index.html">Directives</a>
+    <a href="{{ site.baseurl }}/directives/index.html">Directives</a>
     <ul>
       {% sorted_for page in site.pages | sort_by:order %}
         {% if page.chapter == "directives" %}
           <li>
-            <a href="{{page.url}}">{{page.title}}</a>
+            <a href="{{ site.baseurl }}{{page.url}}">{{page.title}}</a>
           </li>
         {% endif %}
       {% endsorted_for %}
@@ -49,12 +49,12 @@ title: Table of Contents
   </li>
 
   <li>
-    <a href="filters/index.html">Filters</a>
+    <a href="{{ site.baseurl }}/filters/index.html">Filters</a>
     <ul>
       {% sorted_for page in site.pages | sort_by:order %}
         {% if page.chapter == "filters" %}
           <li>
-            <a href="{{page.url}}">{{page.title}}</a>
+            <a href="{{ site.baseurl }}{{page.url}}">{{page.title}}</a>
           </li>
         {% endif %}
       {% endsorted_for %}
@@ -62,12 +62,12 @@ title: Table of Contents
   </li>
 
   <li>
-    <a href="consuming-external-services/index.html">Consuming External Services</a>
+    <a href="{{ site.baseurl }}/consuming-external-services/index.html">Consuming External Services</a>
     <ul>
       {% sorted_for page in site.pages | sort_by:order %}
         {% if page.chapter == "consuming-external-services" %}
           <li>
-            <a href="{{page.url}}">{{page.title}}</a>
+            <a href="{{ site.baseurl }}{{page.url}}">{{page.title}}</a>
           </li>
         {% endif %}
       {% endsorted_for %}
@@ -75,12 +75,12 @@ title: Table of Contents
   </li>
 
   <li>
-    <a href="urls-routing-and-partials/index.html">URLs, Routing and Partials</a>
+    <a href="{{ site.baseurl }}/urls-routing-and-partials/index.html">URLs, Routing and Partials</a>
     <ul>
       {% sorted_for page in site.pages | sort_by:order %}
         {% if page.chapter == "urls-routing-and-partials" %}
           <li>
-            <a href="{{page.url}}">{{page.title}}</a>
+            <a href="{{ site.baseurl }}{{page.url}}">{{page.title}}</a>
           </li>
         {% endif %}
       {% endsorted_for %}
@@ -88,12 +88,12 @@ title: Table of Contents
   </li>
 
   <li>
-    <a href="common-user-interface-patterns/index.html">Common User Interface Patterns</a>
+    <a href="{{ site.baseurl }}/common-user-interface-patterns/index.html">Common User Interface Patterns</a>
     <ul>
       {% sorted_for page in site.pages | sort_by:order %}
         {% if page.chapter == "common-user-interface-patterns" %}
           <li>
-            <a href="{{page.url}}">{{page.title}}</a>
+            <a href="{{ site.baseurl }}{{page.url}}">{{page.title}}</a>
           </li>
         {% endif %}
       {% endsorted_for %}
@@ -101,12 +101,12 @@ title: Table of Contents
   </li>
 
   <li>
-    <a href="backend-integration-with-ruby-on-rails/index.html">Backend Integration with Ruby on Rails</a>
+    <a href="{{ site.baseurl }}/backend-integration-with-ruby-on-rails/index.html">Backend Integration with Ruby on Rails</a>
     <ul>
       {% sorted_for page in site.pages | sort_by:order %}
         {% if page.chapter == "backend-integration-with-ruby-on-rails" %}
           <li>
-            <a href="{{page.url}}">{{page.title}}</a>
+            <a href="{{ site.baseurl }}{{page.url}}">{{page.title}}</a>
           </li>
         {% endif %}
       {% endsorted_for %}
@@ -114,12 +114,12 @@ title: Table of Contents
   </li>
 
   <li>
-    <a href="backend-integration-with-node-express/index.html">Backend Integration with Node Express</a>
+    <a href="{{ site.baseurl }}/backend-integration-with-node-express/index.html">Backend Integration with Node Express</a>
     <ul>
       {% sorted_for page in site.pages | sort_by:order %}
         {% if page.chapter == "backend-integration-with-node-express" %}
           <li>
-            <a href="{{page.url}}">{{page.title}}</a>
+            <a href="{{ site.baseurl }}{{page.url}}">{{page.title}}</a>
           </li>
         {% endif %}
       {% endsorted_for %}

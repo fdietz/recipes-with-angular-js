@@ -3,7 +3,7 @@ layout: default
 title: URLs, Routing and Partials - Table of Contents
 ---
 <ul class="breadcrumbs">
-  <li><a href="/">Home</a></li>
+  <li><a href="{{ site.baseurl }}">Home</a></li>
   <li class="current">URLs, Routing and Partials</li>
 </ul>
 
@@ -18,7 +18,7 @@ Depending on the configuration, the `$location` service behaves differently and 
   {% sorted_for page in site.pages | sort_by:order %}
     {% if page.chapter == "urls-routing-and-partials" %}
       <li>
-        <a href="{{page.url}}">{{page.title}}</a>
+        <a href="{{ site.baseurl }}{{page.url}}">{{page.title}}</a>
       </li>
     {% endif %}
   {% endsorted_for %}

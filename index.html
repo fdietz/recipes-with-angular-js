@@ -34,7 +34,7 @@ title: Home
       <script id="search-results-template" type="text/mustache">
         {{#entries}}
           <li>
-            <a href="{{url}}">{{title}}</a>
+            <a href="/recipes-with-angular-js{{url}}">{{title}}</a>
           </li>
         {{/entries}}
       </script>
@@ -49,15 +49,15 @@ title: Home
   <div class="large-6 columns">
     <h3>Table of Content</h3>
     <ol>
-      <li> <a href="introduction.html">Introduction</a> </li>
-      <li> <a href="controllers/index.html">Controllers</a> </li>
-      <li> <a href="directives/index.html">Directives</a> </li>
-      <li> <a href="filters/index.html">Filters</a> </li>
-      <li> <a href="consuming-external-services/index.html">Consuming External Services</a> </li>
-      <li> <a href="urls-routing-and-partials/index.html">URLs, Routing and Partials</a> </li>
-      <li> <a href="common-user-interface-patterns/index.html">Common User Interface Patterns</a> </li>
-      <li> <a href="backend-integration-with-ruby-on-rails/index.html">Backend Integration with Ruby on Rails</a> </li>
-      <li> <a href="backend-integration-with-node-express/index.html">Backend Integration with Node Express</a> </li>
+      <li> <a href="{{ site.baseurl }}/introduction.html">Introduction</a> </li>
+      <li> <a href="{{ site.baseurl }}/controllers/index.html">Controllers</a> </li>
+      <li> <a href="{{ site.baseurl }}/directives/index.html">Directives</a> </li>
+      <li> <a href="{{ site.baseurl }}/filters/index.html">Filters</a> </li>
+      <li> <a href="{{ site.baseurl }}/consuming-external-services/index.html">Consuming External Services</a> </li>
+      <li> <a href="{{ site.baseurl }}/urls-routing-and-partials/index.html">URLs, Routing and Partials</a> </li>
+      <li> <a href="{{ site.baseurl }}/common-user-interface-patterns/index.html">Common User Interface Patterns</a> </li>
+      <li> <a href="{{ site.baseurl }}/backend-integration-with-ruby-on-rails/index.html">Backend Integration with Ruby on Rails</a> </li>
+      <li> <a href="{{ site.baseurl }}/backend-integration-with-node-express/index.html">Backend Integration with Node Express</a> </li>
     </ol>
   </div>
 
@@ -67,7 +67,7 @@ title: Home
       {% for page in site.pages reversed limit:10 %}
         {% if page.chapter %}
           <li>
-            <a href="{{page.url}}">{{page.title}}</a>
+            <a href="{{ site.baseurl }}{{page.url}}">{{page.title}}</a>
           </li>
         {% endif %}
       {% endfor %}

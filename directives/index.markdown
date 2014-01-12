@@ -3,7 +3,7 @@ layout: default
 title: Directives - Table of Contents
 ---
 <ul class="breadcrumbs">
-  <li><a href="/">Home</a></li>
+  <li><a href="{{ site.baseurl }}">Home</a></li>
   <li class="current">directives</li>
 </ul>
 
@@ -16,7 +16,7 @@ Directives are one of the most powerful concepts in Angular since they let you i
   {% sorted_for page in site.pages | sort_by:order %}
     {% if page.chapter == "directives" %}
       <li>
-        <a href="{{page.url}}">{{page.title}}</a>
+        <a href="{{ site.baseurl }}{{page.url}}">{{page.title}}</a>
       </li>
     {% endif %}
   {% endsorted_for %}
