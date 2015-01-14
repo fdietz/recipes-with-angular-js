@@ -6,15 +6,18 @@
 
 code[class*="language-"],
 pre[class*="language-"] {
-	color: black;
-	text-shadow: 0 1px white;
-	font-family: Consolas, Monaco, 'Andale Mono', monospace;
+	color: $black;
+	font-family: "Source Code Pro", Consolas, monospace;
+
+	font-size: 0.9rem;
+	line-height: 1.6rem;
+	font-weight: 300;
+
 	direction: ltr;
 	text-align: left;
 	white-space: pre;
 	word-spacing: normal;
 	word-break: normal;
-
 
 	-moz-tab-size: 4;
 	-o-tab-size: 4;
@@ -29,13 +32,13 @@ pre[class*="language-"] {
 pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
 code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
 	text-shadow: none;
-	background: #b3d4fc;
+	// background: #b3d4fc;
 }
 
 pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
 code[class*="language-"]::selection, code[class*="language-"] ::selection {
 	text-shadow: none;
-	background: #b3d4fc;
+	// background: #b3d4fc;
 }
 
 @media print {
@@ -54,13 +57,13 @@ pre[class*="language-"] {
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-	background: #f5f2f0;
+	// background: #f5f2f0;
 }
 
 /* Inline code */
 :not(pre) > code[class*="language-"] {
 	padding: .1em;
-	border-radius: .3em;
+	// border-radius: .3em;
 }
 
 .token.comment,

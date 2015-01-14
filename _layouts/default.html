@@ -6,29 +6,45 @@
     <title>Recipes with Angular.js - {{ page.title }}</title>
     <meta keywords="javascript, js, angular.js, angularjs, recipes with angular.js, recipes with angularjs, best practices, cookbook, tutorial, book">
     <meta name="viewport" content="width=device-width">
+
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
-    {% stylesheet application %}
+    <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
+
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400' rel='stylesheet' type='text/css'>
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+
+    <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:300,400' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/application.css" type="text/css" media="all" />
   </head>
     <body ng-app="RecipesApp">
 
-        <div class="contain-to-grid">
-          <nav class="top-bar">
-            <ul class="title-area">
-              <li class="name">
-                <h1><a href="{{ site.baseurl }}">Recipes with Angular.js <img src="{% asset_path AngularJS-Shield-small.png %}" alt="" width="36" height="36"></a>  </h1>
-              </li>
-              <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+      <div class="contain-to-grid">
+        <nav class="top-bar">
+          <ul class="title-area">
+            <li class="name">
+              <h1>
+                <a href="{{ site.baseurl }}/">Recipes with Angular.js
+                  <!-- <img src="{{ site.baseurl }}/images/AngularJS-Shield-small.png" alt="" width="36" height="36"> -->
+                </a>
+              </h1>
+            </li>
+            <li class="toggle-topbar menu-icon">
+              <a href="#"><span>Menu</span></a>
+            </li>
+          </ul>
+
+          <section class="top-bar-section">
+            <ul class="left">
+              <li><a href="{{ site.baseurl }}/toc.html">Table of Contents</a></li>
+              <li><a href="{{ site.baseurl }}/about.html">About</a></li>
             </ul>
 
-            <section class="top-bar-section">
-              <ul class="left">
-                <li><a href="{{ site.baseurl }}/toc.html">Table of Contents</a></li>
-                <li><a href="{{ site.baseurl }}/about.html">About</a></li>
-              </ul>
-
-            </section>
-          </nav>
-        </div>
+          </section>
+        </nav>
+      </div>
 
       <div class="row">
         <div class="large-12 columns">
@@ -36,24 +52,36 @@
         </div>
       </div>
 
-      <footer class="row">
-        <div class="large-12 columns">
-          <hr>
-          <div class="row">
-            <div class="large-6 columns">
-              <p>
-                Maintained by <a href="http://fdietz.de">Frederik Dietz</a>
-              </p>
-            </div>
+      <footer>
+        <div class="row">
+          <div class="large-12 columns">
+            <div class="row">
+              <div class="large-6 columns">
+                <p>
+                  Maintained by <a href="http://fdietz.de">Frederik Dietz</a>
+                </p>
+              </div>
 
-            <div class="large-6 columns text-right">
-              <p>All content licensed with <a href="http://creativecommons.org/">Creative Commons</a></p>
+              <div class="large-6 columns text-right">
+                <p>All content licensed with <a href="http://creativecommons.org/">Creative Commons</a></p>
+              </div>
             </div>
           </div>
         </div>
       </footer>
 
-      {% javascript application %}
+      <script src="{{ site.baseurl }}/js/application.js" type="text/javascript" charset="utf-8"></script>
+      <!--<script src="{{ site.baseurl }}/js/search.min.js" type="text/javascript" charset="utf-8"></script>-->
+      <script src="{{ site.baseurl }}/js/jquery.js"></script>
+      <script src="{{ site.baseurl }}/js/foundation.min.js" type="text/javascript" charset="utf-8"></script>
+      <script src="{{ site.baseurl }}/js/prism.js" type="text/javascript" charset="utf-8"></script>
+
+      <script src="{{ site.baseurl }}/js/date.format.js"></script>
+      <script src="{{ site.baseurl }}/js/mustache.js"></script>
+      <script src="{{ site.baseurl }}/js/URI.min.js"></script>
+      <script src="{{ site.baseurl }}/js/lunr.js"></script>
+      <script src="{{ site.baseurl }}/js/jquery.lunr.search.js"></script>
+
       <script>
         $(document).foundation();
       </script>

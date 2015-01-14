@@ -2,23 +2,32 @@
 layout: default
 ---
 
-<ul class="breadcrumbs">
+<!-- <ul class="breadcrumbs">
   <li><a href="{{ site.baseurl }}">Home</a></li>
   <li><a href="{{ site.baseurl }}/{{ page.chapter }}">{{ page.chapter }}</a></li>
   <li class="current">{{page.title}}</li>
 </ul>
+ -->
 
-<div class="recipe-actions">
+<!-- <div class="recipe-actions">
   {% if page.source_path %}
     {% jsfiddle %}
   {% endif %}
 </div>
+ -->
 
-<h2>{{page.title}}</h2>
+<div class="row">
+ <div class="large-3 medium-6 columns">
+   {% include side-nav.html %}
+ </div>
+ <div class="large-9 medium-6 columns content">
+   <h2>{{page.title}}</h2>
+   {{ content }}
+ </div>
+</div>
 
-{{ content }}
 
-<div class="panel radius similar-pages">
+<!-- <div class="panel radius similar-pages">
   <h4>Similar Recipes</h4>
   <ul>
     {% sorted_for similar_page in site.pages %}
@@ -29,4 +38,4 @@ layout: default
       {% endif %}
     {% endsorted_for %}
   </ul>
-</div>
+</div> -->

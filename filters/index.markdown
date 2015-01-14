@@ -1,13 +1,14 @@
 ---
-layout: default
-title: Filters - Table of Contents
+layout: overview
+chapter: filters
+title: Filters
 ---
 <ul class="breadcrumbs">
   <li><a href="{{ site.baseurl }}">Home</a></li>
   <li class="current">Filters</li>
 </ul>
 
-<h2>Filters</h2>
+<!-- <h2>Filters</h2> -->
 
 Angular Filters are typically used to format expressions in bindings in your template. They transform the input data to a new formatted data type.
 

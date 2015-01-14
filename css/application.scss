@@ -1,0 +1,110 @@
+---
+# this ensures Jekyll reads the file to be transformed into CSS later
+# only Main files contain this front matter, not partials.
+---
+@import "variables";
+
+@import "normalize";
+
+@import "foundation_overrides";
+@import "foundation";
+
+@import "prism";
+//@import "syntax";
+
+
+.content, footer {
+  margin-top: 40px;
+}
+
+.side-nav {
+  background-color: #fafafa;
+  padding: 50px 20px;
+}
+
+.side-nav {
+  // padding: 40px 0 40px 46px;
+
+  > li {
+    > ul {
+      padding-left: 8px;
+
+      // border-left: 2px solid #efefef;
+      border-left: 2px solid #e5e5e5;
+
+      margin-top: 10px;
+      margin-left: 0.6rem;
+
+      > li {
+        list-style: none;
+        // color: $blue-light;
+
+        // &:hover {
+        //   color: $blue-dark;
+        // }
+      }
+    }
+  }
+}
+
+
+footer {
+  padding: 20px 40px;
+  background-color: $footer-bg;
+
+  p {
+    margin: 0;
+  }
+}
+
+pre[data-line] {
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+
+  margin-bottom: 1.25em;
+}
+
+.author {
+  font-size: 0.7em;
+}
+
+.similar-pages {
+  font-size: 0.9em;
+
+  ul {
+    // padding-left: 20px;
+  }
+}
+
+
+.recipe-actions {
+  float: right;
+}
+
+.recipe-actions-centered {
+  margin: 20px;
+}
+
+.breadcrumbs {
+  display: none;
+}
+
+#search-query {
+  border-radius: 5px;
+}
+
+
+// fancy inline code
+p {
+  > code {
+    font-family: "Source Code Pro", Consolas, monospace;
+    font-weight: 300;
+    font-size: 0.9rem;
+
+    color: $orange-dark;
+    background-color: lighten($orange-light, 40%);
+
+    padding: 3px 4px;
+    border-radius: 4px;
+  }
+}

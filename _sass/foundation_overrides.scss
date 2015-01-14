@@ -1,0 +1,78 @@
+$base-font-size: 100% !default;
+
+$em-base: 16px !default;
+
+$body-font-color: $black;
+$header-font-color: $black;
+
+
+// $body-font-family: "Playfair Display", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+// $body-font-family: "Montserrat", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+// $header-font-family: "Playfair Display", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+
+// $body-font-family: "Lato", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+// $header-font-family: "Lato", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+
+// $body-font-family: "Source Sans Pro", "Helvetica", Helvetica, Arial, sans-serif;
+$body-font-family: "Open Sans", "Helvetica", Helvetica, Arial, sans-serif;
+$header-font-family: "Lato", "Helvetica", Helvetica, Arial, sans-serif;
+
+$body-font-weight: 300;
+
+$paragraph-font-weight: 300;
+
+// $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+// $header-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+
+
+$font-smoothing: antialiased;
+
+$h1-font-size: emCalc(37px);
+$h2-font-size: emCalc(27px);
+$h3-font-size: emCalc(23px);
+$h4-font-size: emCalc(18px);
+$h5-font-size: emCalc(14px);
+$h6-font-size: 1em;
+
+
+// $row-width: emCalc(1000px);
+$row-width: 90%;
+
+// $topbar-bg: #21242C;
+
+// $topbar-bg: #fff;
+// $topbar-bg: #2a3744;
+// $topbar-bg: $blue-light;
+// $topbar-bg: $blue-lighter;
+$topbar-bg: $top-bar-black;
+
+$topbar-title-font-size: emCalc(24px);
+
+$topbar-height: 60px;
+$topbar-margin-bottom: emCalc(70px);
+
+// $topbar-link-color: #444;
+$topbar-link-color: #fff;
+// $topbar-link-color-hover: #444;
+// $topbar-link-color-active: #444;
+
+// $topbar-title-font-size: emCalc(15px);
+// $topbar-link-font-size: emCalc(15px);
+
+// $topbar-menu-link-color: $blue-lighter;
+// $topbar-menu-icon-color: $blue-lighter;
+// $topbar-menu-link-color-toggled: #444;
+// $topbar-menu-icon-color-toggled: #444;
+
+$topbar-dropdown-bg: $blue-lighter;
+// $topbar-dropdown-link-color: #444;
+
+
+// $crumb-bg: #fff;
+// $crumb-border-style: none;
+
+$side-nav-link-color: $blue-light;
+$side-nav-link-color-active: $black;
+
+$anchor-font-color: $blue-light;
+$anchor-font-color-hover: lighten($blue-light, 10%);
