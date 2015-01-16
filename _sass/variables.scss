@@ -1,13 +1,13 @@
 $dark-green: #2A3744;
-$blue-dark: #007FFF;
-$blue-light: lighten(#198CFF, 10%);
+$blue-dark: #004CFF;
+$blue-light: #195EFF;
 $blue-lighter: #6FB6FF;
 
-$orange-dark: #B27000;
-$orange-light: #FFA000;
+$orange-dark: #B27E00;
+$orange-light: #FFB300;
 
 
-$black: lighten(#000, 30%);
+$black: lighten(#000, 10%);
 
 $top-bar-black: #333;
 
@@ -15,3 +15,7 @@ $primary-color: $blue-light;
 $secondary-color: $orange-light;
 
 $footer-bg: #efefef;
+
+$gray-blue-mel-style: rgba(43, 74, 140, 0.52);
+
+$gray-blue: #2c3240;

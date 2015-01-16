@@ -2,6 +2,7 @@ $base-font-size: 100% !default;
 
 $em-base: 16px !default;
 
+// mel: 0.9 opacity black
 $body-font-color: $black;
 $header-font-color: $black;
 
@@ -36,11 +37,11 @@ $row-width: 90%;
 // $topbar-bg: #2a3744;
 // $topbar-bg: $blue-light;
 // $topbar-bg: $blue-lighter;
-$topbar-bg: $top-bar-black;
+$topbar-bg: $gray-blue;
 
 $topbar-title-font-size: emCalc(24px);
 
-$topbar-height: 60px;
+$topbar-height: 68px;
 $topbar-margin-bottom: emCalc(70px);
 
 // $topbar-link-color: #444;
@@ -56,7 +57,7 @@ $topbar-link-color: #fff;
 // $topbar-menu-link-color-toggled: #444;
 // $topbar-menu-icon-color-toggled: #444;
 
-$topbar-dropdown-bg: $blue-lighter;
+// $topbar-dropdown-bg: $blue-lighter;
 // $topbar-dropdown-link-color: #444;
 
 

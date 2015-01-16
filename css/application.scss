@@ -12,6 +12,13 @@
 @import "prism";
 //@import "syntax";
 
+ul, ol {
+  margin-left: 20px;
+}
+
+.logo-image {
+  margin-left: 5px;
+}
 
 .content, footer {
   margin-top: 40px;
@@ -37,7 +44,9 @@
 
       > li {
         list-style: none;
-        // color: $blue-light;
+        margin-bottom: 10px; // mel
+
+        color: $blue-dark;
 
         // &:hover {
         //   color: $blue-dark;
