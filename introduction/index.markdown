@@ -1,6 +1,7 @@
 ---
 layout: overview
 chapter: introduction
+intro: true
 title: Introduction
 ---
 <ul class="breadcrumbs">

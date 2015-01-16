@@ -1,6 +1,8 @@
 ---
-layout: default
+layout: recipe
 title: Consuming External Services - Table of Contents
+chapter: consuming-external-services
+intro: true
 ---
 <ul class="breadcrumbs">
   <li><a href="{{ site.baseurl }}">Home</a></li>

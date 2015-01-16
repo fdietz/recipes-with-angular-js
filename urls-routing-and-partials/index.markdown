@@ -1,13 +1,13 @@
 ---
-layout: default
+layout: recipe
 title: URLs, Routing and Partials - Table of Contents
+chapter: urls-routing-and-partials
+intro: true
 ---
 <ul class="breadcrumbs">
   <li><a href="{{ site.baseurl }}">Home</a></li>
   <li class="current">URLs, Routing and Partials</li>
 </ul>
-
-<h2>URLs, Routing and Partials</h2>
 
 The [$location service](http://docs.angularjs.org/guide/dev_guide.services.$location) in Angular.js parses the current browser URL and makes it available to your application. Changes in either the browser address bar or the `$location` service will be kept in sync.
 

@@ -1,10 +1,31 @@
 <ul class="side-nav">
-  <li {% if page.chapter == "introduction" %} class="active" {% endif %}>
+  {% for chapter in site.data.nav %}
+    <li {% if page.chapter == {{chapter.name}} %} class="active" {% endif %}>
+      <a href="{{ site.baseurl }}{{chapter.path}}/index.html">{{chapter.title}}</a>
+
+      {% if page.chapter == {{chapter.name}} %}
+        <ul>
+          {% sorted_for page in site.pages | sort_by:order %}
+            {% if page.chapter == {{chapter.name}}  %}
+              {% if page.intro != true  %}
+                <li>
+                  <a href="{{ site.baseurl }}/{{page.url}}">{{page.title}}</a>
+                </li>
+              {% endif %}
+            {% endif %}
+          {% endsorted_for %}
+        </ul>
+      {% endif %}
+
+    </li>
+  {% endfor %}
+
+  <!-- <li {% if page.chapter == "introduction" %} class="active" {% endif %}>
     <a href="{{ site.baseurl }}/introduction/index.html">Introduction</a>
     {% if page.chapter == "introduction" %}
       <ul>
         {% sorted_for page in site.pages | sort_by:order %}
-          {% if page.chapter == "introduction" %}
+          {% if page.chapter == "introduction" && page.intro  != "true" %}
             <li>
               <a href="{{ site.baseurl }}/{{page.url}}">{{page.title}}</a>
             </li>
@@ -43,6 +64,7 @@
       </ul>
     {% endif %}
   </li>
+
   <li {% if page.chapter == "filters" %} class="active" {% endif %}>
     <a href="{{ site.baseurl }}/filters/index.html">Filters</a>
     {% if page.chapter == "filters" %}
@@ -57,4 +79,79 @@
       </ul>
     {% endif %}
   </li>
+
+  <li {% if page.chapter == "consuming-external-services" %} class="active" {% endif %}>
+    <a href="{{ site.baseurl }}/consuming-external-services/index.html">Consuming External Services</a>
+    {% if page.chapter == "consuming-external-services" %}
+      <ul>
+        {% sorted_for page in site.pages | sort_by:order %}
+          {% if page.chapter == "consuming-external-services" %}
+            <li>
+              <a href="{{ site.baseurl }}{{page.url}}">{{page.title}}</a>
+            </li>
+          {% endif %}
+        {% endsorted_for %}
+      </ul>
+    {% endif %}
+  </li>
+
+  <li {% if page.chapter == "urls-routing-and-partials" %} class="active" {% endif %}>
+    <a href="{{ site.baseurl }}/urls-routing-and-partials/index.html">URLs, Routing and Partials</a>
+    {% if page.chapter == "urls-routing-and-partials" %}
+      <ul>
+        {% sorted_for page in site.pages | sort_by:order %}
+          {% if page.chapter == "urls-routing-and-partials" %}
+            <li>
+              <a href="{{ site.baseurl }}{{page.url}}">{{page.title}}</a>
+            </li>
+          {% endif %}
+        {% endsorted_for %}
+      </ul>
+    {% endif %}
+  </li>
+
+  <li {% if page.chapter == "common-user-interface-patterns" %} class="active" {% endif %}>
+    <a href="{{ site.baseurl }}/common-user-interface-patterns/index.html">Common User Interface Patterns</a>
+    {% if page.chapter == "common-user-interface-patterns" %}
+      <ul>
+        {% sorted_for page in site.pages | sort_by:order %}
+          {% if page.chapter == "common-user-interface-patterns" %}
+            <li>
+              <a href="{{ site.baseurl }}{{page.url}}">{{page.title}}</a>
+            </li>
+          {% endif %}
+        {% endsorted_for %}
+      </ul>
+    {% endif %}
+  </li>
+
+  <li {% if page.chapter == "backend-integration-with-ruby-on-rails" %} class="active" {% endif %}>
+    <a href="{{ site.baseurl }}/backend-integration-with-ruby-on-rails/index.html">Backend Integration with Ruby on Rails</a>
+    {% if page.chapter == "backend-integration-with-ruby-on-rails" %}
+      <ul>
+        {% sorted_for page in site.pages | sort_by:order %}
+          {% if page.chapter == "backend-integration-with-ruby-on-rails" %}
+            <li>
+              <a href="{{ site.baseurl }}{{page.url}}">{{page.title}}</a>
+            </li>
+          {% endif %}
+        {% endsorted_for %}
+      </ul>
+    {% endif %}
+  </li>
+
+  <li {% if page.chapter == "backend-integration-with-node-express" %} class="active" {% endif %}>
+    <a href="{{ site.baseurl }}/backend-integration-with-node-express/index.html">Backend Integration with Node Express</a>
+    {% if page.chapter == "backend-integration-with-node-express" %}
+      <ul>
+        {% sorted_for page in site.pages | sort_by:order %}
+          {% if page.chapter == "backend-integration-with-node-express" %}
+            <li>
+              <a href="{{ site.baseurl }}{{page.url}}">{{page.title}}</a>
+            </li>
+          {% endif %}
+        {% endsorted_for %}
+      </ul>
+    {% endif %}
+  </li> -->
 </ul>
