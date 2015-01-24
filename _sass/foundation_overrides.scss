@@ -64,8 +64,8 @@ $topbar-link-color: #fff;
 // $crumb-bg: #fff;
 // $crumb-border-style: none;
 
-$side-nav-link-color: $blue-light;
+$side-nav-link-color: $blue-dark;
 $side-nav-link-color-active: $black;
 
-$anchor-font-color: $blue-light;
-$anchor-font-color-hover: lighten($blue-light, 10%);
+$anchor-font-color: $blue-dark;
+$anchor-font-color-hover: $blue-light;

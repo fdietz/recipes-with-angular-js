@@ -5,11 +5,11 @@
 
       {% if page.chapter == {{chapter.name}} %}
         <ul>
-          {% sorted_for page in site.pages | sort_by:order %}
-            {% if page.chapter == {{chapter.name}}  %}
-              {% if page.intro != true  %}
-                <li>
-                  <a href="{{ site.baseurl }}/{{page.url}}">{{page.title}}</a>
+          {% sorted_for current_page in site.pages | sort_by:order %}
+            {% if current_page.chapter == {{chapter.name}}  %}
+              {% if current_page.intro != true  %}
+                <li {% if current_page.order == page.order %} class="active" {% endif %}>
+                  <a href="{{ site.baseurl }}/{{current_page.url}}">{{current_page.title}}</a>
                 </li>
               {% endif %}
             {% endif %}

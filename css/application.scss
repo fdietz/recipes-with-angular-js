@@ -20,13 +20,22 @@ ul, ol {
   margin-left: 5px;
 }
 
-.content, footer {
+.contain-to-grid {
+  margin-bottom: 40px;
+}
+
+.content {
+  // margin-top: 20px;
+}
+
+footer {
   margin-top: 40px;
 }
 
 .side-nav {
   background-color: #fafafa;
   padding: 50px 20px;
+  margin-top: -40px;
 }
 
 .side-nav {
@@ -46,11 +55,15 @@ ul, ol {
         list-style: none;
         margin-bottom: 10px; // mel
 
-        color: $blue-dark;
+        a {
+          color: $blue-dark;
 
-        // &:hover {
-        //   color: $blue-dark;
-        // }
+          &:hover {
+            color: $blue-light;
+
+          }
+        }
+
       }
     }
   }

@@ -2,6 +2,7 @@
 layout: overview
 chapter: controllers
 title: Controllers
+intro: true
 ---
 <ul class="breadcrumbs">
   <li><a href="{{ site.baseurl }}">Home</a></li>

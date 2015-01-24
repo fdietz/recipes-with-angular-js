@@ -2,6 +2,7 @@
 layout: overview
 chapter: filters
 title: Filters
+intro: true
 ---
 <ul class="breadcrumbs">
   <li><a href="{{ site.baseurl }}">Home</a></li>

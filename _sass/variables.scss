@@ -1,6 +1,10 @@
 $dark-green: #2A3744;
-$blue-dark: #004CFF;
-$blue-light: #195EFF;
+// $blue-dark: #004CFF;
+$blue-dark: #07a;
+
+// $blue-light: #195EFF;
+$blue-light: lighten($blue-dark, 20%);
+
 $blue-lighter: #6FB6FF;
 
 $orange-dark: #B27E00;
