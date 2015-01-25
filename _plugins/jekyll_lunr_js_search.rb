@@ -17,7 +17,7 @@ module Jekyll
     # The main content from each page is extracted and saved to disk as json
     def generate(site)
       puts 'Running the search indexer...'
-      return
+      # return
 
       # gather pages and posts
       items = pages_to_index(site)

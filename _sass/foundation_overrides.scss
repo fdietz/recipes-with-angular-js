@@ -1,30 +1,38 @@
-$base-font-size: 100% !default;
+// $base-font-size: 100% !default;
 
-$em-base: 16px !default;
+@import "foundation/functions";
+
+// $em-base: 12px !default;
 
 // mel: 0.9 opacity black
 $body-font-color: $black;
 $header-font-color: $black;
 
 
-$body-font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$header-font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-sans-serif: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-serif: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+// $body-font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+// $header-font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
-$body-font-weight: 300;
+$font-weight-normal: 300;
+$font-weight-bold: bold;
 
-$paragraph-font-weight: 300;
+$header-font-weight: 400;
+// $body-font-weight: 300;
+
+// $paragraph-font-weight: 300;
 
 // $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 // $header-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 
 
-$font-smoothing: antialiased;
+// $font-smoothing: antialiased;
 
-$h1-font-size: emCalc(37px);
-$h2-font-size: emCalc(27px);
-$h3-font-size: emCalc(23px);
-$h4-font-size: emCalc(18px);
-$h5-font-size: emCalc(14px);
+$h1-font-size: em-calc(37px);
+$h2-font-size: em-calc(27px);
+$h3-font-size: em-calc(23px);
+$h4-font-size: em-calc(18px);
+$h5-font-size: em-calc(14px);
 $h6-font-size: 1em;
 
 
@@ -39,10 +47,11 @@ $row-width: 90%;
 // $topbar-bg: $blue-lighter;
 $topbar-bg: $gray-blue;
 
-$topbar-title-font-size: emCalc(24px);
+$topbar-title-font-size: em-calc(36);
+$topbar-title-weight: $font-weight-bold;
 
-$topbar-height: 68px;
-$topbar-margin-bottom: emCalc(70px);
+$topbar-height: em-calc(68);
+// $topbar-margin-bottom: emCalc(70px);
 
 // $topbar-link-color: #444;
 $topbar-link-color: #fff;
@@ -67,5 +76,11 @@ $topbar-link-color: #fff;
 $side-nav-link-color: $blue-dark;
 $side-nav-link-color-active: $black;
 
+$side-nav-font-size: rem-calc(14);
+$side-nav-font-weight-active: $font-weight-bold;
+
+// $side-nav-padding: rem-calc(0 0);
+
 $anchor-font-color: $blue-dark;
 $anchor-font-color-hover: $blue-light;
+

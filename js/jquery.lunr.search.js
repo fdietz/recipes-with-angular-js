@@ -100,8 +100,49 @@
     LunrSearch.prototype.bindKeypress = function() {
       var self = this;
 
-      this.$elem.bind('keyup', debounce(function() {
-        self.search($(this).val());
+      this.$elem.bind('keyup', debounce(function(e) {
+        switch(e.which) {
+          case 38: // up
+            console.log("up")
+
+            var current = self.$entries.find("li.active")
+
+            if (current.length === 0) {
+              current = self.$entries.find("li").last();
+              current.addClass("active");
+            } else {
+              if (current.prev("li").length) {
+                current.removeClass("active");
+                current.prev("li").addClass("active");
+              }
+            }
+
+          break;
+
+          case 40: // down
+            console.log("down")
+
+            var current = self.$entries.find("li.active")
+
+            console.log("current", current)
+            if (current.length === 0) {
+              current = self.$entries.find("li").first();
+              current.addClass("active");
+            } else {
+              if (current.next("li").length) {
+                current.removeClass("active");
+                current.next("li").addClass("active");
+              }
+            }
+          break;
+
+          default: {
+            self.search($(this).val());
+          }
+        }
+
+        e.preventDefault();
+        return false;
       }));
     };
 

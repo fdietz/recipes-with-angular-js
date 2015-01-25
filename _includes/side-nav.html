@@ -1,4 +1,5 @@
 <ul class="side-nav">
+  <li> <a href="{{ site.baseurl }}/index.html">Home</a> </li>
   {% for chapter in site.data.nav %}
     <li {% if page.chapter == {{chapter.name}} %} class="active" {% endif %}>
       <a href="{{ site.baseurl }}{{chapter.path}}/index.html">{{chapter.title}}</a>

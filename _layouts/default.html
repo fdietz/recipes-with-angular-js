@@ -20,8 +20,9 @@
           <ul class="title-area">
             <li class="name">
               <h1>
-                <a href="{{ site.baseurl }}/">Recipes with Angular.js
-                  <!-- <img class="logo-image" src="{{ site.baseurl }}/images/AngularJS-Shield-small.png" alt="" width="36" height="36"> -->
+                <a href="{{ site.baseurl }}/">
+                  <img class="logo-image" src="{{ site.baseurl }}/images/AngularJS-Shield-small.png" alt="" width="36" height="36">
+                  <span>Recipes with Angular.js</span>
                 </a>
               </h1>
             </li>
@@ -29,6 +30,28 @@
               <a href="#"><span>Menu</span></a>
             </li>
           </ul>
+
+          <section class="top-bar-section2">
+            <ul class="right" style="position: relative">
+              <li class="has-form">
+                <div class="row collapse postfix-radius2">
+                  <div class="large-8 small-9 columns">
+                    <input type="text" id="search-query" name="q" autocomplete="off" placeholder="Search recipes">
+                  </div>
+                  <div class="large-4 small-3 columns">
+                    <a href="#" class="alert button expand top-bar-button postfix2">Search</a>
+                  </div>
+                </div>
+              </li>
+
+              <div id="search-results" style="display: none;">
+                <ul class="entries">
+                </ul>
+              </div>
+            </ul>
+          </section>
+
+
 
           <!-- <section class="top-bar-section">
             <ul class="left">
@@ -62,6 +85,16 @@
           </div>
         </div>
       </footer>
+
+      {% raw %}
+        <script id="search-results-template" type="text/mustache">
+          {{#entries}}
+            <li>
+              <a href="/recipes-with-angular-js{{url}}">{{title}}</a>
+            </li>
+          {{/entries}}
+        </script>
+      {% endraw %}
 
       <script src="{{ site.baseurl }}/js/application.js" type="text/javascript" charset="utf-8"></script>
       <!--<script src="{{ site.baseurl }}/js/search.min.js" type="text/javascript" charset="utf-8"></script>-->
@@ -101,6 +134,7 @@
             entries:  '.entries',
             template: '#search-results-template'
           });
+
         });
       </script>
     </body>

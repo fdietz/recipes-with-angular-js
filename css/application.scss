@@ -6,8 +6,10 @@
 
 @import "normalize";
 
+
 @import "foundation_overrides";
 @import "foundation";
+
 
 @import "prism";
 //@import "syntax";
@@ -39,36 +41,49 @@ footer {
 }
 
 .side-nav {
-  // padding: 40px 0 40px 46px;
-
   > li {
-    > ul {
-      padding-left: 8px;
+    margin: 0;
 
-      // border-left: 2px solid #efefef;
+    &.heading {
+      margin-bottom: 15px;
+    }
+
+    > a {
+      color: $blue-dark;
+
+      // padding: 0.33333rem 0 !important;
+
+      &:hover {
+        color: $blue-light;
+
+        // margin: 0 -20px;
+        // padding-left: 20px;
+        // padding-right: 20px;
+      }
+    }
+
+    > ul {
+      // padding-left: 8px;
+
       border-left: 2px solid #e5e5e5;
 
-      margin-top: 10px;
-      margin-left: 0.6rem;
+      // margin-top: 10px;
+      // margin-left: 0.6rem;
 
       > li {
         list-style: none;
-        margin-bottom: 10px; // mel
+        margin: 0;
 
-        a {
-          color: $blue-dark;
-
-          &:hover {
-            color: $blue-light;
-
-          }
-        }
-
+        font-size: 12px;
+        // margin-bottom: 10px; // mel
       }
     }
   }
 }
 
+// .side-nav li a:not(.button) {
+//   padding: 0.33333rem 0;
+// }
 
 footer {
   padding: 20px 40px;
@@ -111,9 +126,9 @@ pre[data-line] {
   display: none;
 }
 
-#search-query {
-  border-radius: 5px;
-}
+// #search-query {
+//   border-radius: 5px;
+// }
 
 
 // fancy inline code
@@ -128,5 +143,66 @@ p {
 
     padding: 3px 4px;
     border-radius: 4px;
+  }
+}
+
+// #search-query {
+//   border-radius: 0;
+//   box-shadow: none;
+
+//   background-color: #fafafa;
+//   border-color: darken(#fafafa, 5%);
+
+//   font-size: 2rem;
+// }
+
+.latest-updates {
+  background-color: #fafafa;
+  border-color: darken(#fafafa, 5%);
+
+  ul {
+    margin-left: 0;
+
+    li {
+      list-style: none;
+    }
+  }
+
+}
+
+.book-panel {
+  border: none;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.top-bar-button {
+  padding-top: 4px !important;
+  border-radius: 0  !important;
+}
+
+#search-results {
+  position: absolute;
+  top: 48px;
+  right: 0;
+  width: 300px;
+
+  background-color: #f2f2f2;
+  border: 1px solid #d8d8d8;
+
+  z-index: 99;
+
+  .entries {
+    margin: 0;
+
+    > li {
+      padding: 5px 10px;
+      font-size: 0.8rem;
+
+      &.active {
+        background-color: #d1d1d1;
+      }
+
+    }
   }
 }
