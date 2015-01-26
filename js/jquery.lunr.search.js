@@ -103,8 +103,6 @@
       this.$elem.bind('keyup', debounce(function(e) {
         switch(e.which) {
           case 38: // up
-            console.log("up")
-
             var current = self.$entries.find("li.active")
 
             if (current.length === 0) {
@@ -120,11 +118,8 @@
           break;
 
           case 40: // down
-            console.log("down")
-
             var current = self.$entries.find("li.active")
 
-            console.log("current", current)
             if (current.length === 0) {
               current = self.$entries.find("li").first();
               current.addClass("active");
@@ -135,6 +130,12 @@
               }
             }
           break;
+
+          case 13: // enter
+            var current = self.$entries.find("li.active");
+            if (current) {
+              window.location.href = current.find("a").attr("href");
+            }
 
           default: {
             self.search($(this).val());

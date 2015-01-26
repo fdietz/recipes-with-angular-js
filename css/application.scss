@@ -18,8 +18,13 @@ ul, ol {
   margin-left: 20px;
 }
 
+.top-bar > .title-area {
+  margin-left: 9px;
+}
+
 .logo-image {
   margin-left: 5px;
+  margin-bottom: 6px;
 }
 
 .contain-to-grid {
@@ -187,7 +192,7 @@ p {
   right: 0;
   width: 300px;
 
-  background-color: #f2f2f2;
+  background-color: #FAFAFA;
   border: 1px solid #d8d8d8;
 
   z-index: 99;
@@ -200,9 +205,23 @@ p {
       font-size: 0.8rem;
 
       &.active {
-        background-color: #d1d1d1;
+        background-color: #0379AB;
+
+        a {
+          color: #fff;
+        }
       }
 
     }
+  }
+}
+
+.columns.zero-padding {
+  padding: 0;
+}
+
+.book-panel {
+  p {
+    text-align: justify;
   }
 }
