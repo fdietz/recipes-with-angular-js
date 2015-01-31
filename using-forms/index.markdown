@@ -1,6 +1,6 @@
 ---
 layout: recipe
-title: Using Forms - Table of Contents
+title: Using Forms
 chapter: using-forms
 intro: true
 ---

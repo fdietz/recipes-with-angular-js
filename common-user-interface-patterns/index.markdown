@@ -1,9 +1,10 @@
 ---
 layout: recipe
-title: Common User Interface Patterns - Table of Contents
+title: Common User Interface Patterns
 chapter: common-user-interface-patterns
 intro: true
 ---
+
 <h2>Table of Contents</h2>
 <ol>
   {% sorted_for page in site.pages | sort_by:order %}

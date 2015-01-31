@@ -1,6 +1,6 @@
 ---
 layout: recipe
-title: Backend Integration with Node Express - Table of Contents
+title: Backend Integration with Node Express
 chapter: backend-integration-with-node-express
 intro: true
 ---

@@ -1,6 +1,6 @@
 ---
 layout: recipe
-title: URLs, Routing and Partials - Table of Contents
+title: URLs, Routing and Partials
 chapter: urls-routing-and-partials
 intro: true
 ---
