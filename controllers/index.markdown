@@ -4,12 +4,6 @@ chapter: controllers
 title: Controllers
 intro: true
 ---
-<ul class="breadcrumbs">
-  <li><a href="{{ site.baseurl }}">Home</a></li>
-  <li class="current">controllers</li>
-</ul>
-
-<!-- <h2>Controllers</h2> -->
 
 Controllers in Angular provide the business logic to handle view behavior, for example responding to a user clicking a button or entering some text in a form. Additionally, controllers prepare the model for the view template.
 

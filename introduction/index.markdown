@@ -4,11 +4,6 @@ chapter: introduction
 intro: true
 title: Introduction
 ---
-<ul class="breadcrumbs">
-  <li><a href="{{ site.baseurl }}">Home</a></li>
-  <li class="current">introduction</li>
-</ul>
-
 <h2>Table of Contents</h2>
 <ol>
   {% sorted_for page in site.pages | sort_by:order %}
