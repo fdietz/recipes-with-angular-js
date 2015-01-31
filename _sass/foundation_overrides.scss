@@ -15,7 +15,7 @@ $font-family-serif: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 // $header-font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 $font-weight-normal: 300;
-$font-weight-bold: bold;
+$font-weight-bold: 400;
 
 $header-font-weight: 400;
 // $body-font-weight: 300;
@@ -28,11 +28,11 @@ $header-font-weight: 400;
 
 // $font-smoothing: antialiased;
 
-$h1-font-size: em-calc(37px);
-$h2-font-size: em-calc(27px);
-$h3-font-size: em-calc(23px);
-$h4-font-size: em-calc(18px);
-$h5-font-size: em-calc(14px);
+$h1-font-size: em-calc(33px);
+$h2-font-size: em-calc(23px);
+$h3-font-size: em-calc(19px);
+$h4-font-size: em-calc(14px);
+$h5-font-size: em-calc(10px);
 $h6-font-size: 1em;
 
 
@@ -47,7 +47,7 @@ $row-width: 90%;
 // $topbar-bg: $blue-lighter;
 $topbar-bg: $gray-blue;
 
-$topbar-title-font-size: em-calc(36);
+$topbar-title-font-size: em-calc(32);
 $topbar-title-weight: $font-weight-bold;
 
 $topbar-height: em-calc(68);
