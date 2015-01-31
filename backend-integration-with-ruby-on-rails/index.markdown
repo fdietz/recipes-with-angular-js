@@ -1,14 +1,10 @@
 ---
-layout: default
-title: Backend Integration with Ruby on Rails - Table of Contents
+layout: recipe
+title: Backend Integration with Ruby on Rails
+chapter: backend-integration-with-ruby-on-rails
+intro: true
 ---
-<ul class="breadcrumbs">
-  <li><a href="{{ site.baseurl }}">Home</a></li>
-  <li class="current">Backend Integration with Ruby on Rails</li>
-</ul>
-
-<h2>Backend Integration with Ruby on Rails</h2>
-
+In this chapter we will have a look at using Angular.js with the Ruby on Rails framework.
 <h2>Table of Contents</h2>
 <ol>
   {% sorted_for page in site.pages | sort_by:order %}

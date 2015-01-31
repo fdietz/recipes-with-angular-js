@@ -2,31 +2,33 @@
 layout: default
 ---
 
-<ul class="breadcrumbs">
-  <li><a href="{{ site.baseurl }}">Home</a></li>
-  <li><a href="{{ site.baseurl }}/{{ page.chapter }}">{{ page.chapter }}</a></li>
-  <li class="current">{{page.title}}</li>
-</ul>
+<div class="row">
+  <div class="large-3 medium-6 columns">
+    {% include side-nav.html %}
+  </div>
+  <div class="large-9 medium-6 columns content">
+    <h2>{{page.title}}</h2>
+    {{ content }}
 
-<div class="recipe-actions">
-  {% if page.source_path %}
-    {% jsfiddle %}
-  {% endif %}
-</div>
-
-<h2>{{page.title}}</h2>
-
-{{ content }}
-
-<div class="panel radius similar-pages">
-  <h4>Similar Recipes</h4>
-  <ul>
-    {% sorted_for similar_page in site.pages %}
-      {% if similar_page.chapter == page.chapter %}
-        <li>
-          <a href="{{ site.baseurl }}{{similar_page.url}}">{{similar_page.title}}</a>
-        </li>
+    <!-- <div class="recipe-actions">
+      {% if page.source_path %}
+        {% jsfiddle %}
       {% endif %}
-    {% endsorted_for %}
-  </ul>
+    </div> -->
+
+    <div id="disqus_thread"></div>
+      <script type="text/javascript">
+          /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+          var disqus_shortname = 'recipes-with-angularjs-site'; // required: replace example  with your forum shortname
+
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+              dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+ </div>
 </div>

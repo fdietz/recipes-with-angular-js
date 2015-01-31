@@ -6,29 +6,52 @@
     <title>Recipes with Angular.js - {{ page.title }}</title>
     <meta keywords="javascript, js, angular.js, angularjs, recipes with angular.js, recipes with angularjs, best practices, cookbook, tutorial, book">
     <meta name="viewport" content="width=device-width">
-    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
-    {% stylesheet application %}
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+
+    <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:300,400' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/application.css" type="text/css" media="all" />
   </head>
     <body ng-app="RecipesApp">
 
-        <div class="contain-to-grid">
-          <nav class="top-bar">
-            <ul class="title-area">
-              <li class="name">
-                <h1><a href="{{ site.baseurl }}">Recipes with Angular.js <img src="{% asset_path AngularJS-Shield-small.png %}" alt="" width="36" height="36"></a>  </h1>
+      <div class="contain-to-grid">
+        <nav class="top-bar">
+          <ul class="title-area">
+            <li class="name">
+              <h1>
+                <a href="{{ site.baseurl }}/">
+                  <img class="logo-image" src="{{ site.baseurl }}/images/AngularJS-Shield-small.png" alt="" width="36" height="36">
+                  <span>Recipes with Angular.js</span>
+                </a>
+              </h1>
+            </li>
+            <li class="toggle-topbar menu-icon">
+              <a href="#"><span>Menu</span></a>
+            </li>
+          </ul>
+
+          <section class="top-bar-section2">
+            <ul class="right" style="position: relative">
+              <li class="has-form">
+                <div class="row collapse">
+                  <div class="large-8 small-9 columns">
+                    <input type="text" id="search-query" name="q" autocomplete="off" placeholder="Search recipes">
+                  </div>
+                  <div class="large-4 small-3 columns">
+                    <a href="#" class="alert button expand top-bar-button">Search</a>
+                  </div>
+                </div>
               </li>
-              <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+
+              <div id="search-results" style="display: none;">
+                <ul class="entries">
+                </ul>
+              </div>
             </ul>
-
-            <section class="top-bar-section">
-              <ul class="left">
-                <li><a href="{{ site.baseurl }}/toc.html">Table of Contents</a></li>
-                <li><a href="{{ site.baseurl }}/about.html">About</a></li>
-              </ul>
-
-            </section>
-          </nav>
-        </div>
+          </section>
+        </nav>
+      </div>
 
       <div class="row">
         <div class="large-12 columns">
@@ -36,24 +59,45 @@
         </div>
       </div>
 
-      <footer class="row">
-        <div class="large-12 columns">
-          <hr>
-          <div class="row">
-            <div class="large-6 columns">
-              <p>
-                Maintained by <a href="http://fdietz.de">Frederik Dietz</a>
-              </p>
-            </div>
+      <footer>
+        <div class="row">
+          <div class="large-12 columns">
+            <div class="row">
+              <div class="large-6 columns">
+                <p>
+                  Maintained by <a href="http://fdietz.de">Frederik Dietz</a>
+                </p>
+              </div>
 
-            <div class="large-6 columns text-right">
-              <p>All content licensed with <a href="http://creativecommons.org/">Creative Commons</a></p>
+              <div class="large-6 columns text-right">
+                <p>All content licensed with <a href="http://creativecommons.org/">Creative Commons</a></p>
+              </div>
             </div>
           </div>
         </div>
       </footer>
 
-      {% javascript application %}
+      {% raw %}
+        <script id="search-results-template" type="text/mustache">
+          {{#entries}}
+            <li>
+              <a href="/recipes-with-angular-js{{url}}">{{title}}</a>
+            </li>
+          {{/entries}}
+        </script>
+      {% endraw %}
+
+      <script src="{{ site.baseurl }}/js/application.js" type="text/javascript" charset="utf-8"></script>
+      <script src="{{ site.baseurl }}/js/jquery.js"></script>
+      <script src="{{ site.baseurl }}/js/foundation.min.js" type="text/javascript" charset="utf-8"></script>
+      <script src="{{ site.baseurl }}/js/prism.js" type="text/javascript" charset="utf-8"></script>
+
+      <script src="{{ site.baseurl }}/js/date.format.js"></script>
+      <script src="{{ site.baseurl }}/js/mustache.js"></script>
+      <script src="{{ site.baseurl }}/js/URI.min.js"></script>
+      <script src="{{ site.baseurl }}/js/lunr.js"></script>
+      <script src="{{ site.baseurl }}/js/jquery.lunr.search.js"></script>
+
       <script>
         $(document).foundation();
       </script>
@@ -80,6 +124,7 @@
             entries:  '.entries',
             template: '#search-results-template'
           });
+
         });
       </script>
     </body>

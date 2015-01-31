@@ -1,10 +1,12 @@
 name: Recipes with Angular.js
 baseurl: /recipes-with-angular-js
-pygments: true
+highlighter: true
+sass:
+  style: compressed
 table_of_contents:
   dirs: [introduction, controllers]
-assets:
-  compress:
-    js:   uglifier
-    css:  sass
-  baseurl: http://fdietz.github.io/recipes-with-angular-js/assets/
+# assets:
+#   compress:
+#     js:   uglifier
+#     css:  sass
+  # baseurl: http://fdietz.github.io/recipes-with-angular-js/assets/

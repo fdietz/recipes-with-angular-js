@@ -1,0 +1,183 @@
+---
+# this ensures Jekyll reads the file to be transformed into CSS later
+# only Main files contain this front matter, not partials.
+---
+@import "variables";
+
+@import "normalize";
+
+
+@import "foundation_overrides";
+@import "foundation";
+
+
+@import "prism";
+
+ul, ol {
+  margin-left: 20px;
+}
+
+.top-bar > .title-area {
+  margin-left: 9px;
+}
+
+.logo-image {
+  margin-left: 5px;
+  margin-bottom: 6px;
+}
+
+.contain-to-grid {
+  margin-bottom: 40px;
+}
+
+footer {
+  margin-top: 40px;
+}
+
+.side-nav {
+  background-color: #fafafa;
+  padding: 50px 20px;
+  margin-top: -40px;
+}
+
+.side-nav {
+  > li {
+    margin: 0;
+
+    &.heading {
+      margin-bottom: 15px;
+    }
+
+    > a {
+      color: $blue-dark;
+
+      &:hover {
+        color: $blue-light;
+      }
+    }
+
+    > ul {
+      border-left: 2px solid #e5e5e5;
+
+      > li {
+        list-style: none;
+        margin: 0;
+
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+footer {
+  padding: 20px 40px;
+  background-color: $footer-bg;
+
+  p {
+    margin: 0;
+  }
+}
+
+pre[data-line] {
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+
+  margin-bottom: 1.25em;
+}
+
+.author {
+  font-size: 0.7em;
+}
+
+
+.recipe-actions {
+  text-align: center;
+}
+
+.recipe-actions-centered {
+  margin: 20px;
+}
+
+p {
+  > code {
+    font-family: "Source Code Pro", Consolas, monospace;
+    font-weight: 300;
+    font-size: 0.9rem;
+
+    color: $orange-dark;
+    background-color: lighten($orange-light, 40%);
+
+    padding: 3px 4px;
+    border-radius: 4px;
+  }
+}
+
+.latest-updates {
+  background-color: #fafafa;
+  border-color: darken(#fafafa, 5%);
+
+  ul {
+    margin-left: 0;
+
+    li {
+      list-style: none;
+    }
+  }
+
+}
+
+.book-panel {
+  border: none;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.top-bar-button {
+  padding-top: 4px !important;
+  border-radius: 0  !important;
+}
+
+
+#search-query {
+  padding-bottom: .4rem;
+}
+
+#search-results {
+  position: absolute;
+  top: 48px;
+  right: 0;
+  width: 300px;
+
+  background-color: #FAFAFA;
+  border: 1px solid #d8d8d8;
+
+  z-index: 99;
+
+  .entries {
+    margin: 0;
+
+    > li {
+      padding: 5px 10px;
+      font-size: 0.8rem;
+
+      &.active {
+        background-color: #0379AB;
+
+        a {
+          color: #fff;
+        }
+      }
+
+    }
+  }
+}
+
+.columns.zero-padding {
+  padding: 0;
+}
+
+.book-panel {
+  p {
+    text-align: justify;
+  }
+}

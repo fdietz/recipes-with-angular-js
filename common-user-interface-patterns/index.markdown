@@ -1,13 +1,9 @@
 ---
-layout: default
-title: Common User Interface Patterns - Table of Contents
+layout: recipe
+title: Common User Interface Patterns
+chapter: common-user-interface-patterns
+intro: true
 ---
-<ul class="breadcrumbs">
-  <li><a href="{{ site.baseurl }}">Home</a></li>
-  <li class="current">Common User Interface Patterns</li>
-</ul>
-
-<h2>Common User Interface Patterns</h2>
 
 <h2>Table of Contents</h2>
 <ol>

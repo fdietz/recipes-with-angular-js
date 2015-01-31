@@ -1,0 +1,87 @@
+// $base-font-size: 100% !default;
+
+@import "foundation/functions";
+
+// $em-base: 12px !default;
+
+// mel: 0.9 opacity black
+$body-font-color: $black;
+$header-font-color: $black;
+
+
+$font-family-sans-serif: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-serif: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+// $body-font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+// $header-font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+$font-weight-normal: 300;
+$font-weight-bold: bold;
+
+$header-font-weight: 400;
+// $body-font-weight: 300;
+
+// $paragraph-font-weight: 300;
+
+// $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+// $header-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+
+
+// $font-smoothing: antialiased;
+
+$h1-font-size: em-calc(37px);
+$h2-font-size: em-calc(27px);
+$h3-font-size: em-calc(23px);
+$h4-font-size: em-calc(18px);
+$h5-font-size: em-calc(14px);
+$h6-font-size: 1em;
+
+
+// $row-width: emCalc(1000px);
+$row-width: 90%;
+
+// $topbar-bg: #21242C;
+
+// $topbar-bg: #fff;
+// $topbar-bg: #2a3744;
+// $topbar-bg: $blue-light;
+// $topbar-bg: $blue-lighter;
+$topbar-bg: $gray-blue;
+
+$topbar-title-font-size: em-calc(36);
+$topbar-title-weight: $font-weight-bold;
+
+$topbar-height: em-calc(68);
+// $topbar-margin-bottom: emCalc(70px);
+
+// $topbar-link-color: #444;
+$topbar-link-color: #fff;
+// $topbar-link-color-hover: #444;
+// $topbar-link-color-active: #444;
+
+// $topbar-title-font-size: emCalc(15px);
+// $topbar-link-font-size: emCalc(15px);
+
+// $topbar-menu-link-color: $blue-lighter;
+// $topbar-menu-icon-color: $blue-lighter;
+// $topbar-menu-link-color-toggled: #444;
+// $topbar-menu-icon-color-toggled: #444;
+
+// $topbar-dropdown-bg: $blue-lighter;
+// $topbar-dropdown-link-color: #444;
+
+
+// $crumb-bg: #fff;
+// $crumb-border-style: none;
+
+$side-nav-link-color: $blue-dark;
+$side-nav-link-color-active: $black;
+
+$side-nav-font-size: rem-calc(14);
+$side-nav-font-weight-active: $font-weight-bold;
+
+// $side-nav-padding: rem-calc(0 0);
+
+$anchor-font-color: $blue-dark;
+$anchor-font-color-hover: $blue-light;
+
+$alert-color: #C4473A;

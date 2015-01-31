@@ -1,14 +1,9 @@
 ---
-layout: default
-title: Using Forms - Table of Contents
+layout: recipe
+title: Using Forms
+chapter: using-forms
+intro: true
 ---
-<ul class="breadcrumbs">
-  <li><a href="{{ site.baseurl }}">Home</a></li>
-  <li class="current">Using Forms</li>
-</ul>
-
-<h2>Using Forms</h2>
-
 Every website eventually uses some kind of form for users to enter data. Angular makes it particularly easy to implement client-side form validations to give immediate feedback for an improved user experience.
 
 <h2>Table of Contents</h2>
