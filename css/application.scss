@@ -12,7 +12,6 @@
 
 
 @import "prism";
-//@import "syntax";
 
 ul, ol {
   margin-left: 20px;
@@ -29,10 +28,6 @@ ul, ol {
 
 .contain-to-grid {
   margin-bottom: 40px;
-}
-
-.content {
-  // margin-top: 20px;
 }
 
 footer {
@@ -56,39 +51,23 @@ footer {
     > a {
       color: $blue-dark;
 
-      // padding: 0.33333rem 0 !important;
-
       &:hover {
         color: $blue-light;
-
-        // margin: 0 -20px;
-        // padding-left: 20px;
-        // padding-right: 20px;
       }
     }
 
     > ul {
-      // padding-left: 8px;
-
       border-left: 2px solid #e5e5e5;
-
-      // margin-top: 10px;
-      // margin-left: 0.6rem;
 
       > li {
         list-style: none;
         margin: 0;
 
         font-size: 12px;
-        // margin-bottom: 10px; // mel
       }
     }
   }
 }
-
-// .side-nav li a:not(.button) {
-//   padding: 0.33333rem 0;
-// }
 
 footer {
   padding: 20px 40px;
@@ -110,33 +89,15 @@ pre[data-line] {
   font-size: 0.7em;
 }
 
-.similar-pages {
-  font-size: 0.9em;
-
-  ul {
-    // padding-left: 20px;
-  }
-}
-
 
 .recipe-actions {
-  float: right;
+  text-align: center;
 }
 
 .recipe-actions-centered {
   margin: 20px;
 }
 
-.breadcrumbs {
-  display: none;
-}
-
-// #search-query {
-//   border-radius: 5px;
-// }
-
-
-// fancy inline code
 p {
   > code {
     font-family: "Source Code Pro", Consolas, monospace;
@@ -150,16 +111,6 @@ p {
     border-radius: 4px;
   }
 }
-
-// #search-query {
-//   border-radius: 0;
-//   box-shadow: none;
-
-//   background-color: #fafafa;
-//   border-color: darken(#fafafa, 5%);
-
-//   font-size: 2rem;
-// }
 
 .latest-updates {
   background-color: #fafafa;
