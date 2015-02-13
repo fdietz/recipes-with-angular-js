@@ -5,6 +5,7 @@ sass:
   style: compressed
 table_of_contents:
   dirs: [introduction, controllers]
+host: fdietz.github.io
 # assets:
 #   compress:
 #     js:   uglifier

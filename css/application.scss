@@ -93,9 +93,64 @@ pre[data-line] {
   font-size: 0.7em;
 }
 
+.bottom-actions {
+  .recipe-actions {
+    width: 49%;
+  }
+
+  .share-menu {
+    width: 50%;
+  }
+}
 
 .recipe-actions {
-  text-align: center;
+  text-align: left;
+  display: inline-block;
+}
+
+.share-menu {
+  display: inline-block;
+  text-align: right;
+  list-style: none;
+  margin-left: 0;
+
+  > li {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 0;
+
+    &.title {
+      color: #BEBEBE;
+      font-weight: bold;
+    }
+
+    > a {
+      padding: 5px;
+      display: block;
+
+      &:hover {
+        background-color: #F4F4F4;
+      }
+    }
+
+    .svg-icon {
+      width: 24px;
+      height: 24px;
+    }
+
+    .svg-icon-twitter {
+      fill: #55acee;
+    }
+
+    .svg-icon-facebook {
+      fill: #3b5998;
+    }
+
+    .svg-icon-google {
+      fill: #dd4b39;
+    }
+  }
+
 }
 
 .recipe-actions-centered {
