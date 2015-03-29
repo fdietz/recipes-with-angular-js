@@ -96,4 +96,4 @@ If we weren't to redirect all requests to the root, what would happen if we were
 
 Also note how navigating to a person's detail page will load only the `show.jade` partial and navigating back to the `persons` list won't carry out any server requests. Everything our app needs is loaded once from the server and cached client-side.
 
-If you have a hard time understanding the server implementation, I suggest you read the excellent [Express Guide](http://expressjs.com/guide.html). Additionally, there is going to be an extra chapter, which goes into more details on how to integrate Angular.js with server-side frameworks.
+If you have a hard time understanding the server implementation, I suggest you read the excellent [Express Guide](http://expressjs.com). Additionally, there is going to be an extra chapter, which goes into more details on how to integrate Angular.js with server-side frameworks.
