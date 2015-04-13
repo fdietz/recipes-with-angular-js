@@ -244,3 +244,39 @@ p {
     text-align: justify;
   }
 }
+
+.banner {
+  padding: 20px;
+  margin-bottom: 25px;
+  margin-top: 25px;
+
+  border: 2px solid #F5F5E1;
+  background-color: #FCFCF2;
+
+  a {
+    display: block;
+    height: 170px;
+
+    h2 {
+      margin-top: 15px;
+      margin-bottom: 0.3em;
+      color: #555;
+    }
+
+    h3 {
+      font-style: italic;
+      padding-top: 8px;
+      color: #555;
+    }
+
+    h4 {
+      color: #666;
+      font-size: 1rem;
+    }
+  }
+
+  img {
+    margin-right: 20px;
+    float: left;
+  }
+}
