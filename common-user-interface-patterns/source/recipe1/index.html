@@ -1,0 +1,11 @@
+<body ng-app="MyApp">
+  <div ng-controller="MyCtrl">
+    <form class="form-inline">
+      <input ng-model="query" type="text"
+        placeholder="Filter by" autofocus>
+    </form>
+    <ul ng-repeat="friend in friends | filter:query | orderBy: 'name' ">
+      <li>{{friend.name}}</li>
+    </ul>
+  </div>
+</body>

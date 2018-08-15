@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Recipes with Angular.js - Home</title>
+    <meta keywords="javascript, js, angular.js, angularjs, recipes with angular.js, recipes with angularjs, best practices, cookbook, tutorial, book">
+    <meta name="viewport" content="width=device-width">
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+
+    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:300,400' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="/recipes-with-angular-js/css/application.css" type="text/css" media="all" />
+  </head>
+    <body ng-app="RecipesApp">
+
+      <div class="contain-to-grid">
+        <nav class="top-bar">
+          <ul class="title-area">
+            <li class="name">
+              <h1>
+                <a href="/recipes-with-angular-js/">
+                  <img class="logo-image" src="/recipes-with-angular-js/images/AngularJS-Shield-small.png" alt="" width="36" height="36">
+                  <span>Recipes with Angular.js</span>
+                </a>
+              </h1>
+            </li>
+            <li class="toggle-topbar menu-icon">
+              <a href="#"><span>Menu</span></a>
+            </li>
+          </ul>
+
+          <section class="top-bar-section2">
+            <ul class="right" style="position: relative">
+              <li class="has-form">
+                <div class="row collapse">
+                  <div class="large-8 small-9 columns">
+                    <input type="text" id="search-query" name="q" autocomplete="off" placeholder="Search recipes">
+                  </div>
+                  <div class="large-4 small-3 columns">
+                    <a href="#" class="alert button expand top-bar-button">Search</a>
+                  </div>
+                </div>
+              </li>
+
+              <div id="search-results" style="display: none;">
+                <ul class="entries">
+                </ul>
+              </div>
+            </ul>
+          </section>
+        </nav>
+      </div>
+
+      <div class="row">
+        <div class="large-12 columns">
+          <div class="row">
+  <div class="large-3 medium-6 columns">
+
+    <ul class="side-nav">
+      <li class="active"> <a href="/recipes-with-angular-js/index.html">Home</a> </li>
+      <li> <a href="/recipes-with-angular-js/introduction/index.html">Introduction</a> </li>
+      <li> <a href="/recipes-with-angular-js/controllers/index.html">Controllers</a> </li>
+      <li> <a href="/recipes-with-angular-js/directives/index.html">Directives</a> </li>
+      <li> <a href="/recipes-with-angular-js/filters/index.html">Filters</a> </li>
+      <li> <a href="/recipes-with-angular-js/consuming-external-services/index.html">Consuming External Services</a> </li>
+      <li> <a href="/recipes-with-angular-js/urls-routing-and-partials/index.html">URLs, Routing and Partials</a> </li>
+      <li> <a href="/recipes-with-angular-js/common-user-interface-patterns/index.html">Common User Interface Patterns</a> </li>
+      <li> <a href="/recipes-with-angular-js/backend-integration-with-ruby-on-rails/index.html">Backend Integration with Ruby on Rails</a> </li>
+      <li> <a href="/recipes-with-angular-js/backend-integration-with-node-express/index.html">Backend Integration with Node Express</a> </li>
+    </ul>
+  </div>
+
+  <div class="large-9 medium-6 columns content">
+    <h2>Welcome to Recipes with Angular.js</h2>
+
+    <p>A community project dedicated to collecting resources for the <a href="http://angularjs.org/">Angular.js</a> framework. You find here easy to follow cookbook style recipes for issues you are likely to face when working with Angular.js.</p>
+
+    <h2>Latest changes</h2>
+    <p><strong>13.Feb 2015</strong> - I've added <a href="http://jsfiddle.net/">jsFiddle</a> integration for almost all recipes. Just press the jsFiddle button at the end of the recipe and you have the running code. Additionally, please use the social sharing links for Twitter, Facebook and Google+ and share helpful recipes!</p>
+    <p><strong>1.Feb 2015</strong> - Finally there's a new design for Recipes with Angular.js! It should make it much easier to browse and search recipes. Furthermore I've integrated comments using the disqus service. So, ask your questions and help me improve the recipes! Have fun and watch this place for upcoming changes!</p>
+
+    <h2>How to contribute</h2>
+    <p>
+      You can create an <a href="https://github.com/fdietz/recipes-with-angular-js/issues">issue</a> on Github in case you find errors in the existing recipes or have ideas for new ones. New recipes are contributed by forking the <a href="https://github.com/fdietz/recipes-with-angular-js">repository</a> and sending a pull request.
+    </p>
+
+    <h2>Where it started</h2>
+    <p>The original content of this site is based on my ebook <a href="https://leanpub.com/recipes-with-angular-js">Recipes with Angular.js</a>. I'm currently working hard to release all chapters on this website in the coming weeks. If you like this site, please support me and buy the book!</p>
+
+    <div class="row panel book-panel">
+      <div class="large-3 columns zero-padding-left">
+        <img src="/recipes-with-angular-js/images/book-medium.png" alt="" width="200px">
+      </div>
+      <div class="large-9 columns zero-padding-left">
+        <a class="button small" href="https://leanpub.com/recipes-with-angular-js">Learn More</a>
+        <a class="button small success" href="https://leanpub.com/recipes-with-angular-js/purchases/new">Buy on Leanpub</a>
+        <a class="button small success" href="http://www.amazon.com/dp/B00DK95V48">Buy on Amazon</a>
+
+        <div>
+          <p>
+            <a href="http://angularjs.org/">Angular.js</a> is an open-source Javascript MVC (Model-View-Controller) framework developed by Google. It gives Javascript developers a highly structured approach to developing rich browser-based applications which leads to very high productivity.
+          </p>
+          <p>
+            If you are using <a href="http://angularjs.org/">Angular.js</a>, or considering it, this cookbook provides easy to follow recipes for issues you are likely to face. Each recipe solves a specific problem and provides a solution and in-depth discussion of it.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="row">
+          <div class="large-12 columns">
+            <div class="row">
+              <div class="large-6 columns">
+                <p>
+                  Maintained by <a href="http://fdietz.de">Frederik Dietz</a>
+                </p>
+              </div>
+
+              <div class="large-6 columns text-right">
+                <p>All content licensed with <a href="http://creativecommons.org/">Creative Commons</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      
+        <script id="search-results-template" type="text/mustache">
+          {{#entries}}
+            <li>
+              <a href="/recipes-with-angular-js{{url}}">{{title}}</a>
+            </li>
+          {{/entries}}
+        </script>
+      
+
+      <script src="/recipes-with-angular-js/js/application.js" type="text/javascript" charset="utf-8"></script>
+      <script src="/recipes-with-angular-js/js/jquery.js"></script>
+      <script src="/recipes-with-angular-js/js/foundation.min.js" type="text/javascript" charset="utf-8"></script>
+      <script src="/recipes-with-angular-js/js/prism.js" type="text/javascript" charset="utf-8"></script>
+
+      <script src="/recipes-with-angular-js/js/date.format.js"></script>
+      <script src="/recipes-with-angular-js/js/mustache.js"></script>
+      <script src="/recipes-with-angular-js/js/URI.min.js"></script>
+      <script src="/recipes-with-angular-js/js/lunr.js"></script>
+      <script src="/recipes-with-angular-js/js/jquery.lunr.search.js"></script>
+
+      <script>
+        $(document).foundation();
+      </script>
+
+      <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-42557266-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+      </script>
+
+      <script type="text/javascript">
+        $(function() {
+          $('#search-query').lunrSearch({
+            indexUrl: '/recipes-with-angular-js/search.json',
+            results:  '#search-results',
+            entries:  '.entries',
+            template: '#search-results-template'
+          });
+
+        });
+      </script>
+    </body>
+</html>

@@ -1,0 +1,39 @@
+<body ng-app="MyApp">
+  <div ng-controller="User">
+    <form name="form" ng-submit="submit()" novalidate>
+      <div class="control-group" ng-class="error('firstname')">
+        <label class="control-label" for="firstname">Firstname</label>
+        <div class="controls">
+          <input id="firstname" name="firstname" type="text" ng-model="user.firstname" placeholder="Firstname" required/>
+          <span class="help-block" ng-show="form.firstname.$invalid && form.firstname.$dirty">Firstname is required</span>
+        </div>
+      </div>
+
+      <div class="control-group" ng-class="error('lastname')">
+        <label class="control-label" for="lastname">Lastname</label>
+        <div class="controls">
+          <input id="lastname" name="lastname" type="text" ng-model="user.lastname" placeholder="Lastname" required/>
+          <span class="help-block" ng-show="form.lastname.$invalid && form.lastname.$dirty">Lastname is required</span>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <div class="controls">
+          <button ng-disabled="form.$invalid" class="btn">Submit</button>
+        </div>
+      </div>
+    </form>
+
+    User Model: {{user}}
+    <br>
+    Form was submitted: {{wasSubmitted}}
+    <br>
+    Firstname input valid: {{form.firstname.$valid}}
+    <br>
+    Firstname validation error: {{form.firstname.$error}}
+    <br>
+    Form valid: {{form.$valid}}
+    <br>
+    Form validation error: {{form.$error}}
+  </div>
+</body>

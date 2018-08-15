@@ -1,0 +1,10 @@
+<body ng-app="MyApp">
+  <div ng-controller="MyCtrl">
+    <ul ng-repeat="user in users">
+      <li>{{user}}</li>
+    </ul>
+    <div class="nested" ng-controller="AnotherCtrl">
+      First user: {{firstUser}}
+    </div>
+  </div>
+</body>

@@ -1,0 +1,7 @@
+<body ng-app="MyApp">
+  <ul ng-init="names = ['Peter', 'Anton', 'John']">
+    <li ng-repeat="name in names | exclude:'Peter' | sortAscending ">
+      <span>{{name}}</span>
+    </li>
+  </ul>
+</body>

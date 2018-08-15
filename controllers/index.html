@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Recipes with Angular.js - Controllers</title>
+    <meta keywords="javascript, js, angular.js, angularjs, recipes with angular.js, recipes with angularjs, best practices, cookbook, tutorial, book">
+    <meta name="viewport" content="width=device-width">
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+
+    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:300,400' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="/recipes-with-angular-js/css/application.css" type="text/css" media="all" />
+  </head>
+    <body ng-app="RecipesApp">
+
+      <div class="contain-to-grid">
+        <nav class="top-bar">
+          <ul class="title-area">
+            <li class="name">
+              <h1>
+                <a href="/recipes-with-angular-js/">
+                  <img class="logo-image" src="/recipes-with-angular-js/images/AngularJS-Shield-small.png" alt="" width="36" height="36">
+                  <span>Recipes with Angular.js</span>
+                </a>
+              </h1>
+            </li>
+            <li class="toggle-topbar menu-icon">
+              <a href="#"><span>Menu</span></a>
+            </li>
+          </ul>
+
+          <section class="top-bar-section2">
+            <ul class="right" style="position: relative">
+              <li class="has-form">
+                <div class="row collapse">
+                  <div class="large-8 small-9 columns">
+                    <input type="text" id="search-query" name="q" autocomplete="off" placeholder="Search recipes">
+                  </div>
+                  <div class="large-4 small-3 columns">
+                    <a href="#" class="alert button expand top-bar-button">Search</a>
+                  </div>
+                </div>
+              </li>
+
+              <div id="search-results" style="display: none;">
+                <ul class="entries">
+                </ul>
+              </div>
+            </ul>
+          </section>
+        </nav>
+      </div>
+
+      <div class="row">
+        <div class="large-12 columns">
+          <div class="row">
+  <div class="large-3 columns">
+    <ul class="side-nav">
+  <li> <a href="/recipes-with-angular-js/index.html">Home</a> </li>
+  
+    <li >
+      <a href="/recipes-with-angular-js/introduction/index.html">Introduction</a>
+
+      
+
+    </li>
+  
+    <li  class="active" >
+      <a href="/recipes-with-angular-js/controllers/index.html">Controllers</a>
+
+      
+        <ul>
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              
+                <li >
+                  <a href="/recipes-with-angular-js//controllers/assigning-a-default-value-to-a-model.html">Assigning a Default Value to a Model</a>
+                </li>
+              
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              
+                <li >
+                  <a href="/recipes-with-angular-js//controllers/changing-a-model-value-with-a-controller-function.html">Changing a Model Value with a Controller Function</a>
+                </li>
+              
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              
+                <li >
+                  <a href="/recipes-with-angular-js//controllers/encapsulation-a-model-value-with-a-controller-function.html">Encapsulating a Model Value with a Controller Function</a>
+                </li>
+              
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              
+                <li >
+                  <a href="/recipes-with-angular-js//controllers/responding-to-scope-changes.html">Responding to Scope Changes</a>
+                </li>
+              
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              
+                <li >
+                  <a href="/recipes-with-angular-js//controllers/sharing-models-between-nested-controllers.html">Sharing Models Between Nested Controllers</a>
+                </li>
+              
+            
+          
+            
+          
+            
+              
+                <li >
+                  <a href="/recipes-with-angular-js//controllers/sharing-code-between-controllers-using-services.html">Sharing Code Between Controllers using Services</a>
+                </li>
+              
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              
+                <li >
+                  <a href="/recipes-with-angular-js//controllers/testing-controllers.html">Testing Controllers</a>
+                </li>
+              
+            
+          
+            
+          
+            
+          
+            
+          
+        </ul>
+      
+
+    </li>
+  
+    <li >
+      <a href="/recipes-with-angular-js/directives/index.html">Directives</a>
+
+      
+
+    </li>
+  
+    <li >
+      <a href="/recipes-with-angular-js/filters/index.html">Filters</a>
+
+      
+
+    </li>
+  
+    <li >
+      <a href="/recipes-with-angular-js/using-forms/index.html">Using Forms</a>
+
+      
+
+    </li>
+  
+    <li >
+      <a href="/recipes-with-angular-js/consuming-external-services/index.html">Consuming External Services</a>
+
+      
+
+    </li>
+  
+    <li >
+      <a href="/recipes-with-angular-js/urls-routing-and-partials/index.html">Urls Routing and Partials</a>
+
+      
+
+    </li>
+  
+    <li >
+      <a href="/recipes-with-angular-js/common-user-interface-patterns/index.html">Common User Interface Patterns</a>
+
+      
+
+    </li>
+  
+    <li >
+      <a href="/recipes-with-angular-js/backend-integration-with-ruby-on-rails/index.html">Backend Integration with Ruby on Rails</a>
+
+      
+
+    </li>
+  
+    <li >
+      <a href="/recipes-with-angular-js/backend-integration-with-node-express/index.html">Backend Integration with Node Express</a>
+
+      
+
+    </li>
+  
+
+  <!-- <li >
+    <a href="/recipes-with-angular-js/introduction/index.html">Introduction</a>
+    
+  </li>
+
+  <li  class="active" >
+    <a href="/recipes-with-angular-js/controllers/index.html">Controllers</a>
+    
+      <ul>
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li>
+              <a href="/recipes-with-angular-js/controllers/index.html">Controllers</a>
+            </li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li>
+              <a href="/recipes-with-angular-js/controllers/assigning-a-default-value-to-a-model.html">Assigning a Default Value to a Model</a>
+            </li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li>
+              <a href="/recipes-with-angular-js/controllers/changing-a-model-value-with-a-controller-function.html">Changing a Model Value with a Controller Function</a>
+            </li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li>
+              <a href="/recipes-with-angular-js/controllers/encapsulation-a-model-value-with-a-controller-function.html">Encapsulating a Model Value with a Controller Function</a>
+            </li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li>
+              <a href="/recipes-with-angular-js/controllers/responding-to-scope-changes.html">Responding to Scope Changes</a>
+            </li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li>
+              <a href="/recipes-with-angular-js/controllers/sharing-models-between-nested-controllers.html">Sharing Models Between Nested Controllers</a>
+            </li>
+          
+        
+          
+        
+          
+            <li>
+              <a href="/recipes-with-angular-js/controllers/sharing-code-between-controllers-using-services.html">Sharing Code Between Controllers using Services</a>
+            </li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li>
+              <a href="/recipes-with-angular-js/controllers/testing-controllers.html">Testing Controllers</a>
+            </li>
+          
+        
+          
+        
+          
+        
+          
+        
+      </ul>
+    
+  </li>
+
+  <li >
+    <a href="/recipes-with-angular-js/directives/index.html">Directives</a>
+    
+  </li>
+
+  <li >
+    <a href="/recipes-with-angular-js/filters/index.html">Filters</a>
+    
+  </li>
+
+  <li >
+    <a href="/recipes-with-angular-js/consuming-external-services/index.html">Consuming External Services</a>
+    
+  </li>
+
+  <li >
+    <a href="/recipes-with-angular-js/urls-routing-and-partials/index.html">URLs, Routing and Partials</a>
+    
+  </li>
+
+  <li >
+    <a href="/recipes-with-angular-js/common-user-interface-patterns/index.html">Common User Interface Patterns</a>
+    
+  </li>
+
+  <li >
+    <a href="/recipes-with-angular-js/backend-integration-with-ruby-on-rails/index.html">Backend Integration with Ruby on Rails</a>
+    
+  </li>
+
+  <li >
+    <a href="/recipes-with-angular-js/backend-integration-with-node-express/index.html">Backend Integration with Node Express</a>
+    
+  </li> -->
+</ul>
+  </div>
+  <div class="large-9 columns content">
+    <h2>Controllers</h2>
+    <p>Controllers in Angular provide the business logic to handle view behavior, for example responding to a user clicking a button or entering some text in a form. Additionally, controllers prepare the model for the view template.</p>
+
+<p>As a general rule, a controller should not reference or manipulate the DOM directly. This has the benefit of simplifying unit testing controllers.</p>
+
+<h2>Table of Contents</h2>
+<ol>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li>
+        <a href="/recipes-with-angular-js/controllers/index.html">Controllers</a>
+      </li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li>
+        <a href="/recipes-with-angular-js/controllers/assigning-a-default-value-to-a-model.html">Assigning a Default Value to a Model</a>
+      </li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li>
+        <a href="/recipes-with-angular-js/controllers/changing-a-model-value-with-a-controller-function.html">Changing a Model Value with a Controller Function</a>
+      </li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li>
+        <a href="/recipes-with-angular-js/controllers/encapsulation-a-model-value-with-a-controller-function.html">Encapsulating a Model Value with a Controller Function</a>
+      </li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li>
+        <a href="/recipes-with-angular-js/controllers/responding-to-scope-changes.html">Responding to Scope Changes</a>
+      </li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li>
+        <a href="/recipes-with-angular-js/controllers/sharing-models-between-nested-controllers.html">Sharing Models Between Nested Controllers</a>
+      </li>
+    
+  
+    
+  
+    
+      <li>
+        <a href="/recipes-with-angular-js/controllers/sharing-code-between-controllers-using-services.html">Sharing Code Between Controllers using Services</a>
+      </li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li>
+        <a href="/recipes-with-angular-js/controllers/testing-controllers.html">Testing Controllers</a>
+      </li>
+    
+  
+    
+  
+    
+  
+    
+  
+</ol>
+
+  </div>
+</div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="row">
+          <div class="large-12 columns">
+            <div class="row">
+              <div class="large-6 columns">
+                <p>
+                  Maintained by <a href="http://fdietz.de">Frederik Dietz</a>
+                </p>
+              </div>
+
+              <div class="large-6 columns text-right">
+                <p>All content licensed with <a href="http://creativecommons.org/">Creative Commons</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      
+        <script id="search-results-template" type="text/mustache">
+          {{#entries}}
+            <li>
+              <a href="/recipes-with-angular-js{{url}}">{{title}}</a>
+            </li>
+          {{/entries}}
+        </script>
+      
+
+      <script src="/recipes-with-angular-js/js/application.js" type="text/javascript" charset="utf-8"></script>
+      <script src="/recipes-with-angular-js/js/jquery.js"></script>
+      <script src="/recipes-with-angular-js/js/foundation.min.js" type="text/javascript" charset="utf-8"></script>
+      <script src="/recipes-with-angular-js/js/prism.js" type="text/javascript" charset="utf-8"></script>
+
+      <script src="/recipes-with-angular-js/js/date.format.js"></script>
+      <script src="/recipes-with-angular-js/js/mustache.js"></script>
+      <script src="/recipes-with-angular-js/js/URI.min.js"></script>
+      <script src="/recipes-with-angular-js/js/lunr.js"></script>
+      <script src="/recipes-with-angular-js/js/jquery.lunr.search.js"></script>
+
+      <script>
+        $(document).foundation();
+      </script>
+
+      <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-42557266-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+      </script>
+
+      <script type="text/javascript">
+        $(function() {
+          $('#search-query').lunrSearch({
+            indexUrl: '/recipes-with-angular-js/search.json',
+            results:  '#search-results',
+            entries:  '.entries',
+            template: '#search-results-template'
+          });
+
+        });
+      </script>
+    </body>
+</html>

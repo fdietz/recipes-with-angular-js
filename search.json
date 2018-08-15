@@ -1,0 +1,580 @@
+{
+  "entries": [
+    {
+      "title": "Assigning a Default Value to a Model",
+      "url": "/controllers/assigning-a-default-value-to-a-model.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "You wish to assign a default value to the scope in the controller’s context. Use the ng-controller directive in your template: Next, define the scope variable in your controller function: Depending on where you use the ng-controller directive, you define its assigned scope. The scope is hierarchical and follows the DOM node hierarchy. In our example, the value expression is correctly evaluated to some value, since value is set in the MyCtrl controller. Note that this would not work if the value expression were moved outside the controllers scope: In this case {{value}} will simply be not rendered at all due to the fact that expression evaluation in Angular.js is forgiving for undefined and null values."
+    },
+    {
+      "title": "Binding a Text Input to an Expression",
+      "url": "/introduction/binding-text-input-to-an-expression.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "You want user input to be used in another part of your HTML page. Use Angulars ng-model directive to bind the text input to the expression. Assigning “name” to the ng-model attribute and using the name variable in an expression will keep both in sync automatically. Typing in the text input will automatically reflect these changes in the paragraph element below. Consider how you would implement this traditionally using jQuery: On document ready we bind to the keypress event in the text input and replace the text in the paragraph in the callback function. Using jQuery you need to deal with document ready callbacks, element selection, event binding and the context of this. Quite a lot of concepts to swallow and lines of code to maintain!"
+    },
+    {
+      "title": "Chaining Filters together",
+      "url": "/filters/chaining-filters-together.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "You wish to combine several filters to form a single result. Filters can be chained using the UNIX-like pipe syntax. The pipe symbol (|) is used to chain multiple filters together. First we will start with the initial Array of names. After applying the exclude filter the Array contains only ['Anton', 'John'] and afterwards we will sort the names in ascending order. I leave the implementation of the sortAscending filter as an exercise to the reader ;-)"
+    },
+    {
+      "title": "Changing a Model Value with a Controller Function",
+      "url": "/controllers/changing-a-model-value-with-a-controller-function.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "You wish to increment a model value by 1 using a controller function. Implement an increment function that changes the scope. This function can be directly called in an expression, in our example we use ng-init: The ng-init directive is executed on page load and calls the function incrementValue defined in MyCtrl. Functions are defined on the scope very similar to values but must be called with the familiar parenthesis syntax. Of course, it would have been possible to increment the value right inside of the expression with value = value +1 but imagine the function being much more complex! Moving this function into a controller separates our business logic from our declarative view template and we can easily write unit tests for it."
+    },
+    {
+      "title": "Changing the DOM in response to user actions",
+      "url": "/directives/changing-the-dom-in-response-to-user-actions.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "You wish to change the CSS of an HTML element on a mouse click and encapsulate this behavior in a reusable component. Implement a directive my-widget that contains an example paragraph of text we want to style. We use a link function in our directive implementation to change the CSS of the paragraph. When clicking on the paragraph the background color changes to red. In the HTML document we use the new directive as an HTML element my-widget, which can be found in the Javascript code as myWidget again. The directive function returns a restriction and a link function. The restriction means that this directive can only be used as an HTML element and not for example an HTML attribute. If you want to use it as an HTML attribute, change the restrict to return A instead. The usage would then have to be adapted to: Whether you use the attribute or element mechanism will depend on your use case. Generally speaking one would use the element mechanism to define a custom reusable component. The attribute mechanism would be used whenever you want to “configure” some element or enhance it with more behavior. Other available options are using the directive as a class attribute or a comment. The directive method expects a function that can be used for initialization and injection of dependencies. The link function is much more interesting since it defines the actual behavior. The scope, the actual HTML element my-widget and the HTML attributes are passed as params. Note that this has nothing to do with Angular’s dependency injection mechanism. Ordering of the parameters is important! Firstly we select the paragraph element, which is a child of the my-widget element using Angular’s children() function as defined by element. In the second step we use jQuery to bind to the click event and modify the css property on click. This is of particular interest since we have a mixture of Angular element functions and jQuery here. In fact under the hood Angular will use jQuery in the children() function if it is defined and will fall back to jqLite (shipped with Angular) otherwise. You can find all supported methods in the API Reference of element. Following a slightly altered version of the code using jQuery only: In this case element is alreay a jQuery element and we can directly use the on function."
+    },
+    {
+      "title": "Client-Side Routing with Hashbang URLs",
+      "url": "/urls-routing-and-partials/client-side-routing-with-hashbang-urls.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "You wish the browser address bar to reflect your applications page flow consistently. Use the $routeProvider and $locationProvider services to define your routes and the ng-view directive as the placeholder for the partials, which should be shown for a particular route definition. The main template uses the ng-view directive: The route configuration is implemented in app.js using the config method: It is set up to render either the person_list.html or the person_details.html partial depending on the URL. The partial person_list.html renders a list of persons: And the partial person_details.html shows more detailed information for a specific person: This example is based on the Angular Seed Bootstrap again and will not work without starting the development server. You can find the complete example on github. Let’s give our app a try and open the index.html. The otherwise defined route redirects us from index.html to index.html#!/persons. This is the default behavior in case other when conditions don’t apply. Take a closer look at the index.html#!/persons URL and note how the hashbang (#!) separates the index.html from the dynamic client-side part /persons. By default, Angular would use the hash (#) character but we configured it to use the hashbang instead, following Google’s Making AJAX applications crawlable guide. The /persons route loads the person_list.html partial via HTTP Request (that is also the reason why it won’t work without a development server). It shows a list of persons and therefore defines a ng-controller directive inside the template. Let us assume for now that the controller implementation defines a $scope.persons somewhere. Now for each person we also render a link to show the details via #!persons/. The route definition for the person’s details uses a placeholder /persons/:id which resolves to a specific person’s details, for example /persons/1. The person_details.html partial and additionally a controller are defined for this URL. The controller will be scoped to the partial, which basically resembles our index.html template where we defined our own ng-controller directive to achieve the same effect. The person_details.html has a back link to #!persons which leads back to the person_list.html page. Let us come back to the ng-view directive. It is automatically bound to the router definition. Therefore you can currently use only a single ng-view on your page. For example, you cannot use nested ng-views to achieve user interaction patterns with a first and second level navigation. And finally the HTTP request for the partials happens only once and is then cached via $templateCache service. Finally, the hashbang-based routing is client-side only and doesn’t require server-side configuration. Let us look into the HTML5-based approach next."
+    },
+    {
+      "title": "Consuming JSONP APIs",
+      "url": "/consuming-external-services/consuming-jsonp-apis.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "You wish to call a JSONP API. Use the $resource service and configure it to use JSONP. As an example we will take the Twitter search API here. The HTML template lets you enter a search term in an input field and will render the search result in a list. The $resource configuration can be done in a controller requesting the data: You can find the complete example on github. The Twitter search API supports a callback attribute for the JSON format as described in their documentation. The $resource definition sets the callback attribute to JSON_CALLBACK, which is a convention from Angular when using JSONP. It is a placeholder that is replaced with the real callback function, generated by Angular. Additionally, we configure the get method to use JSONP. Now, when calling the API we use the q URL parameter to pass the entered searchTerm."
+    },
+    {
+      "title": "Consuming REST APIs",
+      "url": "/backend-integration-with-node-express/consuming-rest-apis.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "You wish to consume a JSON REST API implemented in your Express application. Using the $resource service we will begin by defining our Contact model and all RESTful actions. We can now fetch a list of contacts using Contact.index() and a single contact with Contact.show(id). These actions can be directly mapped to the API routes defined in app.js. I like to keep routes in a separate file routes/api.js and just reference them in app.js in order to keep it small. The API implementation first initializes the Mongoose library and defines a schema for our Contact model. We can now use the Contact model to implement the API. Lets start with the index action: Skipping the error handling we retrieve all contacts with the find function provided by Mongoose and render the result in the JSON format. The show action is pretty similar except it uses findOne and the id from the URL parameter to retrieve a single contact. As a final example we will create a new Contact instance passing in the request body and call the save method to persist it: You can find the complete example on github. Let have a look again at the example for the contact function, which retrieves a single Contact. It uses _id instead of id as the parameter for the findOne function. This underscore is intentional and used by MongoDB for its auto-generated IDs. In order to automatically map from id to the _id parameter we used a nice trick of the $resource service. Take a look at the second parameter of the Contact $resource definition: { id: \"@_id\" }. Using this parameter Angular will automatically set the URL parameter id based on the value of the model attribute _id."
+    },
+    {
+      "title": "Consuming REST APIs",
+      "url": "/backend-integration-with-ruby-on-rails/consuming-rest-apis.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "You wish to consume a JSON REST API implemented in your Rails application. Using the $resource service is a great start and can be tweaked to feel more natural to a Rails developer by configuring the methods in accordance with the Rails actions. We can now fetch a list of contacts using Contact.index() and a single contact with Contact.show(id). These actions can be directly mapped to the ContactsController actions in your Rails backend. The Rails action controller uses a Contact ActiveRecord model with the usual contact attributes like firstname, lastname, age, etc. By specifying respond_to :json the controller only responds to the JSON resource format and we can use respond_with to automatically transform the Contact model to a JSON response. The route definition uses the Rails default resource routing and an api scope to separate the API requests from other requests. This will generate paths like for example api/contacts and api/contacts/:id for the HTTP GET method. You can find the complete example on github. If you want to get up to speed with Ruby on Rails, I suggest that you look into the Rails Guides which will help you understand how all the pieces fit together. The example code above works nicely until we use the HTTP methods POST, PUT and DELETE with the resource. As a security mechanism, Rails expects an authenticity token to prevent a CSRF (Cross Site Request Forgery) attack. We need  to submit an additional HTTP header X-CSRF-Token with the token. It is conveniently rendered in the HTML meta tag csrf-token by Rails. Using jQuery we can fetch that meta tag definition and configure the $httpProvider appropriately. If you are using a Rails version prior 3.1, you’ll notice that the JSON response will use a contact namespace for the model attributes which breaks your Angular.js code. To disable this behavior you can configure your Rails app accordingly. There are still inconsistencies between the Ruby and Javascript world. For example, in Ruby we use underscored attribute names (display_name) whereas in Javascript we use camelCase (displayName). There is a custom $resource implementation angularjs-rails-resource available to streamline consuming Rails resources. It uses transformers and inceptors to rename the attribute fields and handles the root wrapping behavior for you."
+    },
+    {
+      "title": "Consuming RESTful APIs",
+      "url": "/consuming-external-services/consuming-restful-apis.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "You wish to consume a RESTful data source. Use Angular’s high-level $resource service. Note that the Angular ngResource module needs to be separately loaded since it is not included in the base angular.js file: Let us now start by defining the application module and our Post model as an Angular service: Now we can use our service to retrieve a list of posts inside a controller (example: HTTP GET /api/posts): Or a specific post by id (example: HTTP GET /api/posts/1): We can create a new post using save (example: HTTP POST /api/posts): And we can delete a specific post by id (example: DELETE /api/posts/1): The complete example code is based on Brian Ford’s angular-express-seed and uses the Express framework. You can find the complete example on github. Following some conventions simplifies our code quite a bit. We define the $resource by passing the URL schema only. This gives us a handful of nice methods including query, get, save, remove and delete to work with our resource. In the example above we implement several controllers to cover the typical use cases. The get and query methods expect three arguments, the request parameters, the success and the error callback. The save method expects four arguments, the request parameters, the POST data, the success and the error callback. The $resource service currently does not support promises and therefore has a distinctly different interface to the $http service. But we don’t have to wait very long for it, since work has already started in the 1.1 development branch to introduce promise support for the $resource service! The returned object of a $resource query or get function is a $resource instance which provides $save, $remove and $delete methods. This allows you to easily fetch a resource and update it as in the following example: It is important to notice that the get call immediately returns an empty reference - in our case the post variable. Once the data is returned from the server the existing reference is populated and we can change our post title and use the $save method conveniently. Note that having an empty reference means that our post will not be rendered in the template. Once the data is returned though, the view automatically re-renders itself showing the new data. What if your response of posts is not an array but a more complex json? This typically results in the following error: Angular seems to expect your service to return a JSON array. Have a look at the following JSON example, which wraps a posts array in a JSON object: In this case you have to change the $resource definition accordingly. We only change the configuration of the query action to not expect an array by setting the isArray attribute to false. Then in our controller we can directly access data.posts. It is generally good practice to encapsulate your model and $resource usage in an Angular service module and inject that in your controller. This way you can easily reuse the same model in different controllers and test it more easily."
+    },
+    {
+      "title": "Converting Expression Output with Filters",
+      "url": "/introduction/converting-expression-output-with-filters.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "When presenting data to the user, you might need to convert the data to a more user-friendly format. In our case we want to uppercase the name value from the previous recipe in the expression. Use the uppercase Angular filter. Angular uses the | (pipe) character to combine filters with variables in expressions. When evaluating the expression, the name variable is passed to the uppercase filter. This is similar to working with the Unix bash pipe symbol where an input can be transformed by another program. Also try the lowercase filter!"
+    },
+    {
+      "title": "Deferred and Promise",
+      "url": "/consuming-external-services/deferred-and-promise.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "You wish to synchronize multiple asynchronous functions and avoid Javascript callback hell. As an example, we want to call three services in sequence and combine the result of them. Let us start with a nested approach: We call the get function three times to retrieve three JSON documents each with an array of strings. We haven’t even started adding error handling but already using nested callbacks the code becomes messy and can be simplified using the $q service: You can find the complete example on github. The all function combines multiple promises into a single promise and solves our problem quite elegantly. Let’s have a closer look at the then method. It is rather contrived but should give you an idea of how to use then to sequentially call functions and pass data along. Since the all function returns a promise again we can call then on it. By returning the tmp variable it will be passed along to the then function as tmpResult argument. Before finishing this recipe let us quickly discuss an example where we have to create our own deferred object: Using the defer method we create a deferred instance. As an example of an asynchronous operation we will use the $timeout service which will either resolve or reject our operation depending on the boolean success parameter. The function will immediately return the promise and therefore not render any result in our HTML template. After one second, the timer will execute and return our success or failure response. This deferredTimer can be triggered in our HTML template by wrapping it into a function defined on the scope: Our startDeferredTimer function will get a success parameter which it passes along to the deferredTimer. The then function expects a success and an error callback as arguments which we use to set a scope variable deferredTimerResult to show our result. This is just one of many examples of how promises can simplify your code, but you can find many more examples by looking into Kris Kowal’s Q implementation."
+    },
+    {
+      "title": "Directive-to-Directive Communication",
+      "url": "/directives/directive-to-directive-communication.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "You wish a directive to communicate with another directive and augment each other’s behavior using a well-defined interface (API). We implement a directive basket with a controller function and two other directive orange and apple which “require” this controller. Our example starts with an apple and orange directive used as attributes. The basket directive manages an array to which one can add apples and oranges! And finally the apple and orange directives, which add themselves to the basket using the basket’s controller. If you hover with the mouse over the rendered text the console should print and the basket’s content. Basket is the example directive that demonstrates an API using the controller function, whereas the apple and orange directives augment the basket directive. They both define a dependency to the basket controller with the require attribute. The link function then gets basketCtrl injected. Note how the basket directive is defined as an HTML element and the apple and orange directives are defined as HTML attributes (the default for directives). This demonstrates the typical use case of a reusable component augmented by other directives. Now there might be other ways of passing data back and forth between directives - we have seen the different semantics of using the (isolated) context in directives in previous recipes - but what’s especially great about the controller is the clear API contract it lets you define."
+    },
+    {
+      "title": "Displaying a Flash Notice/Failure Message",
+      "url": "/common-user-interface-patterns/displaying-a-flash-notice-failure-message.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "You wish to display a flash confirmation message after a user submitted a form successfully. In a web framework like Ruby on Rails, the form submit will lead to a redirect with the flash confirmation message, relying on the browser session. For our client-side approach we bind to route changes and manage a queue of flash messages. In our example we use a home page with a form and on form submit we navigate to another page and show the flash message. We use the ng-view Directive and define the two pages as script tags here. Note that the flash message just like the navigation is always shown but conditionally hidden depending on whether there is a flash message available. The route definition defines the pages, nothing new here for us: The interesting part is the flash service, which handles a queue of messages and listens for route changes to provide a message from the queue to the current page. The controller handles the form submit and navigates to the other page. The flash service is dependency-injected into the controller and made available to the scope since we want to use it in our template. When you press the submit button you will be navigated to the other page and see the flash message. Note that using the navigation to go back and forth between pages doesn’t show the flash message. You can find the complete example on github. The controller uses the setMessage function of the flash service and the service stores the message in an array called queue. When the controller then uses $location service to navigate the service routeChangeSuccess listener will be called and retrieves the message from the queue. In the template we use ng-show to hide the div element with the flash messaging using flash.getMessage(). Since this is a service it can be used anywhere in your code and it will show a flash message on the next route change."
+    },
+    {
+      "title": "Displaying a Loading Spinner",
+      "url": "/common-user-interface-patterns/displaying-a-loading-spinner.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "You wish to display a loading spinner while waiting for an AJAX request to be finished. We will use the Twitter search API for our example to render a list of search results. When pressing the button the AJAX request is run and the spinner image should be shown until the request is done. An Angular.js interceptor for all AJAX calls is used, which allows you to execute code before the actual request is started and when it is finished. Note that we use jQuery to show the spinner in the configuration step and hide the spinner in the interceptor. Additionally we use a controller to handle the button click and execute the search request. Don’t forget to add ngResource to the module and load it via script tag. You can find the complete example on github. The template is the easy part of this recipe since it renders a list of tweets using the ng-repeat directive. Let us jump straight to the interceptor code. The interceptor is implemented using the factory method and attaches itself to the promise function of the AJAX response to hide the spinner on success or failure. Note that on failure we use the reject function of the $q service, Angular’s promise/deferred implementation. Now, in the config method we add our inceptor to the list of responseInterceptors of $httpProvider to register it properly. In a similar manner we add the spinnerFunction to the default transformRequest list in order to call it before each AJAX request. The controller is responsible for using a $resource object and handling the button click with the load function. We are using JSONP here to allow this code to be executed locally even though it is served by a different domain."
+    },
+    {
+      "title": "Displaying a Modal Dialog",
+      "url": "/common-user-interface-patterns/displaying-a-modal-dialog.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "You wish to use a Modal Dialog using the Twitter Bootstrap Framework. A dialog is called modal when it is blocking the rest of your web application until it is closed. Use the angular-ui module’s nice modal plugin, which directly supports Twitter Bootstrap. The template defines a button to open the modal and the modal code itself. Note that even though we don’t specify it explicitly the modal dialog is hidden initially via the modal attribute. The controller only handles the button click and the showModal value used by the modal attribute. Do not forget to download and include the angular-ui.js file in a script tag. The module dependency is defined directly to “ui.bootstrap.modal”. The full example is available on Github including the angular-ui module. You can find the complete example on github. The modal as defined in the template is straight from the Twitter bootstrap documentation. We can control the visibility with the modal attribute. Additionally, the close attribute defines a close function which is called whenever the dialog is closed. Note that this could happen if the user presses the escape key or clicking outside the modal. Our own cancel button uses the same function to close the modal manually, whereas the okay button uses the ok function. This makes it easy for us to distinguish between a user who simply cancelled the modal or actually pressed the okay button."
+    },
+    {
+      "title": "Displaying Form Validation Errors with the Twitter Bootstrap framework",
+      "url": "/using-forms/displaying-form-validation-errors-with-the-twitter-bootstrap-framework.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "You wish to display form validation errors but the form is styled using Twitter Bootstrap. When using the .horizontal-form class Twitter Bootstrap uses div elements to structure label, input fields and help messages into groups. The group div has the class control-group and the actual controls are further nested in another div element with the CSS class controls. Twitter Bootstrap shows a nice validation status when adding the CSS class error on the div with the control-group class. Let us start with the form: Note that we use the ng-class directive on the control-group div. So let’s look at the controller implementation of the error function: The error function gets the input name attribute passed as a string and checks for the $invalid and $dirty flags to return either the error class or a blank string. You can find the complete example on github. Again we check both the invalid and dirty flags because we only show the error message in case the user has actually changed the form. Note that this ng-class function usage is pretty typical in Angular since expressions do not support ternary checks."
+    },
+    {
+      "title": "Displaying Form Validation Errors",
+      "url": "/using-forms/displaying-form-validation-errors.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "You wish to show validation errors to the user by marking the input field red and displaying an error message. We can use the ng-show directive to show an error message if a form input is invalid and CSS classes to change the input element’s background color depending on its state. Let us start with the styling changes: And here is a small part of the form with an error message for the input field: You can find the complete example on github. The CSS classes ensure that we initially show the fresh form without any classes. When the user starts typing in some input for the first time, we change it to either green or red. That is a good example of using the ng-dirty and ng-invalid CSS classes. We use the same logic in the ng-show directive to only show the error message when the user starts typing for the first time."
+    },
+    {
+      "title": "Editing Text In-Place using HTML5 ContentEditable",
+      "url": "/common-user-interface-patterns/editing-text-in-place-using-html5-content-editable.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "You wish to make a div element editable in place using the HTML5 contenteditable attribute. Implement a directive for the contenteditable attribute and use ng-model for data binding. In this example we use a div and a paragraph to render the content. The directive is especially interesting since it uses ng-model instead of custom attributes. You can find the complete example on github. The directive is restricted for usage as an HTML attribute since we want to use the HTML5 contenteditable attribute as it is instead of defining a new HTML element. It requires the ngModel controller for data binding in conjunction with the link function. The implementation binds an event listener, which executes the read function with apply. This ensures that even though we call the read function from within a DOM event handler we notify Angular about it. The read function updates the model based on the view’s user input. And the $render function is doing the same in the other direction, updating the view for us whenever the model changes. The directive is surprisingly simple, leaving the ng-model aside. But without the ng-model support we would have to come up with our own model-attribute handling which would not be consistent with other directives."
+    },
+    {
+      "title": "Enabling/Disabling DOM Elements Conditionally",
+      "url": "/directives/enabling-disabling-dom-elements-conditionally.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "You wish to disable a button depending on a checkbox state. Use the ng-disabled directive and bind its condition to the checkbox state. The ng-disabled directive is a direct translation from the disabled HTML attribute, without you needing to worry about browser incompatibilities. It is bound to the checked model using an attribute value as is the checkbox using the ng-model directive. In fact the checked attribute value is again an Angular expression. You could for example invert the logic and use !checked instead. This is just one example of a directive shipped with Angular. There are many others like for example ng-hide, ng-checked or ng-mouseenter and I encourage you go through the API Reference and explore all the directives Angular has to offer. In the next recipes we will focus on implementing directives."
+    },
+    {
+      "title": "Encapsulating a Model Value with a Controller Function",
+      "url": "/controllers/encapsulation-a-model-value-with-a-controller-function.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "You wish to retrieve a model via function (instead of directly accessing the scope from the template) that encapsulates the model value. Define a getter function that returns the model value. Then in the template we use an expression to call it: MyCtrl defines the getIncrementedValue function, which uses the current value and returns it incremented by one. One could argue that depending on the use case it would make more sense to use a filter. But there are use cases specific to the controllers behavior where a generic filter is not required."
+    },
+    {
+      "title": "Filtering a List of DOM Nodes",
+      "url": "/filters/filtering-a-list-of-dom-nodes.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "You wish to filter a ul list of names. As well as with strings as input, Angular’s filters also work with arrays. We pass Peter as the single param to the exclude filter, which will render all names except Peter. You can find the complete example on github. The filter implementation loops through all names and creates a result array excluding ‘Peter’. Note that the actual syntax of the filter function didn’t change at all from our previous example with the String input."
+    },
+    {
+      "title": "Filtering and Sorting a List",
+      "url": "/common-user-interface-patterns/filtering-and-sorting-a-list.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "You wish to filter and sort a relatively small list of items all available on the client. For this example we will render a list of friends using the ng-repeat directive. Using the built-in filter and orderBy filters we will filter and sort the friends list client-side. A plain text input field is used to enter the filter query and bound to the filter. Any changes are therefore directly used to filter the list. The controller defines the default friends array: You can find the complete example on github. Chaining filters is a fantastic way of implementing such a use case as long as you have all the data available on the client. The filter Angular.js Filter works on an array and returns a subset of items as a new array. It supports a String, Object or Function parameter. In this example we only use the String parameter, but given that the $scope.friends is an array of objects we could think of more complex examples where we use the Object param, as for example: That way we can filter by name and age at the same time. And lastly you could call a function defined in the controller, which does the filtering for you: The filterFunction must return either true or false. In this example we use a regular expression on the name starting with Ma to filter the list."
+    },
+    {
+      "title": "Formatting a String with currency Filter",
+      "url": "/filters/formatting-string-with-currency-filter.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "You wish to format the amount of currency with a localized currency label. Use the built-in currency filter and make sure you load the corresponding locale file for the user’s language. Enter an amount and it will be displayed using Angular’s default locale. You can find the complete example on github. In our example we explicitly load the German locale settings and therefore the default formatting will be in German. The English locale is shipped by default, so there’s no need to include the angular-locale_en.js file. If you remove the script tag, you will see the formatting change to English instead. This means in order for a localized application to work correctly you need to load the corresponding locale file. All available locale files can be seen on github."
+    },
+    {
+      "title": "Implementing a Basic Form",
+      "url": "/using-forms/implement-a-basic-form.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "You wish to create a form to enter user details and capture this information in an Angular.js scope. Use the standard form tag and the ng-model directive to implement a basic form: The novalidate attribute disables the HTML5 validations, which are client-side validations supports by modern browsers. In our example we only want the Angular.js validations running to have complete control over the look and feel. The controller binds the form data to your user model and implements the submit() function: You can find the complete example on github. The initial idea when using forms would be to implement them in the traditional way by serialising the form data and submit it to the server. Instead we use ng-model to bind the form to our model, something we have been doing a lot already in previous recipes. The submit button state is reflected in our wasSubmitted scope variable, but no submit to the server was actually done. The default behavior in Angular.js forms is to prevent the default action since we do not want to reload the whole page. We want to handle the submission in an application-specific way. In fact there is even more going on in the background and we are going to look into the behavior of the form or ng-form directive in the next recipe."
+    },
+    {
+      "title": "Implementing Client-Side Routing",
+      "url": "/backend-integration-with-node-express/implementing-client-side-routing.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "You wish to use client-side routing in conjunction with an Express backend. Every request to the backend should initially render the complete layout in order to load our Angular app. Only then will the client-side rendering take over. Let us first have a look at the route definition for this “catch all” route in our app.js. It uses the wildcard character to catch all requests in order to get processed with the routes.index module. Additionally, it defines the route to use the same module. The module again resides in routes/index.js. The implementation only renders the layout template. It uses the Jade template engine. Now that we can actually render the initial layout we can get started with the client-side routing definition in app.js We define route definitions to list, show and edit contacts and use a set of partials and corresponding controllers. In order for the partials to get loaded correctly we need to add another express route in the backend which serves all these partials. It uses the name of the partial as an URL param and renders the partial with the given name from the partial directory. Keep in mind that you must define that route before the catch all route, otherwise it will not work. You can find the complete example on github. Compared to Rails the handling of partials is quite explicit by defining a route for partials. On the other hand it is quite nice to being able to use jade templates for our partials too."
+    },
+    {
+      "title": "Implementing Client-Side Routing",
+      "url": "/backend-integration-with-ruby-on-rails/implementing-client-side-routing.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "You wish to use client-side routing in conjunction with a Ruby on Rails backend. Every request to the backend should initially render the complete page in order to load our Angular app. Only then will the client-side rendering take over. Let us first have a look at the route definition for this “catch all” route. It uses Route Globbing to match all URLs and defines a root URL. Both will be handled by a layout controller with the sole purpose of rendering the initial layout. The actual layout template defines our ng-view directive and resides in app/views/layouts/application.html - nothing new here. So let’s skip ahead to the Angular route definition in app.js.erb. We set the $locationProvider to use the HTML5 mode and define our client-side routes for listing, showing, editing and creating new contacts. You can find the complete example on github. Let us have a look into the route definition again. First of all the filename ends with erb, since it uses ERB tags in the javascript file, courtesy of the Rails Asset Pipeline. The  asset_path method is used to retrieve the URL to the HTML partials since it will change depending on the environment. On production the filename contains an MD5 checksum and the actual ERB output will change from /assets/contacts/index.html to /assets/contacts/index-7ce113b9081a20d93a4a86e1aacce05f.html. If your Rails app is configured to use an asset host, the path will in fact be absolute."
+    },
+    {
+      "title": "Implementing a Custom Filter to Reverse an Input String",
+      "url": "/filters/implementing-custom-filter-to-reverse-an-input-string.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "You wish to reverse user’s text input. Implement a custom filter, which reverses the input. You can find the complete example on github. Angular’s filter function expects a filter name and a function as params. The function must return the actual filter function where you implement the business logic. In this example it will only have an input param. The result will be returned after the for loop has reversed the input."
+    },
+    {
+      "title": "Implementing Custom Validations",
+      "url": "/using-forms/implementing-custom-validations.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "You wish to validate user input by comparing it to a blacklist of words. The angular-ui project offers a nice custom validation directive which lets you pass in options via expression. Let us have a look at the template first with the usage of the ui-validate Directive: And the controller with the notBlackListed implementation: You can find the complete example on github. First we need to explicitly list our module dependency to the Angular UI directives module. Make sure you actually download the javascript file and load it via script tag. Our blacklist contains the words we do not want to accept as user input and the notBlackListed function checks if the user input matches any of the words defined in the blacklist. The ui-validate directive is pretty powerful since it lets you define your custom validations easily by just implementing the business logic in a controller function. If you want to know even more, have a look at how to implement custom directives for yourself in Angular’s excellent guide."
+    },
+    {
+      "title": "Including the Angular.js Library Code in an HTML Page",
+      "url": "/introduction/including-the-angular-library-code-in-an-html-page.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "You wish to use Angular.js on a web page. In order to get your first Angular.js app up and running you need to include the Angular Javascript file via script tag and make use of the ng-app directive. Adding the ng-app directive tells Angular to kick in its magic. The expression 1 is evaluated by Angular and the result 3 is rendered. Note that removing ng-app will result in the browser rendering the expression as is instead of evaluating it. Play around with the expression! You can, for instance, concatenate Strings and invert or combine Boolean values."
+    },
+    {
+      "title": "Home",
+      "url": "/index.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "A community project dedicated to collecting resources for the Angular.js framework. You find here easy to follow cookbook style recipes for issues you are likely to face when working with Angular.js. 13.Feb 2015 - I've added jsFiddle integration for almost all recipes. Just press the jsFiddle button at the end of the recipe and you have the running code. Additionally, please use the social sharing links for Twitter, Facebook and Google+ and share helpful recipes! 1.Feb 2015 - Finally there's a new design for Recipes with Angular.js! It should make it much easier to browse and search recipes. Furthermore I've integrated comments using the disqus service. So, ask your questions and help me improve the recipes! Have fun and watch this place for upcoming changes!        You can create an issue on Github in case you find errors in the existing recipes or have ideas for new ones. New recipes are contributed by forking the repository and sending a pull request.      The original content of this site is based on my ebook Recipes with Angular.js. I'm currently working hard to release all chapters on this website in the coming weeks. If you like this site, please support me and buy the book!              Angular.js is an open-source Javascript MVC (Model-View-Controller) framework developed by Google. It gives Javascript developers a highly structured approach to developing rich browser-based applications which leads to very high productivity.                         If you are using Angular.js, or considering it, this cookbook provides easy to follow recipes for issues you are likely to face. Each recipe solves a specific problem and provides a solution and in-depth discussion of it.           "
+    },
+    {
+      "title": "Using Forms",
+      "url": "/using-forms/index.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "Every website eventually uses some kind of form for users to enter data. Angular makes it particularly easy to implement client-side form validations to give immediate feedback for an improved user experience."
+    },
+    {
+      "title": "Filters",
+      "url": "/filters/index.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "Angular Filters are typically used to format expressions in bindings in your template. They transform the input data to a new formatted data type."
+    },
+    {
+      "title": "URLs, Routing and Partials",
+      "url": "/urls-routing-and-partials/index.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "The $location service in Angular.js parses the current browser URL and makes it available to your application. Changes in either the browser address bar or the $location service will be kept in sync. Depending on the configuration, the $location service behaves differently and has different requirements for your application. We will first look into client-side routing with hashbang URLs since it is the default mode, and then later, look at the new HTML5-based routing."
+    },
+    {
+      "title": "Directives",
+      "url": "/directives/index.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "Directives are one of the most powerful concepts in Angular since they let you invent new HTML elements specific to your application. This allows you to create reusable components which encapsulate complex DOM structures, stylesheets and even behavior."
+    },
+    {
+      "title": "Controllers",
+      "url": "/controllers/index.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "Controllers in Angular provide the business logic to handle view behavior, for example responding to a user clicking a button or entering some text in a form. Additionally, controllers prepare the model for the view template. As a general rule, a controller should not reference or manipulate the DOM directly. This has the benefit of simplifying unit testing controllers."
+    },
+    {
+      "title": "Introduction",
+      "url": "/introduction/index.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "Welcome to Recipes with Angular.js. Let's get started!"
+    },
+    {
+      "title": "Consuming External Services",
+      "url": "/consuming-external-services/index.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "Angular has built-in support for communication with remote HTTP servers. The $http service handles low-level AJAX requests via the browser’s XMLHttpRequest object or via JSONP. The $resource service lets you interact with RESTful data sources and provides high-level behaviors which naturally map to RESTful resources."
+    },
+    {
+      "title": "Backend Integration with Node Express",
+      "url": "/backend-integration-with-node-express/index.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "In this chapter we will have a look into solving common problems when combining Angular.js with the Node.js Express framework. The examples used in this chapter are based on a Contacts app to manage a list of contacts. As an extra we use MongoDB as a backend for our contacts since it requires further customization to make it work in conjunction with Angular’s $resource service."
+    },
+    {
+      "title": "Backend Integration with Ruby on Rails",
+      "url": "/backend-integration-with-ruby-on-rails/index.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "In this chapter we will have a look at using Angular.js with the Ruby on Rails framework."
+    },
+    {
+      "title": "Common User Interface Patterns",
+      "url": "/common-user-interface-patterns/index.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": ""
+    },
+    {
+      "title": "Listening on Route Changes to Implement a Login Mechanism",
+      "url": "/urls-routing-and-partials/listening-on-route-changes-to-implement-a-login-mechanism.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "You wish to ensure that a user has to login before navigating to protected pages. Implement a listener on the $routeChangeStart event to track the next route navigation. Redirect to a login page if the user is not yet logged in. The most interesting part is the implementation of the route change listener: Next we will define a login form to enter the username, skipping the password for the sake of simplicity: and finally the login controller, which sets the logged in user and redirects to the persons URL: You can find the complete example on github. This is of course not a fully fledged login system so please don’t use it in any production system. But, it exemplifies how to generally handle access to specific areas of your web app. When you open the app in your browser you will be redirected to the login app in all cases. Only after you have entered a username can you access the other areas. The run method is defined in Module and is a good place for such a route change listener since it runs only once on initialization after the injector is finished loading all the modules. We check the loggedInUser in the $rootScope and if it is not set we redirect the user to the login page. Note that in order to skip this behavior when already navigating to the login page, we have to explicitly check the next templateUrl. The login controller sets the $rootScope to the username and redirects to /persons. Generally, I try to avoid using the $rootScope since it basically is a kind of global state but in our case it fits nicely since there should be a current user globally available."
+    },
+    {
+      "title": "Only Enabling the Submit Button if the Form is Valid",
+      "url": "/using-forms/only-enabling-submit-button-if-the-form-is-valid.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "You wish to disable the Submit button as long as the form contains invalid data. Use the $form.invalid state in combination with a ng-disabled directive. Here is the changed submit button: You can find the complete example on github. The Form Controller attributes form.$invalid and friends are very useful to cover all kinds of use cases which focus on the form as a whole instead of individual fields. Note that you have to assign a name attribute to the form element, otherwise form.$invalid won’t be available."
+    },
+    {
+      "title": "Paginating Through Client-Side Data",
+      "url": "/common-user-interface-patterns/paginating-through-client-side-data.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "You have a table of data completely client-side and want to paginate through the data. Use an HTML table element with the ng-repeat directive to render only the items for the current page. All the pagination logic should be handled in a custom filter and controller implementation. Let us start with the template using Twitter Bootstrap for the table and pagination elements: The offset Filter is responsible for selecting the subset of items for the current page. It uses the slice function on the Array given the start param as the index. The controller manages the actual $scope.items array and handles the logic for enabling/disabling the pagination buttons. You can find the complete example on github. The initial idea of this pagination solution can be best explained by looking into the usage of ng-repeat to render the table rows for each item: The offset filter uses the currentPage*itemsPerPage to calculate the offset for the array slice operation. This will generate an array from the offset to the end of the array. Then we use the built-in limitTo filter to subset the array to the number of itemsPerPage. All this is done on the client side with filters only. The controller is responsible for supporting a nextPage and prevPage action and the accompanying functions to check the disabled state of these actions via ng-class directive: nextPageDisabled and prevPageDisabled. The prevPage function first checks if it has not reached the first page yet before decrementing the currentPage and the nextPage does the same for the last page and the same logic is applied for the disabled checks. This example is already quite involved and I intentionally omitted an explanation of the rendering of links between the previous and next buttons. The full implementation is online though for you to investigate."
+    },
+    {
+      "title": "Paginating Through Server-Side Data",
+      "url": "/common-user-interface-patterns/paginating-through-server-side-data.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "You wish to paginate through a large server-side result set. You cannot use the previous method with a filter since that would require all data to be available on the client. Instead we use an implementation with a controller only instead. The template has not changed much. Only the ng-repeat directive looks simpler now: In order to simplify the example we will fake a server-side service by providing an Angular service implementation for the items. The service manages a list of items and has methods for retrieving a subset of items for a given offset and limit and the total number of items. The controller uses dependency injection to access the Item service and contains almost the same methods as our previous recipe. You can find the complete example on github. When you select the next/previous page you will change the $scope.currentPage value and the $watch function is triggered. It fetches fresh items for the current page and the total number of items. So, on the client side we only have five items available as defined in itemsPerPage and when paginating we throw away the items of the previous page and fetch new items. If you want to try this with a real backend you only have to swap out the Item service implementation."
+    },
+    {
+      "title": "Paginating Using Infinite Results",
+      "url": "/common-user-interface-patterns/paginating-using-infinite-results.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "You wish to paginate through server-side data with a “Load More” button, which just keeps appending more data until no more data is available. Let’s start by looking at how the item table is rendered with the ng-repeat Directive. The controller uses the same Item Service as used for the previous recipe and handles the logic for the “Load More” button. You can find the complete example on github. The solution is actually pretty similar to the previous recipe and uses a controller only again. The $scope.pagedItems is retrieved initially to render the first five items. When pressing the “Load More” button we fetch another set of items incrementing the currentPage to change the offset of the Item.get function. The new items will be concatenated with the existing items using the Array concat function. The changes to pagedItems will be automatically rendered by the ng-repeat directive. The nextPageDisabledClass checks whether there is more data available by calculating the total number of pages in pageCount and comparing that to the current page."
+    },
+    {
+      "title": "Passing Configuration Params to Filters",
+      "url": "/filters/passing-configuration-params-to-filters.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "You wish to make your filter customizable by introducing config params. Angular filters can be passed a hash of params which can be directly accessed in the filter function. You can find the complete example on github. The suffix ! is passed as an option to the filter function and is appended to the output. Note that we check if an actual input exists since we don’t want to render the suffix without any input."
+    },
+    {
+      "title": "Passing Configuration Params Using HTML Attributes",
+      "url": "/directives/passing-configuration-params-using-html-attributes.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "You wish to pass a configuration param to change the rendered output. Use the attribute-based directive and pass an attribute value for the configuration. The attribute is passed as a parameter to the link function. This renders a paragraph with the text passed as the param. The link function has access to the element and its attributes. It is therefore straightforward to set the scope to the text passed as the attributes value and use this in the template evaluation. The scope context is important though. The text model we changed might already be defined in the parent scope and used in another part of your app. In order to isolate the context and thereby use it only locally inside your directive, we have to return an additional scope attribute. In Angular this is called an isolate scope. It does not prototypically inherit from the parent scope and is especially useful when creating reusable components. Let’s look into another way of passing params to the directive. This time we will define an HTML element my-widget2. The scope definition using @text is binding the text model to the directive’s attribute. Note that any changes to the parent scope text will change the local scope text, but not the other way around. If you want instead to have a bi-directional binding between the parent scope and the local scope, you should use the = equality character: Changes to the local scope will also change the parent scope. Another option would be to pass an expression as a function to the directive using the & character. We pass the attribute fn to the directive and since the local scope defines fn accordingly we can call the function in the linkFunction and pass in the expression arguments as a hash."
+    },
+    {
+      "title": "Rendering a Directive's DOM Node Children",
+      "url": "/directives/rendering-a-directives-dom-node-children.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "Your widget uses the child nodes of the directive element to create a combined rendering. Use the transclude attribute together with the ng-transclude directive. This will render a div element containing an h3 element and append the directive’s child node with the paragraph element below. In this context, transclusion refers to the inclusion of a part of a document into another document by reference. The ng-transclude attribute should be positioned depending on where you want your child nodes to be appended."
+    },
+    {
+      "title": "Rendering an HTML Snippet in a Directive",
+      "url": "/directives/rendering-an-html-snippet-in-a-directive.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "You wish to render an HTML snippet as a reusable component. Implement a directive and use the template attribute to define the HTML. This will render the Hello World paragraph as a child node of your my-widget element. If you want to replace the element entirely with the paragraph you will also have to return the replace attribute: Another option would be to use a file for the HTML snippet. In this case you will need to use the templateUrl attribute, for example as follows: The widget.html should reside in the same directory as the index.html file. This will only work if you use a web server to host the file. The example on Github uses angular-seed as bootstrap again."
+    },
+    {
+      "title": "Repeatedly Rendering Directive's DOM Node Children",
+      "url": "/directives/repeatedly-rendering-directives-dom-node-children.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "You wish to render an HTML snippet repeatedly using the directive’s child nodes as the “stamp” content. Implement a compile function in your directive. This will render the header and paragraph 10 times. The directive repeats the child nodes as often as configured in the repeat attribute. It works similarly to the ng-repeat directive. The implementation uses Angular’s element methods to append the child nodes in a for loop. Note that the compile method only has access to the templates element tElement and template attributes. It has no access to the scope and you therefore can’t use $watch to add behavior either. This is in comparison to the link function that has access to the DOM “instance” (after the compile phase) and has access to the scope to add behavior. Use the compile function for template DOM manipulation only. Use the link function whenever you want to add behavior. Note that you can use both compile and link function combined. In this case the compile function must return the link function. As an example you want to react to a click on the header: Clicking the header will change the background color to red."
+    },
+    {
+      "title": "Requesting JSON data with AJAX",
+      "url": "/consuming-external-services/requesting-json-data-with-ajax.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "You wish to fetch JSON data via AJAX request and render it. Implement a controller using the $http service to fetch the data and store it in the scope. You can find the complete example using the angular-seed project on github. The controller defines a dependency to the $scope and the $http module. An HTTP GET request to the data/posts.json endpoint is carried out with the get method. It returns a $promise object with a success and an error method. Once successful, the JSON data is assigned to $scope.posts to make it available in the template. The $http service supports the HTTP verbs get, head, post, put, delete and jsonp. We are going to look into more examples in the following chapters. The $http service automatically adds certain HTTP headers like for example X-Requested-With: XMLHttpRequest. But you can also set custom HTTP headers by yourself using the $http.defaults function: Until now the $http service does not really look particularly special. But if you look into the documentation you find a whole lot of nice features like, for example, request/response transformations, to automatically deserialize JSON for you, response caching, response interceptors to handle global error handling, authentication or other preprocessing tasks and, of course, promise support. We will look into the $q service, Angular’s promise/deferred service in a later chapter."
+    },
+    {
+      "title": "Responding to Click Events using Controllers",
+      "url": "/introduction/responding-to-click-events-using-controllers.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "You wish to hide an HTML element on button click. Use the ng-hide directive in conjunction with a controller to change the visibility status on button click. And the controller in js/app.js: When toggling the button the “Hello World” paragraph will change its visibility. Using the ng-controller directive, we bind the div element including its children to the context of the MyCtrl controller. The ng-click directive will call the toggle() function of our controller on button click. Note that the ng-show directive is bound to the visible scope variable and will toggle the paragraph’s visibility accordingly. The controller implementation defaults the visible attribute to true and toggles its Boolean state in the toggle function. Both the visible variable and the toggle function are defined on the $scope service which is passed to all controller functions automatically via dependency injection. The next chapter will go into all the details of controllers in Angular. For now let us quickly discuss the MVVM (Model-View-ViewModel) pattern as used by Angular. In the MVVM pattern the model is plain Javascript, the view is the HTML template and the ViewModel is the glue between the template and the model. The ViewModel makes Angular’s two-way binding possible where changes in the model or the template are in sync automatically. In our example, the visible attribute is the model, but it could of course be much more complex , when for example retrieving data from a backend service. The controller is used to define the scope which represents the ViewModel. It interacts with the HTML template by binding the scope variable visible and the function toggle() to it."
+    },
+    {
+      "title": "Responding to Scope Changes",
+      "url": "/controllers/responding-to-scope-changes.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "You wish to react on a model change to trigger some further actions. In our example we simple want to set another model value depending on the value we are listening to. Use the $watch function in your controller. In our example we use the text input value to print a friendly greeting. The value greeting will be changed whenever there’s a change to the name model and the value is not blank. The first argument name of the $watch function is actually an Angular expression, so you can use more complex expressions (for example: [value1, value2] | json) or even a Javascript function. In this case you need to return a string in the watcher function: The second argument is a function which gets called whenever the expression evaluation returns a different value. The first parameter is the new value and the second parameter the old value. Internally, this uses angular.equals to determine equality which means both objects or values pass the === comparison."
+    },
+    {
+      "title": "Sharing Code Between Controllers using Services",
+      "url": "/controllers/sharing-code-between-controllers-using-services.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "You wish to share business logic between controllers. Utilise a Service to implement your business logic and use dependency injection to use this service in your controllers. The template shows access to a list of users from two controllers: The service and controller implementation in app.js implements a user service and the controllers set the scope initially: You can find the complete example on github. The factory method creates a singleton UserService, that returns two functions for retrieving all users and the first user only. The controllers get the UserService injected by adding it to the controller function as params. Using dependency injection here is quite nice for testing your controllers, since you can easily inject a UserService stub. The only downside is that you can’t minify the code from above without breaking it, since the injection mechanism relies on the exact string representation of UserService. It is therefore recommended to define dependencies using inline annotations, which keeps working even when minified: The syntax looks a bit funny, but since strings in arrays are not changed during the minification process it solves our problem. Note that you could change the parameter names of the function, since the injection mechanism relies on the order of the array definition only. Another way to achieve the same is using the $inject annotation: This requires you to use a temporary variable to call the $inject service. Again, you could change the function parameter names. You will most probably see both versions applied in apps using Angular."
+    },
+    {
+      "title": "Sharing Models Between Nested Controllers",
+      "url": "/controllers/sharing-models-between-nested-controllers.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "You wish to share a model between a nested hierarchy of controllers. Use Javascript objects instead of primitives or direct $parent scope references. Our example template uses a controller MyCtrl and a nested controller MyNestedCtrl: The app.js file contains the controller definition and initializes the scope with some defaults: Play around with the various input fields and see how changes affect each other. All the default values are defined in MyCtrl which is the parent of MyNestedCtrl. When making changes in the first input field, the changes will be in sync with the other input fields bound to the name variable. They all share the same scope variable as long as they only read from the variable. If you change the nested value, a copy in the scope of the MyNestedCtrl will be created. From now on, changing the first input field will only change the nested input field which explicitly references the parent scope via $parent.name expression. The object-based value behaves differently in this regard. Whether you change the nested or the MyCtrl scopes input fields, the changes will stay in sync. In Angular, a scope prototypically inherits properties from a parent scope. Objects are therefore references and kept in sync. Whereas primitive types are only in sync as long they are not changed in the child scope. Generally I tend to not use $parent.name and instead always use objects to share model properties. If you use $parent.name the MyNestedCtrl not only requires certain model attributes but also a correct scope hierarchy to work with. Tip: The Chrome plugin Batarang simplifies debugging the scope hierarchy by showing you a tree of the nested scopes. It is awesome!"
+    },
+    {
+      "title": "Testing Controllers",
+      "url": "/controllers/testing-controllers.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "You wish to unit test your business logic. Implement a unit test using Jasmine and the angular-seed project. Following our previous $watch recipe, this is how our spec would look. Jasmine specs use describe and it functions to group specs and beforeEach and afterEach to setup and teardown code. The actual expectation compares the greeting from the scope with our expectation Greetings Frederik. The scope and controller initialization is a bit more involved. We use inject to initialize the scope and controller as closely as possible to how our code would behave at runtime too. We can’t just initialize the scope as a Javascript object {} since we would then not be able to call $watch on it. Instead $rootScope.$new() will do the trick. Note that the $controller service requires MyCtrl to be available and uses an object notation to pass in dependencies. The $digest call is required in order to trigger a watch execution after we have changed the scope. We need to call $digest manually in our spec whereas at runtime Angular will do this for us automatically."
+    },
+    {
+      "title": "Testing Directives",
+      "url": "/directives/testing-directives.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "You wish to test your directive with a unit test. As an example we will use a tab component directive implementation, which can easily be used in your HTML document. The directive implementation is split into the tabs and the pane directive. Let us start with the tabs directive. It manages a list of panes and the selected state of the panes. The template definition makes use of the selection to change the class and responds on the click event to change the selection. The pane directive depends on the tabs directive to add itself to it. Using the angular-seed in combination with jasmine and jasmine-jquery, you can implement a unit test. Combining jasmine with jasmine-jquery gives you useful assertions like toHaveClass and actions like click, which are used extensively in the example above. To prepare the template we use $compile and $digest in the beforeEach function and then access the resulting Angular element in our tests. The angular-seed project was slightly extended to add jquery and jasmine-jquery to the project. The example code was extracted from Vojta Jina’ Github example - the author of the awesome Testacular."
+    },
+    {
+      "title": "Testing Filters",
+      "url": "/filters/testing-filters.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "You wish to unit test your new filter. Let us start with an easy filter, which renders a checkmark depending on a boolean value. Use the angular-seed project as a bootstrap again. The beforeEach loads the module and the it method injects the filter function for us. Note, that it has to be called checkmarkFilter, otherwise Angular can’t inject our filter function correctly."
+    },
+    {
+      "title": "Testing Services",
+      "url": "/consuming-external-services/testing-services.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "You wish to unit test your controller and service consuming a JSONP API. Let’s have a look again at our example we wish to test: Note that it slightly changed from the previous recipe as the TwitterAPI is pulled out of the controller and resides in its own service now. Use the angular-seed project and the $http_backend mocking service. You can find the complete example on github. Since we now have a clear separation between the service and the controller, we can simply inject the TwitterAPI into our beforeEach function. Mocking with the $httpBackend is done as a last step in beforeEach. When a JSONP request happens we respond with mockData. After the search() is triggered we flush() the httpBackend in order to return our mockData. Have a look at the ngMock.$httpBackend module for more details."
+    },
+    {
+      "title": "Using Regular URLs with the HTML5 History API",
+      "url": "/urls-routing-and-partials/using-regular-urls-with-the-html5-history-api.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "You want nice looking URLs and can provide server-side support. We will use the same example but use the Express framework to serve all content and handle the URL rewriting. Let us start with the route configuration: There are no changes except for the html5Mode method, which enables our new routing mechanism. The Controller implementation does not change at all. We have to take care of the partial loading though. Our Express app will have to serve the partials for us. The initial typical boilerplate for an Express app loads the module and creates a server: We will skip the configuration here and jump directly to the server-side route definition: The Express route definition loads the partial with given name from the partials directory and renders its content. When supporting HTML5 routing, our server has to redirect all other URLs to the entry point of our application, the index page. First we define the rendering of the index page, which contains the ng-view directive: Then the catch all route which redirects to the same page: Let us quickly check the partials again. Note that they use the Jade template engine, which relies on indentation to define the HTML document: The index page creates a list of persons and the show page shows some more details: The person details link /persons/ and the back link /persons are both now much cleaner in my opinion compared to the hashbang URLs. Have a look at the complete example on Github and start the Express app with node app.js. You can find the complete example on github. If we weren’t to redirect all requests to the root, what would happen if we were to navigate to the persons list at http://localhost:3000/persons? The Express framework would show us an error because there is no route defined for persons, we only defined routes for our root URL (/) and the partials URL /partials/:name. The redirect ensures that we actually end up at our root URL, which then kicks in our Angular app. When the client-side routing takes over we then redirect back to the /persons URL. Also note how navigating to a person’s detail page will load only the show.jade partial and navigating back to the persons list won’t carry out any server requests. Everything our app needs is loaded once from the server and cached client-side. If you have a hard time understanding the server implementation, I suggest you read the excellent Express Guide. Additionally, there is going to be an extra chapter, which goes into more details on how to integrate Angular.js with server-side frameworks."
+    },
+    {
+      "title": "Using Route Location to Implement a Navigation Menu",
+      "url": "/urls-routing-and-partials/using-route-location-to-implement-a-navigation-menu.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "You wish to implement a navigation menu, which shows the selected menu item to the user. Use the $location service in a controller to compare the address bar URL to the navigation menu item the user selected. The navigation menu is the classic ul/li menu using a class attribute to mark one of the li elements as active: The controller implements the menuClass function: You can find the complete example on github. When the user selects a menu item the client-side navigation will kick in as expected. The menuClass function is bound using the ngClass directive and updates the CSS class automatically for us depending on the current route. Using $location.path() we get the current route. The substring operation removes the leading slash (/) and converts /persons to persons."
+    },
+    {
+      "title": "Validating a Form Model Client-Side",
+      "url": "/using-forms/validating-a-form-model-client-side.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "You wish to validate the form client-side using HTML5 form attributes. Angular.js works in tandem with HTML5 form attributes. Let us start with the same form but let us add some HTML5 attributes to make the input required: It is still the same form but this time we defined the name attribute on the form and made the input required for the firstname. Let us add some more debug output below the form: You can find the complete example on github. When starting with a fresh empty form, you will notice that Angular adds the css class ng-pristine and ng-valid to the form tag and each input tag. When editing the form the ng-pristine class will be removed from the changed input field and also from the form tag. Instead it will be replaced by the ng-dirty class. Very useful because it allows you to easily add new features to your app depending on these states. In addition to these two css classes there are two more to look into. The ng-valid class will be added whenever an input is valid, otherwise the css class ng-invalid is added. Note that the form tag also gets either a valid or invalid class depending on the input fields. To demonstrate this I’ve added the required HTML5 attribute. Initially, the firstname and lastname input fields are empty and therefore have the ng-invalid css class, whereas the age input field has the ng-valid class. Additionally, there’s ng-invalid-required class alongside the ng-invalid for even more specificity. Since we defined the name attribute on the form HTML element we can now access Angular’s form controller via scope variables. In the debug output we can check the validity and specific error for each named form input and the form itself. Note that this only works on the level of the form’s name attributes and not on the model scope. If you output the following expression {{user.firstname.$error}} it will not work. Angular’s form controller exposes $valid, $invalid, $error, $pristine and $dirty variables. For validation, Angular provides built-in directives including required, pattern, minlength, maxlength, min and max. Let us use Angular’s form integration to actually show validation errors in the next recipe."
+    },
+    {
+      "title": "Validating Forms Server-Side",
+      "url": "/backend-integration-with-ruby-on-rails/validating-forms-server-side.html",
+      "date": null,
+      "categories": [
+
+      ],
+      "body": "You wish to validate forms using a server-side REST API provided by Rails. Rails already provides model validation support out of the box for us. Let us start with the Contact ActiveRecord model. It defines a validation on the age attribute. It must be an integer and less or equal to 50 years. In the ContactsController we can use that to make sure the REST API returns proper error messages. As an example let us look into the create action. On success it will render the contact model using a JSON presentation and on failure it will return all validation errors transformed to JSON. Let us have a look at an example JSON response: It is a hash with an entry for each attribute with validation errors. The value is an array of Strings since there might be multiple errors at the same time. Let us move on to the client-side of our application. The Angular.js contact $resource calls the create function and passes the failure callback function. Note that ActiveRecord attributes can have multiple validations defined. That is why the failure function iterates through each validation entry and each error and uses $setValidity and $dirty to mark the form fields as invalid. Now we are ready to show some feedback to our users using the same approach discussed already in the forms chapter. The errorClass function adds the error CSS class if the form field is invalid and dirty. This will render the label, input field and the help block with a red color. The errorMessage will print a more detailed error message and is defined in the same controller. It iterates over each error message and creates a comma separated String out of it. You can find the complete example on github. Finally, the errorMessage handling is of course pretty primitive. A user would expect a localized failure message instead of this technical presentation. The Rails Internationalization Guide describes how to translate validation error messages in Rails and might prove helpful to further use that in your client-side code."
+    }
+  ]
+}

@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Recipes with Angular.js - Displaying Form Validation Errors</title>
+    <meta keywords="javascript, js, angular.js, angularjs, recipes with angular.js, recipes with angularjs, best practices, cookbook, tutorial, book">
+    <meta name="viewport" content="width=device-width">
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+
+    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:300,400' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="/recipes-with-angular-js/css/application.css" type="text/css" media="all" />
+  </head>
+    <body ng-app="RecipesApp">
+
+      <div class="contain-to-grid">
+        <nav class="top-bar">
+          <ul class="title-area">
+            <li class="name">
+              <h1>
+                <a href="/recipes-with-angular-js/">
+                  <img class="logo-image" src="/recipes-with-angular-js/images/AngularJS-Shield-small.png" alt="" width="36" height="36">
+                  <span>Recipes with Angular.js</span>
+                </a>
+              </h1>
+            </li>
+            <li class="toggle-topbar menu-icon">
+              <a href="#"><span>Menu</span></a>
+            </li>
+          </ul>
+
+          <section class="top-bar-section2">
+            <ul class="right" style="position: relative">
+              <li class="has-form">
+                <div class="row collapse">
+                  <div class="large-8 small-9 columns">
+                    <input type="text" id="search-query" name="q" autocomplete="off" placeholder="Search recipes">
+                  </div>
+                  <div class="large-4 small-3 columns">
+                    <a href="#" class="alert button expand top-bar-button">Search</a>
+                  </div>
+                </div>
+              </li>
+
+              <div id="search-results" style="display: none;">
+                <ul class="entries">
+                </ul>
+              </div>
+            </ul>
+          </section>
+        </nav>
+      </div>
+
+      <div class="row">
+        <div class="large-12 columns">
+          <div class="row">
+  <div class="large-3 medium-6 columns">
+    <ul class="side-nav">
+  <li> <a href="/recipes-with-angular-js/index.html">Home</a> </li>
+  
+    <li >
+      <a href="/recipes-with-angular-js/introduction/index.html">Introduction</a>
+
+      
+
+    </li>
+  
+    <li >
+      <a href="/recipes-with-angular-js/controllers/index.html">Controllers</a>
+
+      
+
+    </li>
+  
+    <li >
+      <a href="/recipes-with-angular-js/directives/index.html">Directives</a>
+
+      
+
+    </li>
+  
+    <li >
+      <a href="/recipes-with-angular-js/filters/index.html">Filters</a>
+
+      
+
+    </li>
+  
+    <li  class="active" >
+      <a href="/recipes-with-angular-js/using-forms/index.html">Using Forms</a>
+
+      
+        <ul>
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              
+                <li >
+                  <a href="/recipes-with-angular-js//using-forms/implement-a-basic-form.html">Implementing a Basic Form</a>
+                </li>
+              
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              
+                <li >
+                  <a href="/recipes-with-angular-js//using-forms/validating-a-form-model-client-side.html">Validating a Form Model Client-Side</a>
+                </li>
+              
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              
+                <li  class="active" >
+                  <a href="/recipes-with-angular-js//using-forms/displaying-form-validation-errors.html">Displaying Form Validation Errors</a>
+                </li>
+              
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              
+                <li >
+                  <a href="/recipes-with-angular-js//using-forms/displaying-form-validation-errors-with-the-twitter-bootstrap-framework.html">Displaying Form Validation Errors with the Twitter Bootstrap framework</a>
+                </li>
+              
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              
+                <li >
+                  <a href="/recipes-with-angular-js//using-forms/only-enabling-submit-button-if-the-form-is-valid.html">Only Enabling the Submit Button if the Form is Valid</a>
+                </li>
+              
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              
+                <li >
+                  <a href="/recipes-with-angular-js//using-forms/implementing-custom-validations.html">Implementing Custom Validations</a>
+                </li>
+              
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+        </ul>
+      
+
+    </li>
+  
+    <li >
+      <a href="/recipes-with-angular-js/consuming-external-services/index.html">Consuming External Services</a>
+
+      
+
+    </li>
+  
+    <li >
+      <a href="/recipes-with-angular-js/urls-routing-and-partials/index.html">Urls Routing and Partials</a>
+
+      
+
+    </li>
+  
+    <li >
+      <a href="/recipes-with-angular-js/common-user-interface-patterns/index.html">Common User Interface Patterns</a>
+
+      
+
+    </li>
+  
+    <li >
+      <a href="/recipes-with-angular-js/backend-integration-with-ruby-on-rails/index.html">Backend Integration with Ruby on Rails</a>
+
+      
+
+    </li>
+  
+    <li >
+      <a href="/recipes-with-angular-js/backend-integration-with-node-express/index.html">Backend Integration with Node Express</a>
+
+      
+
+    </li>
+  
+
+  <!-- <li >
+    <a href="/recipes-with-angular-js/introduction/index.html">Introduction</a>
+    
+  </li>
+
+  <li >
+    <a href="/recipes-with-angular-js/controllers/index.html">Controllers</a>
+    
+  </li>
+
+  <li >
+    <a href="/recipes-with-angular-js/directives/index.html">Directives</a>
+    
+  </li>
+
+  <li >
+    <a href="/recipes-with-angular-js/filters/index.html">Filters</a>
+    
+  </li>
+
+  <li >
+    <a href="/recipes-with-angular-js/consuming-external-services/index.html">Consuming External Services</a>
+    
+  </li>
+
+  <li >
+    <a href="/recipes-with-angular-js/urls-routing-and-partials/index.html">URLs, Routing and Partials</a>
+    
+  </li>
+
+  <li >
+    <a href="/recipes-with-angular-js/common-user-interface-patterns/index.html">Common User Interface Patterns</a>
+    
+  </li>
+
+  <li >
+    <a href="/recipes-with-angular-js/backend-integration-with-ruby-on-rails/index.html">Backend Integration with Ruby on Rails</a>
+    
+  </li>
+
+  <li >
+    <a href="/recipes-with-angular-js/backend-integration-with-node-express/index.html">Backend Integration with Node Express</a>
+    
+  </li> -->
+</ul>
+  </div>
+  <div class="large-9 medium-6 columns content">
+
+    <h2>Displaying Form Validation Errors</h2>
+    <h3 id="problem">Problem</h3>
+<p>You wish to show validation errors to the user by marking the input field red and displaying an error message.</p>
+
+<h3 id="solution">Solution</h3>
+<p>We can use the <code>ng-show</code> directive to show an error message if a form input is invalid and CSS classes to change the input element’s background color depending on its state.</p>
+
+<p>Let us start with the styling changes:</p>
+
+<div>
+  <pre data-line=""><code class="language-markup">&lt;style type=&quot;text/css&quot;&gt;
+  input.ng-invalid.ng-dirty {
+    background-color: red;
+  }
+  input.ng-valid.ng-dirty {
+    background-color: green;
+  }
+&lt;/style&gt;</code></pre>
+</div>
+
+<p>And here is a small part of the form with an error message for the input field:</p>
+
+<div>
+  <pre data-line=""><code class="language-markup">&lt;label&gt;Firstname&lt;/label&gt;
+&lt;input name=&quot;firstname&quot; type=&quot;text&quot; ng-model=&quot;user.firstname&quot; required/&gt;
+&lt;p ng-show=&quot;form.firstname.$invalid &amp;&amp; form.firstname.$dirty&quot;&gt;
+  Firstname is required
+&lt;/p&gt;</code></pre>
+</div>
+
+<p>You can find the complete example on <a href="https://github.com/fdietz/recipes-with-angular-js-examples/tree/master/chapter7/recipe3">github</a>.</p>
+
+<h3 id="discussion">Discussion</h3>
+<p>The CSS classes ensure that we initially show the fresh form without any classes. When the user starts typing in some input for the first time, we change it to either green or red. That is a good example of using the <code>ng-dirty</code> and <code>ng-invalid</code> CSS classes.</p>
+
+<p>We use the same logic in the <code>ng-show</code> directive to only show the error message when the user starts typing for the first time.</p>
+
+
+    <div class="bottom-actions">
+      <div class="recipe-actions">
+        
+          <form class="jsfiddle" method="post" action="http://jsfiddle.net/api/post/library/pure/" target="_blank">
+              <input type="hidden" name="html" value="&lt;body ng-app=&quot;MyApp&quot;&gt;
+  &lt;div ng-controller=&quot;User&quot;&gt;
+    &lt;form name=&quot;form&quot; ng-submit=&quot;submit()&quot; class=&quot;form-horizontal&quot; novalidate&gt;
+      &lt;label&gt;Firstname&lt;/label&gt;
+      &lt;input name=&quot;firstname&quot; type=&quot;text&quot; ng-model=&quot;user.firstname&quot; required/&gt;
+      &lt;p ng-show=&quot;form.firstname.$invalid &amp;&amp; form.firstname.$dirty&quot;&gt;Firstname is required&lt;/p&gt;
+      &lt;label&gt;Lastname&lt;/label&gt;
+      &lt;input type=&quot;text&quot; ng-model=&quot;user.lastname&quot; required/&gt;
+      &lt;label&gt;Age&lt;/label&gt;
+      &lt;input type=&quot;text&quot; ng-model=&quot;user.age&quot;/&gt;
+      &lt;br&gt;
+      &lt;button class=&quot;btn&quot;&gt;Submit&lt;/button&gt;
+    &lt;/form&gt;
+
+    User Model: &#123;&#123;user&#125;&#125;
+    &lt;br&gt;
+    Form was submitted: &#123;&#123;wasSubmitted&#125;&#125;
+    &lt;br&gt;
+    Firstname input valid: &#123;&#123;form.firstname.$valid&#125;&#125;
+    &lt;br&gt;
+    Firstname validation error: &#123;&#123;form.firstname.$error&#125;&#125;
+    &lt;br&gt;
+    Form valid: &#123;&#123;form.$valid&#125;&#125;
+    &lt;br&gt;
+    Form validation error: &#123;&#123;form.$error&#125;&#125;
+  &lt;/div&gt;
+&lt;/body&gt;"></input>
+
+              <input type="hidden" name="js" value="var app = angular.module(&quot;MyApp&quot;, []);
+
+app.controller(&quot;User&quot;, function($scope) {
+  $scope.user = {};
+  $scope.wasSubmitted = false;
+
+  $scope.submit = function() {
+    $scope.wasSubmitted = true;
+  };
+});"></input>
+
+        
+              <input type="hidden" name="resources" value="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js,http://code.jquery.com/jquery-1.10.1.min.js,http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css"></input>
+
+        <button class="btn small btn-primary">Edit in jsfiddle</button>
+      </form>
+        
+      </div>
+
+      <ul class="share-menu">
+        <li class="title">Share</li>
+        <li>
+          <a href="https://twitter.com/intent/tweet/?text=Checkout%20this%20Angular.js%20recipe%3A%20&url=http://127.0.0.1%2Frecipes-with-angular-js%2Fusing-forms%2Fdisplaying-form-validation-errors.html&via=fdietz" target="_blank">
+            <svg viewBox="0 0 12 12" preserveAspectRatio="xMidYMid meet" class="svg-icon svg-icon-twitter">
+              <path class="svg-icon-path" d="M10.8,3.5c0,0.1,0,0.2,0,0.3c0,3.3-2.5,7-7,7c-1.4,0-2.7-0.3-3.8-1c0.2,0,0.4,0,0.6,0c1.1,0,2.2-0.5,3.1-1.2 c-1.1,0-2-0.7-2.3-1.7c0.2,0,0.3,0,0.5,0s0.4,0,0.7-0.1c-1.1-0.2-2-1.2-2-2.4l0,0c0.3,0.2,0.7,0.3,1.1,0.3C1,4.3,0.6,3.5,0.6,2.7 c0-0.5,0.1-0.8,0.3-1.2c1.2,1.6,3,2.5,5,2.6c0-0.2-0.1-0.4-0.1-0.6c0-1.3,1.1-2.4,2.5-2.4c0.7,0,1.4,0.3,1.8,0.8 c0.6-0.1,1.1-0.3,1.6-0.6c-0.2,0.6-0.6,1.1-1.1,1.4c0.5-0.1,1-0.2,1.4-0.4C11.7,2.8,11.2,3.2,10.8,3.5z"></path>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/sharer/sharer.php?u=http://127.0.0.1%2Frecipes-with-angular-js%2Fusing-forms%2Fdisplaying-form-validation-errors.html" target="_blank" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+            <svg viewBox="0 0 12 12" preserveAspectRatio="xMidYMid meet" class="svg-icon svg-icon-facebook">
+              <path class="svg-icon-path" d="M9.1,0.1V2H8C7.6,2,7.3,2.1,7.1,2.3C7,2.4,6.9,2.7,6.9,3v1.4H9L8.8,6.5H6.9V12H4.7V6.5H2.9V4.4h1.8V2.8 c0-0.9,0.3-1.6,0.7-2.1C6,0.2,6.6,0,7.5,0C8.2,0,8.7,0,9.1,0.1z"></path>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://plus.google.com/share?url=http://127.0.0.1%2Frecipes-with-angular-js%2Fusing-forms%2Fdisplaying-form-validation-errors.html" target="_blank" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+            <svg viewBox="0 0 12 12" preserveAspectRatio="xMidYMid meet" class="svg-icon svg-icon-google">
+              <path class="svg-icon-path" d="M5.4,5.7c0,0.2,0.1,0.3,0.2,0.5c0.2,0.2,0.3,0.3,0.6,0.5s0.4,0.3,0.7,0.5C7,7.5,7.2,7.7,7.4,8 c0.2,0.3,0.2,0.6,0.2,1c0,0.4-0.1,0.8-0.3,1.2c-0.3,0.6-0.9,1-1.5,1.3S4.3,12,3.6,12c-0.6,0-1.2-0.1-1.8-0.3s-1-0.5-1.2-1 c-0.2-0.3-0.3-0.6-0.3-0.9c0-0.4,0.1-0.7,0.3-1.1c0.2-0.3,0.5-0.6,0.9-0.8c0.6-0.4,1.6-0.6,2.9-0.7C4.2,6.9,4.1,6.8,4,6.6 C4,6.4,3.9,6.3,3.9,6.1c0-0.2,0.1-0.4,0.2-0.6c-0.2,0-0.4,0-0.5,0c-0.7,0-1.3-0.2-1.8-0.7C1.3,4.3,1.1,3.7,1.1,3 c0-0.4,0.1-0.8,0.3-1.1S1.7,1.2,2,0.9c0.4-0.3,0.8-0.6,1.3-0.7C3.9,0.1,4.4,0,4.9,0h3l-1,0.6H6c0.4,0.3,0.6,0.6,0.8,1 s0.3,0.7,0.3,1.2c0,0.3-0.1,0.7-0.2,0.9C6.8,4,6.6,4.2,6.5,4.4C6.3,4.5,6.1,4.7,6,4.8C5.8,5,5.7,5.1,5.5,5.3 C5.4,5.4,5.4,5.6,5.4,5.7z M4.3,11.3c0.3,0,0.5,0,0.8-0.1c0.3-0.1,0.5-0.2,0.7-0.3c0.2-0.1,0.4-0.3,0.5-0.5c0.1-0.2,0.2-0.5,0.2-0.8 c0-0.1,0-0.2-0.1-0.4S6.5,9.1,6.4,9c0-0.1-0.1-0.2-0.2-0.3C6.1,8.6,6.1,8.5,6,8.4c0-0.1-0.1-0.1-0.3-0.2C5.6,8.1,5.5,8,5.5,8 c0,0-0.1-0.1-0.3-0.2C5,7.7,4.9,7.6,4.9,7.6c-0.1,0-0.2,0-0.3,0c-0.3,0-0.5,0-0.8,0.1S3.3,7.7,3,7.8C2.8,7.9,2.5,8,2.3,8.1 C2.1,8.3,2,8.4,1.8,8.7C1.7,8.9,1.6,9.1,1.6,9.4c0,0.3,0.1,0.6,0.3,0.9c0.2,0.3,0.4,0.5,0.7,0.6c0.3,0.1,0.6,0.2,0.9,0.3 S4,11.3,4.3,11.3z M4.3,5c0.2,0,0.4,0,0.6-0.1c0.2-0.1,0.3-0.2,0.5-0.3C5.6,4.3,5.7,4,5.7,3.5c0-0.3,0-0.6-0.1-0.9 C5.5,2.2,5.4,1.9,5.3,1.6C5.1,1.3,4.9,1.1,4.7,0.9S4.1,0.6,3.8,0.6c-0.2,0-0.4,0-0.6,0.1C3,0.8,2.9,1,2.7,1.1 C2.5,1.4,2.4,1.8,2.4,2.3c0,0.2,0,0.5,0.1,0.7c0,0.2,0.1,0.5,0.2,0.7C2.8,4,2.9,4.2,3.1,4.4c0.1,0.2,0.3,0.4,0.5,0.5 C3.8,5,4.1,5,4.3,5z M10.2,5h1.5v0.8h-1.5v1.6H9.4V5.8H7.9V5h1.5V3.5h0.8V5z"></path>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="banner">
+      <a href="https://fdietz.github.io/vue-component-patterns-book.html">
+        <img src="/recipes-with-angular-js/images/vue_book.png" alt="vue.js component pattern book" width="120">
+        <div>
+          <h3>Checkout my new project:</h3>
+          <h2>Vue.js Component Patterns Book</h2>
+          <h4>The goal of this course is to teach you the fundamentals to make Vue.js components that are simpler, more flexible
+            and most of all fun to build and use!</h4>
+        </div>
+      </a>
+    </div>
+
+ </div>
+</div>
+
+        </div>
+      </div>
+
+      <footer>
+        <div class="row">
+          <div class="large-12 columns">
+            <div class="row">
+              <div class="large-6 columns">
+                <p>
+                  Maintained by <a href="http://fdietz.de">Frederik Dietz</a>
+                </p>
+              </div>
+
+              <div class="large-6 columns text-right">
+                <p>All content licensed with <a href="http://creativecommons.org/">Creative Commons</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      
+        <script id="search-results-template" type="text/mustache">
+          {{#entries}}
+            <li>
+              <a href="/recipes-with-angular-js{{url}}">{{title}}</a>
+            </li>
+          {{/entries}}
+        </script>
+      
+
+      <script src="/recipes-with-angular-js/js/application.js" type="text/javascript" charset="utf-8"></script>
+      <script src="/recipes-with-angular-js/js/jquery.js"></script>
+      <script src="/recipes-with-angular-js/js/foundation.min.js" type="text/javascript" charset="utf-8"></script>
+      <script src="/recipes-with-angular-js/js/prism.js" type="text/javascript" charset="utf-8"></script>
+
+      <script src="/recipes-with-angular-js/js/date.format.js"></script>
+      <script src="/recipes-with-angular-js/js/mustache.js"></script>
+      <script src="/recipes-with-angular-js/js/URI.min.js"></script>
+      <script src="/recipes-with-angular-js/js/lunr.js"></script>
+      <script src="/recipes-with-angular-js/js/jquery.lunr.search.js"></script>
+
+      <script>
+        $(document).foundation();
+      </script>
+
+      <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-42557266-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+      </script>
+
+      <script type="text/javascript">
+        $(function() {
+          $('#search-query').lunrSearch({
+            indexUrl: '/recipes-with-angular-js/search.json',
+            results:  '#search-results',
+            entries:  '.entries',
+            template: '#search-results-template'
+          });
+
+        });
+      </script>
+    </body>
+</html>
